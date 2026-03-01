@@ -36,6 +36,22 @@
                 <a href="#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
                 <a href="#stack" class="hover:text-slate-900">Tech Stack</a>
                 <a href="#cases" class="hover:text-slate-900">Case Studies</a>
+                <!-- Tutorials Dropdown -->
+                <div style="position:relative;" onmouseenter="this.querySelector('.tut-menu').style.display='block'" onmouseleave="this.querySelector('.tut-menu').style.display='none'">
+                    <span class="cursor-pointer hover:text-slate-900 flex items-center gap-1 select-none">Tutorials <span style="font-size:0.6rem;margin-left:2px;">▼</span></span>
+                    <div class="tut-menu" style="display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:240px;background:#fff;border:1px solid rgba(15,23,42,0.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,0.14);padding:8px;z-index:100;">
+                        <div style="padding:8px 12px 4px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
+                        <a href="tutorials-vibe-coding.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:600;color:#6366F1;text-decoration:none;background:#F5F3FF;">
+                            <span style="width:7px;height:7px;border-radius:50%;background:#A855F7;flex-shrink:0;"></span> Vibe Coding
+                            <span style="margin-left:auto;font-size:10px;color:#A855F7;font-weight:700;">NEW</span>
+                        </a>
+                        <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span> UI/UX Design – Beginner</a>
+                        <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span> UI/UX Design – Intermediate</a>
+                        <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span> UI/UX Design – Advanced</a>
+                        <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#EC4899;flex-shrink:0;"></span> Adobe Illustrator (Graphics)</a>
+                        <a href="#" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:0.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></span> AI Mastery – Full Course</a>
+                    </div>
+                </div>
             </nav>
             <div class="flex items-center gap-4">
                 <a href="#consult" class="hidden whitespace-nowrap rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-900 hover:border-brand hover:text-brand md:inline-flex">
@@ -62,6 +78,14 @@
                 <a href="#playbook" class="py-1">Kiyomi Playbook</a>
                 <a href="#stack" class="py-1">Tech Stack</a>
                 <a href="#cases" class="py-1">Case Studies</a>
+                <hr class="border-slate-100">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 pt-1">Tutorials</p>
+                <a href="tutorials-vibe-coding.html" class="py-1 text-violet-600 font-semibold">↳ Vibe Coding ✦ NEW</a>
+                <a href="#" class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Beginner)</a>
+                <a href="#" class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Intermediate)</a>
+                <a href="#" class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Advanced)</a>
+                <a href="#" class="py-1 pl-3 text-slate-600">↳ Adobe Illustrator</a>
+                <a href="#" class="py-1 pl-3 text-slate-600">↳ AI Mastery</a>
                 <hr class="my-2 border-slate-200">
                 <a href="#consult" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-900 hover:border-brand hover:text-brand">
                     Client Portal
