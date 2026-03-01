@@ -681,5 +681,38 @@
         }
     </script>
 
+
+    <script>
+    // Click-based dropdown
+    (function() {
+        function initDropdown() {
+            var btns = document.querySelectorAll('.tut-drop-btn');
+            btns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var menu = btn.nextElementSibling;
+                    var isOpen = menu.style.display === 'block';
+                    // Close all
+                    document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                    document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+                    if (!isOpen) {
+                        menu.style.display = 'block';
+                        var caret = btn.querySelector('.caret');
+                        if(caret) caret.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDropdown);
+        } else {
+            initDropdown();
+        }
+    })();
+    </script>
 </body>
 </html>
