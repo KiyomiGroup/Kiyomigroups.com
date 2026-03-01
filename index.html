@@ -37,7 +37,7 @@
                 <a href="#stack" class="hover:text-slate-900">Tech Stack</a>
                 <a href="#cases" class="hover:text-slate-900">Case Studies</a>
                 <!-- Tutorials Dropdown -->
-                <div style="position:relative;" onmouseenter="this.querySelector('.tut-menu').style.display='block'" onmouseleave="this.querySelector('.tut-menu').style.display='none'">
+                <div style="position:relative;" >
                     <span class="cursor-pointer hover:text-slate-900 flex items-center gap-1 select-none">Tutorials <span style="font-size:0.6rem;margin-left:2px;">▼</span></span>
                     <div class="tut-menu" style="display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:240px;background:#fff;border:1px solid rgba(15,23,42,0.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,0.14);padding:8px;z-index:100;">
                         <div style="padding:8px 12px 4px;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
@@ -655,6 +655,39 @@
                 }
             });
         })();
+    </script>
+
+    <script>
+    // Click-based dropdown
+    (function() {
+        function initDropdown() {
+            var btns = document.querySelectorAll('.tut-drop-btn');
+            btns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var menu = btn.nextElementSibling;
+                    var isOpen = menu.style.display === 'block';
+                    // Close all
+                    document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                    document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+                    if (!isOpen) {
+                        menu.style.display = 'block';
+                        var caret = btn.querySelector('.caret');
+                        if(caret) caret.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDropdown);
+        } else {
+            initDropdown();
+        }
+    })();
     </script>
 </body>
 </html>
