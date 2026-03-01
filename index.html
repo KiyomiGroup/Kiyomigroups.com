@@ -23,7 +23,7 @@
         }
     </script>
 </head>
-<body id="top" class="bg-black text-slate-100 antialiased">
+<body id="top" class="bg-white text-slate-900 antialiased">
     <!-- Navigation -->
     <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200 transition-shadow">
         <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
@@ -31,9 +31,9 @@
                 KIYOMI GROUP
             </a>
             <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex" aria-label="Primary">
-                <a href="#industries" class="hover:text-slate-900">Industries</a>
-                <a href="#standard" class="hover:text-slate-900">Kiyomi Standard</a>
-                <a href="#playbook" class="hover:text-slate-900">Playbook</a>
+                <a href="#stages" class="hover:text-slate-900">Services</a>
+                <a href="#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="#stack" class="hover:text-slate-900">Tech Stack</a>
                 <a href="#cases" class="hover:text-slate-900">Case Studies</a>
             </nav>
             <div class="flex items-center gap-4">
@@ -57,9 +57,9 @@
         <!-- Mobile menu -->
         <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
             <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
-                <a href="#industries" class="py-1">Industries</a>
-                <a href="#standard" class="py-1">Kiyomi Standard</a>
-                <a href="#playbook" class="py-1">Playbook</a>
+                <a href="#stages" class="py-1">Services</a>
+                <a href="#playbook" class="py-1">Kiyomi Playbook</a>
+                <a href="#stack" class="py-1">Tech Stack</a>
                 <a href="#cases" class="py-1">Case Studies</a>
                 <hr class="my-2 border-slate-200">
                 <a href="#consult" class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-xs font-medium text-slate-900 hover:border-brand hover:text-brand">
@@ -81,15 +81,15 @@
             <div class="relative mx-auto flex min-h-[420px] max-w-6xl flex-col gap-10 px-4 pb-16 pt-12 text-white sm:px-6 md:min-h-[520px] md:flex-row md:items-center md:pb-20 md:pt-16">
                 <div class="md:w-3/5">
                     <p class="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-200">
-                        SOFTWARE / DESIGN / COMPLIANCE
+                        DESIGN-LED ENGINEERING FOR REGULATED TEAMS
                     </p>
                     <h1 class="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
-                        Software that scales.<br class="hidden sm:block">
-                        <span class="text-brand">Compliance that protects.</span>
+                        Build the right product,<br class="hidden sm:block">
+                        <span class="text-brand">the right way.</span>
                     </h1>
                     <p class="mt-5 max-w-xl text-sm leading-relaxed text-slate-100 sm:text-base">
-                        We bridge the gap between visionary design and mission-critical engineering for healthtech,
-                        fintech, and other high-stakes industries.
+                        From discovery sprints to production-grade compliance, Kiyomi Group helps health, fintech,
+                        and compliance-heavy organizations turn complex ideas into resilient, scalable systems.
                     </p>
                     <div class="mt-8 flex flex-wrap items-center gap-4">
                         <button
@@ -110,11 +110,11 @@
                         <dl class="mt-4 space-y-3 text-sm text-slate-50">
                             <div class="flex items-start justify-between gap-4">
                                 <dt class="font-medium">Healthtech</dt>
-                                <dd class="text-right text-xs text-slate-200">Audit-ready code and HIPAA-aware data flows for PHI.</dd>
+                                <dd class="text-right text-xs text-slate-200">Audit-ready experiences, HIPAA-aware flows, and patient-safe data.</dd>
                             </div>
                             <div class="flex items-start justify-between gap-4">
                                 <dt class="font-medium">Fintech</dt>
-                                <dd class="text-right text-xs text-slate-200">High-frequency transaction stability and reconciliation.</dd>
+                                <dd class="text-right text-xs text-slate-200">High-frequency transaction stability with transparent risk controls.</dd>
                             </div>
                             <div class="flex items-start justify-between gap-4">
                                 <dt class="font-medium">Compliance</dt>
@@ -126,141 +126,244 @@
             </div>
         </section>
 
-        <!-- Industries -->
-        <section id="industries" class="bg-slate-50">
-            <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-                <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+        <!-- Service Stages: thoughtbot-style three phase model -->
+        <section id="stages" class="relative -mt-8 bg-[#050509] md:-mt-12">
+            <!-- Purple gradient meshes behind the outer cards -->
+            <div class="pointer-events-none absolute -left-24 top-40 h-64 w-64 rounded-[40%] bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.6),_transparent_60%)] blur-3xl"></div>
+            <div class="pointer-events-none absolute -right-24 bottom-24 h-64 w-64 rounded-[40%] bg-[radial-gradient(circle_at_bottom,_rgba(129,140,248,0.7),_transparent_60%)] blur-3xl"></div>
+            <!-- Center decorative icon between hero and services -->
+            <div class="pointer-events-none absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2">
+                <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_18px_45px_rgba(0,0,0,0.9)] ring-2 ring-white/10">
+                    <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 11.5 10 7l4 4 5-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M5 17h14M7 20h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                    </svg>
+                </div>
+            </div>
+
+            <div class="relative mx-auto max-w-6xl px-4 py-10 text-white sm:px-6 sm:py-14">
+                <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                     <div>
-                        <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                            Engineered for regulated industries.
+                        <span class="inline-flex rounded-full bg-violet-500/20 px-3 py-1 text-xs font-medium text-violet-300">
+                            Service
+                        </span>
+                        <h2 class="mt-4 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                            A product lifecycle built for regulated teams.
                         </h2>
-                        <p class="mt-2 max-w-xl text-sm text-slate-600 sm:text-base">
-                            From seed-stage platforms to enterprise transformations, we build systems that stand up to audits,
-                            outages, and real-world load.
+                        <p class="mt-2 max-w-xl text-sm text-slate-200 sm:text-base">
+                            Whether you are validating an idea, scaling a v1, or building the platform that will run
+                            your organization, Kiyomi Group meets you where you are.
                         </p>
                     </div>
                 </div>
-                <div class="grid gap-6 md:grid-cols-3">
-                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                        <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Health</h3>
-                            <p class="mt-3 text-sm text-slate-600">
-                                Audit-ready code, PHI-aware data models, and HIPAA-compliant architecture from day zero—
-                                not as an afterthought.
+                <div class="grid gap-8 md:grid-cols-3">
+                    <!-- Phase 1 Card -->
+                    <article class="relative flex flex-col justify-between rounded-3xl bg-[#050509] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.9)] md:p-6">
+                        <div class="relative z-10">
+                            <!-- corner icon -->
+                            <div class="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <rect x="4" y="3" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                                    <path d="M8 6h6a1 1 0 0 1 1 1v9.5a.5.5 0 0 1-.8.4L12 15.5l-2.2 1.4a.5.5 0 0 1-.8-.4V6Z" stroke="currentColor" stroke-width="1.2" />
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-semibold text-white">Phase 1: Validation &amp; Discovery</h3>
+                            <p class="mt-3 text-sm text-slate-300">
+                                Sprints, strategy, and clickable prototypes that align stakeholders and de‑risk
+                                your roadmap before you commit code and budget.
                             </p>
                         </div>
-                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
-                            <li>• HIPAA-compliant workflows</li>
-                            <li>• Immutable clinical event trails</li>
-                            <li>• Environment isolation for PHI</li>
+                        <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                            <li>• Discovery &amp; framing workshops</li>
+                            <li>• UX flows and rapid prototyping</li>
+                            <li>• Product / compliance feasibility notes</li>
                         </ul>
+                        <!-- bottom-right arrow -->
+                        <button
+                            type="button"
+                            class="absolute bottom-4 right-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-violet-500 text-white shadow-[0_10px_30px_rgba(0,0,0,0.9)]"
+                            aria-label="Explore validation and discovery"
+                        >
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </article>
-                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+
+                    <!-- Phase 2 Card (central, featured) -->
+                    <article class="relative flex flex-col justify-between rounded-3xl bg-white/5 p-5 text-center shadow-[0_24px_70px_rgba(0,0,0,0.95)] backdrop-blur md:p-6">
                         <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Fintech</h3>
-                            <p class="mt-3 text-sm text-slate-600">
-                                High-frequency transaction stability with guardrails for reconciliation, fraud checks,
-                                and regulatory reporting.
+                            <h3 class="text-base font-semibold text-white">Phase 2: Growth &amp; Engineering</h3>
+                            <p class="mt-3 text-sm text-slate-100">
+                                MVPs and core platforms engineered for uptime, observability, and security-first
+                                development in regulated environments.
                             </p>
                         </div>
-                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
-                            <li>• High-availability transaction rails</li>
-                            <li>• Strong consistency where it matters</li>
-                            <li>• Transparent audit and reporting layers</li>
-                        </ul>
+                        <div class="mt-4 space-y-3">
+                            <ul class="space-y-1.5 text-xs text-slate-200">
+                                <li>• Production-grade Ruby on Rails, React, Elixir</li>
+                                <li>• Security‑first CI/CD and review workflows</li>
+                                <li>• Metrics, logging, and incident playbooks</li>
+                            </ul>
+                            <button
+                                type="button"
+                                class="mt-4 inline-flex items-center justify-center rounded-full bg-violet-500 px-5 py-2 text-xs font-semibold text-white shadow-sm hover:bg-violet-400"
+                            >
+                                <span>Explore Growth</span>
+                                <svg class="ml-2 h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                    <path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
                     </article>
-                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
-                        <div>
-                            <h3 class="text-sm font-semibold text-slate-900">Compliance</h3>
-                            <p class="mt-3 text-sm text-slate-600">
-                                Systems designed for regulators and risk teams: evidence-first logging, policy engines,
-                                and audit-friendly change history.
+
+                    <!-- Phase 3 Card -->
+                    <article class="relative flex flex-col justify-between rounded-3xl bg-[#050509] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.9)] md:p-6">
+                        <div class="relative z-10">
+                            <!-- corner icon -->
+                            <div class="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/5 text-white shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+                                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                                    <path d="M5 11v4M9 8v7M13 5v10M4 15h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h3 class="text-base font-semibold text-white">Phase 3: Team &amp; Platform</h3>
+                            <p class="mt-3 text-sm text-slate-300">
+                                We help you grow the team and platform: DevOps, platform engineering, and
+                                fractional leadership that keeps quality high as you scale.
                             </p>
                         </div>
-                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
-                            <li>• Audit-ready code paths</li>
-                            <li>• Policy-as-code enforcement</li>
-                            <li>• Tamper-evident logging</li>
+                        <ul class="mt-4 space-y-1.5 text-xs text-slate-400">
+                            <li>• DevOps and platform engineering support</li>
+                            <li>• Pairing, mentoring, and hiring assistance</li>
+                            <li>• Fractional CTO and architecture guidance</li>
                         </ul>
+                        <!-- bottom-right arrow -->
+                        <button
+                            type="button"
+                            class="absolute bottom-4 right-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-violet-500 text-white shadow-[0_10px_30px_rgba(0,0,0,0.9)]"
+                            aria-label="Explore team and platform"
+                        >
+                            <svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                                <path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- The Kiyomi Standard -->
-        <section id="standard" class="bg-white">
+        <!-- The Kiyomi Playbook (Authority) -->
+        <section id="playbook" class="relative bg-white">
+            <!-- Decorative playbook icon -->
+            <div class="pointer-events-none absolute left-4 -top-6 sm:left-8">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_14px_40px_rgba(15,23,42,0.55)] ring-2 ring-violet-200/40">
+                    <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M6.5 6.25H12a2 2 0 0 1 2 2v9.5a.5.5 0 0 1-.8.4L12 17.75l-1.2.8a.5.5 0 0 1-.8-.4v-9.9a2 2 0 0 0-2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M14 6.25h3.5a1.5 1.5 0 0 1 1.5 1.5V18a.75.75 0 0 1-1.17.6L16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
             <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
                 <div class="max-w-xl">
                     <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                        The Kiyomi Standard
+                        The Kiyomi Playbook
                     </h2>
                     <p class="mt-3 text-sm text-slate-600 sm:text-base">
-                        We don’t just ship interfaces. We design resilient digital infrastructure that your teams can live in,
-                        scale, and safely extend.
+                        Kiyomi Group is a design-led engineering partner. We bring an open-source mindset to
+                        proprietary systems: clear documentation, transparent decisions, and continuous improvement
+                        baked into every engagement.
                     </p>
                 </div>
                 <div class="mt-8 grid gap-6 md:grid-cols-3">
                     <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                        <h3 class="text-sm font-semibold text-slate-900">Infrastructure over interfaces</h3>
+                        <h3 class="text-sm font-semibold text-slate-900">Open-source mindset</h3>
                         <p class="mt-3 text-sm text-slate-600">
-                            Clear domain boundaries, stable contracts, and predictable APIs that survive product iterations
-                            and team changes.
+                            We favour techniques from open-source: readable code, small pull requests, and public‑style
+                            changelogs so your team can understand how and why the system evolved.
                         </p>
                     </div>
                     <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                        <h3 class="text-sm font-semibold text-slate-900">Compliance-first architecture</h3>
+                        <h3 class="text-sm font-semibold text-slate-900">Product &amp; engineering style guides</h3>
                         <p class="mt-3 text-sm text-slate-600">
-                            Regulatory requirements are modelled in the system itself—roles, scopes, and evidence are built-in,
-                            not bolted on.
+                            We leave behind design systems, API standards, and engineering playbooks so your internal
+                            teams can ship with the same consistency long after we ship v1.
                         </p>
                     </div>
                     <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                        <h3 class="text-sm font-semibold text-slate-900">Operational visibility</h3>
+                        <h3 class="text-sm font-semibold text-slate-900">Continuous improvement</h3>
                         <p class="mt-3 text-sm text-slate-600">
-                            End-to-end observability, tamper-evident logs, and traces that make incident response and audits
-                            straightforward.
+                            Retrospectives, metrics, and feedback loops are part of our default engagement model—
+                            we tune the system and the team, not just the release.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Operational Precision / Playbook -->
-        <section id="playbook" class="bg-slate-50">
+        <!-- Compliance-heavy Tech Stack -->
+        <section id="stack" class="relative bg-slate-50">
+            <!-- Decorative stack / layers icon -->
+            <div class="pointer-events-none absolute right-4 -top-6 sm:right-8">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_14px_40px_rgba(15,23,42,0.55)] ring-2 ring-violet-200/40">
+                    <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M5 9.5 12 5l7 4.5-7 4.5L5 9.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                        <path d="M5 14.5 12 19l7-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+            </div>
             <div class="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-                <div class="grid gap-10 md:grid-cols-2 md:items-start">
-                    <div>
-                        <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                            Operational precision, by design.
-                        </h2>
-                        <p class="mt-3 text-sm text-slate-600 sm:text-base">
-                            Our playbook focuses on stability: predictable deployments, safe migrations, and observability
-                            that your SRE and compliance teams can trust.
-                        </p>
-                    </div>
-                    <dl class="space-y-4 text-sm text-slate-700">
-                        <div class="flex gap-3">
-                            <dt class="mt-1 h-6 w-6 rounded-full bg-brand/10 text-center text-xs font-semibold leading-6 text-brand">01</dt>
-                            <dd>
-                                <p class="font-semibold text-slate-900">Environment isolation</p>
-                                <p class="text-slate-600">Strict Dev, Staging, and Production boundaries with repeatable, automation-first deployments.</p>
-                            </dd>
+                <div class="mb-8 max-w-2xl">
+                    <h2 class="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+                        Compliance-heavy, product-ready stack.
+                    </h2>
+                    <p class="mt-3 text-sm text-slate-600 sm:text-base">
+                        We specialise in modern, battle‑tested tools—Ruby on Rails, React, and Elixir—paired with AI/ML
+                        integrations that keep sensitive data safe while unlocking real leverage for your teams.
+                    </p>
+                </div>
+                <div class="grid gap-6 md:grid-cols-3">
+                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-900">Ruby on Rails</h3>
+                            <p class="mt-3 text-sm text-slate-600">
+                                Fast, opinionated backends with strong conventions, great test tooling, and a mature
+                                ecosystem for payments, admin, and reporting.
+                            </p>
                         </div>
-                        <div class="flex gap-3">
-                            <dt class="mt-1 h-6 w-6 rounded-full bg-brand/10 text-center text-xs font-semibold leading-6 text-brand">02</dt>
-                            <dd>
-                                <p class="font-semibold text-slate-900">Continuous observability</p>
-                                <p class="text-slate-600">Real-time health dashboards, alerts, and logs tailored for both engineers and compliance teams.</p>
-                            </dd>
+                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
+                            <li>• Audit-friendly ActiveRecord patterns</li>
+                            <li>• Secure authentication &amp; authorization</li>
+                            <li>• Background jobs for long-running work</li>
+                        </ul>
+                    </article>
+                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-900">React</h3>
+                            <p class="mt-3 text-sm text-slate-600">
+                                Product‑first interfaces with component libraries, design systems, and accessibility
+                                baked into every flow.
+                            </p>
                         </div>
-                        <div class="flex gap-3">
-                            <dt class="mt-1 h-6 w-6 rounded-full bg-brand/10 text-center text-xs font-semibold leading-6 text-brand">03</dt>
-                            <dd>
-                                <p class="font-semibold text-slate-900">Change with confidence</p>
-                                <p class="text-slate-600">Schema-safe migrations, feature flags, and rollback strategies designed for uptime, not heroics.</p>
-                            </dd>
+                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
+                            <li>• TypeScript‑first frontends</li>
+                            <li>• Design systems &amp; Storybook docs</li>
+                            <li>• WCAG‑aware UI patterns</li>
+                        </ul>
+                    </article>
+                    <article class="flex flex-col justify-between rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+                        <div>
+                            <h3 class="text-sm font-semibold text-slate-900">Elixir &amp; AI/ML</h3>
+                            <p class="mt-3 text-sm text-slate-600">
+                                Highly concurrent services and AI‑assisted workflows where safety, traceability,
+                                and performance are non‑negotiable.
+                            </p>
                         </div>
-                    </dl>
+                        <ul class="mt-4 space-y-1.5 text-xs text-slate-500">
+                            <li>• Real‑time pipelines and event streams</li>
+                            <li>• Guardrailed AI/ML integrations</li>
+                            <li>• Data contracts and lineage for compliance</li>
+                        </ul>
+                    </article>
                 </div>
             </div>
         </section>
@@ -274,8 +377,8 @@
                             Case studies
                         </h2>
                         <p class="mt-2 max-w-xl text-sm text-slate-600 sm:text-base">
-                            Engagement snapshots coming soon. In the meantime, talk to us about similar systems we've helped
-                            design, rescue, or scale.
+                            We work under strict confidentiality with many of our partners. Get in touch and we’ll walk
+                            you through anonymised stories that mirror your product stage and regulatory profile.
                         </p>
                     </div>
                     <button
@@ -298,8 +401,8 @@
                 <p class="text-xs text-slate-500">Isheri - Olofin, Lagos, Nigeria • +234-707-0778-027</p>
             </div>
             <div class="flex flex-wrap items-center gap-4 text-xs">
-                <a href="#standard" class="hover:text-slate-900">Kiyomi Standard</a>
-                <a href="#playbook" class="hover:text-slate-900">Playbook</a>
+                <a href="#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="#stack" class="hover:text-slate-900">Tech Stack</a>
                 <a href="#cases" class="hover:text-slate-900">Case Studies</a>
                 <button
                     type="button"
@@ -333,15 +436,15 @@
                 </svg>
             </button>
             <h2 class="text-lg font-semibold text-slate-900">
-                Start Your Transition to a Scalable System.
+                Let's validate your roadmap.
             </h2>
             <p class="mt-2 text-sm text-slate-600">
-                Schedule a 20-minute technical discovery call to discuss your architecture, compliance needs,
-                and scaling roadmap.
+                Book a 20-minute technical discovery call to discuss your product stage, compliance requirements,
+                and engineering hurdles.
             </p>
             <form class="mt-5 space-y-4 text-sm" id="consult">
                 <div>
-                    <label for="fullName" class="mb-1 block font-medium text-slate-800">Full Name</label>
+                    <label for="fullName" class="mb-1 block font-medium text-slate-800">Name</label>
                     <input
                         id="fullName"
                         type="text"
@@ -371,15 +474,14 @@
                     </select>
                 </div>
                 <div>
-                    <label for="challenge" class="mb-1 block font-medium text-slate-800">Primary Challenge</label>
+                    <label for="productStage" class="mb-1 block font-medium text-slate-800">Product Stage</label>
                     <select
-                        id="challenge"
+                        id="productStage"
                         class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm focus:border-brand focus:outline-none focus:ring-1 focus:ring-brand"
                     >
+                        <option>Early</option>
+                        <option>Growth</option>
                         <option>Scaling</option>
-                        <option>New Build</option>
-                        <option>Audit Prep</option>
-                        <option>Other</option>
                     </select>
                 </div>
                 <button
