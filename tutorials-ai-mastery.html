@@ -177,44 +177,59 @@
 
         <!-- ENROLL -->
         <section id="enroll" style="background:linear-gradient(135deg,#1a0800 0%,#0d001f 100%);padding:80px 0;">
-            <div class="mx-auto max-w-6xl px-4 sm:px-6">
-                <div class="grid md:grid-cols-2 gap-16 items-start">
-                    <div>
-                        <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(245,158,11,.15);color:#FDE68A;">Pricing</span>
-                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl mb-5">Invest in the skill that makes every other skill faster.</h2>
-                        <div class="rounded-2xl p-7" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.4);">
-                            <p class="text-yellow-300 text-sm font-semibold uppercase tracking-wider mb-2">AI Mastery — Full Course</p>
-                            <div class="font-display text-4xl font-extrabold text-white mb-1">₦200,000</div>
-                            <p class="text-slate-400 text-sm mb-5">≈ $149 USD · One-time · Lifetime access</p>
-                            <ul class="space-y-2 text-sm text-slate-200 mb-5">
-                                <li>✓ 10 weeks, 20+ tools covered in depth</li>
-                                <li>✓ Build real AI-powered projects</li>
-                                <li>✓ Live Q&A + student community</li>
-                                <li>✓ Certificate of completion</li>
-                                <li>✓ All future course updates included</li>
-                                <li>✓ No coding or tech background required</li>
-                            </ul>
-                            <div class="rounded-xl p-4 text-sm" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);">
-                                <p class="text-yellow-300 font-semibold mb-1">🔥 Most popular tutorial at Kiyomi</p>
-                                <p class="text-slate-400 text-xs">This course is the fastest path to becoming indispensable in any job, industry, or business in 2025.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl p-7" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.25);">
-                        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
-                        <div id="enroll-form" class="space-y-4">
-                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label><input type="text" placeholder="Jane Doe" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
-                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Email *</label><input type="email" placeholder="you@example.com" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
-                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone</label><input type="tel" placeholder="+234 xxx xxx xxxx" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
-                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Goal</label><select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);"><option disabled selected>What do you want to achieve?</option><option>Use AI at work to save time</option><option>Build a business with AI</option><option>Create content with AI</option><option>Learn AI for freelancing</option><option>Just want to understand AI fully</option></select></div>
-                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Current AI experience</label><select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);"><option disabled selected>Select...</option><option>Never used AI tools</option><option>Use ChatGPT occasionally</option><option>Use AI tools regularly at work</option><option>Fairly experienced, want to go deeper</option></select></div>
-                            <button type="button" onclick="document.getElementById('enroll-form').classList.add('hidden');document.getElementById('enroll-success').classList.remove('hidden')" class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#F59E0B,#EC4899);box-shadow:0 10px 35px rgba(245,158,11,.35);">Reserve My Spot — ₦200,000</button>
-                            <p class="text-center text-xs text-slate-500">No payment here · Team contacts you within 24hrs</p>
-                        </div>
-                        <div id="enroll-success" class="hidden text-center py-8"><div class="text-5xl mb-4">🎉</div><h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4><p class="text-slate-400 text-sm">We'll be in touch within 24 hours with your payment link and onboarding details.</p></div>
-                    </div>
-                </div>
+           <div class="rounded-2xl p-7" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.25);">
+    <div id="enroll-form-container">
+        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
+        <form id="ai-mastery-form" action="https://formspree.io/f/mwvnjrba" method="POST" class="space-y-4">
+            <input type="hidden" name="_subject" value="New Enrollment: AI Mastery Course">
+            
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
+                <input type="text" name="name" required placeholder="Jane Doe" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);">
             </div>
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email *</label>
+                <input type="email" name="email" required placeholder="you@example.com" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone</label>
+                <input type="tel" name="phone" placeholder="+234 xxx xxx xxxx" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);">
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Goal</label>
+                <select name="goal" class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);">
+                    <option disabled selected>What do you want to achieve?</option>
+                    <option>Use AI at work to save time</option>
+                    <option>Build a business with AI</option>
+                    <option>Create content with AI</option>
+                    <option>Learn AI for freelancing</option>
+                    <option>Just want to understand AI fully</option>
+                </select>
+            </div>
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Current AI experience</label>
+                <select name="experience" class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);">
+                    <option disabled selected>Select...</option>
+                    <option>Never used AI tools</option>
+                    <option>Use ChatGPT occasionally</option>
+                    <option>Use AI tools regularly at work</option>
+                    <option>Fairly experienced, want to go deeper</option>
+                </select>
+            </div>
+            <button type="submit" id="ai-submit-btn" class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#F59E0B,#EC4899);box-shadow:0 10px 35px rgba(245,158,11,.35);">
+                Reserve My Spot — ₦200,000
+            </button>
+            <p class="text-center text-xs text-slate-500">No payment here · Team contacts you within 24hrs</p>
+        </form>
+    </div>
+
+    <div id="enroll-success" class="hidden text-center py-8">
+        <div class="text-5xl mb-4">🎉</div>
+        <h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4>
+        <p class="text-slate-400 text-sm mb-6">We've received your application. We'll be in touch within 24 hours with your payment link and onboarding details.</p>
+        <a href="index.html" class="text-brand text-sm font-bold underline">Back to home</a>
+    </div>
+</div>
         </section>
     </main>
 
@@ -236,5 +251,72 @@
         const t=document.querySelector('[data-nav-toggle]'),m=document.querySelector('[data-nav-menu]');
         if(t&&m){t.addEventListener('click',()=>{const o=!m.classList.contains('hidden');m.classList.toggle('hidden',o);document.body.classList.toggle('overflow-hidden',!o)});}
     </script>
+    <script>
+    // AJAX Form Handling
+    const aiForm = document.getElementById("ai-mastery-form");
+    const aiContainer = document.getElementById("enroll-form-container");
+    const aiSuccess = document.getElementById("enroll-success");
+    const aiBtn = document.getElementById("ai-submit-btn");
+
+    if (aiForm) {
+        aiForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            
+            // UI Feedback
+            aiBtn.disabled = true;
+            aiBtn.textContent = "Processing...";
+
+            const formData = new FormData(aiForm);
+            
+            try {
+                const response = await fetch(aiForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    // Show success UI
+                    aiContainer.classList.add("hidden");
+                    aiSuccess.classList.remove("hidden");
+                } else {
+                    const data = await response.json();
+                    alert(data.errors ? data.errors.map(error => error.message).join(", ") : "Submission failed.");
+                    aiBtn.disabled = false;
+                    aiBtn.textContent = "Reserve My Spot — ₦200,000";
+                }
+            } catch (error) {
+                alert("There was an error connecting to the server. Please try again.");
+                aiBtn.disabled = false;
+                aiBtn.textContent = "Reserve My Spot — ₦200,000";
+            }
+        });
+    }
+
+    // Navigation Menu Toggle
+    const navBtn = document.querySelector('[data-nav-toggle]');
+    const navMenu = document.querySelector('[data-nav-menu]');
+    if(navBtn && navMenu) {
+        navBtn.addEventListener('click', () => navMenu.classList.toggle('hidden'));
+    }
+
+    // Dropdown Handling
+    const tutBtn = document.querySelector('.tut-drop-btn');
+    const tutMenu = document.querySelector('.tmenu');
+    const caret = document.querySelector('.caret');
+    
+    if(tutBtn && tutMenu) {
+        tutBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = tutMenu.style.display === 'block';
+            tutMenu.style.display = isOpen ? 'none' : 'block';
+            if(caret) caret.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+        });
+        document.addEventListener('click', () => {
+            tutMenu.style.display = 'none';
+            if(caret) caret.style.transform = 'rotate(0deg)';
+        });
+    }
+</script>
 </body>
 </html>
