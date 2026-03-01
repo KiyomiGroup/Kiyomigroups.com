@@ -412,17 +412,40 @@
         <button type="button" onclick="closeConsultModal()" class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700">
             <svg class="h-3.5 w-3.5" viewBox="0 0 14 14"><path d="M3 3l8 8m0-8L3 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
-        <h2 class="text-lg font-semibold text-slate-900">Let's validate your roadmap.</h2>
-        <p class="mt-2 text-sm text-slate-600">Book a 20-minute technical discovery call to discuss your product stage, compliance requirements, and engineering hurdles.</p>
-        <div class="mt-5 space-y-4 text-sm">
-            <div><label class="mb-1 block font-medium text-slate-800">Name</label><input type="text" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Jane Doe"></div>
-            <div><label class="mb-1 block font-medium text-slate-800">Work Email</label><input type="email" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="you@company.com"></div>
-            <div><label class="mb-1 block font-medium text-slate-800">Industry</label><select class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm"><option>Health</option><option>Fintech</option><option>Compliance</option><option>Other</option></select></div>
-            <div><label class="mb-1 block font-medium text-slate-800">Product Stage</label><select class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm"><option>Early</option><option>Growth</option><option>Scaling</option></select></div>
-            <button type="button" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">Book a Strategy Consultation</button>
-            <p class="text-[11px] leading-relaxed text-slate-500">We'll review your details and follow up with a scheduling link. No marketing lists, no noise.</p>
-            <button type="button" onclick="closeConsultModal()" class="w-full pt-1 text-center text-xs text-slate-400 hover:text-slate-600">Not now</button>
-        </div>
+      <h2 class="text-lg font-semibold text-slate-900">Let's validate your roadmap.</h2>
+<p class="mt-2 text-sm text-slate-600">Book a 20-minute technical discovery call to discuss your product stage, compliance requirements, and engineering hurdles.</p>
+
+<form action="https://formspree.io/f/mwvnjrba" method="POST" class="mt-5 space-y-4 text-sm">
+    <div>
+        <label class="mb-1 block font-medium text-slate-800">Name</label>
+        <input type="text" name="name" required class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Jane Doe">
+    </div>
+    <div>
+        <label class="mb-1 block font-medium text-slate-800">Work Email</label>
+        <input type="email" name="email" required class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="you@company.com">
+    </div>
+    <div>
+        <label class="mb-1 block font-medium text-slate-800">Industry</label>
+        <select name="industry" class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm">
+            <option>Health</option>
+            <option>Fintech</option>
+            <option>Compliance</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div>
+        <label class="mb-1 block font-medium text-slate-800">Product Stage</label>
+        <select name="stage" class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm">
+            <option>Early</option>
+            <option>Growth</option>
+            <option>Scaling</option>
+        </select>
+    </div>
+    
+    <button type="submit" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">
+        Book a Strategy Consultation
+    </button>
+</form>
     </div>
 </div>
 
