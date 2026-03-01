@@ -412,10 +412,10 @@
         <button type="button" onclick="closeConsultModal()" class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700">
             <svg class="h-3.5 w-3.5" viewBox="0 0 14 14"><path d="M3 3l8 8m0-8L3 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </button>
-      <h2 class="text-lg font-semibold text-slate-900">Let's validate your roadmap.</h2>
+     <h2 class="text-lg font-semibold text-slate-900">Let's validate your roadmap.</h2>
 <p class="mt-2 text-sm text-slate-600">Book a 20-minute technical discovery call to discuss your product stage, compliance requirements, and engineering hurdles.</p>
 
-<form action="https://formspree.io/f/mwvnjrba" method="POST" class="mt-5 space-y-4 text-sm">
+<form id="consult-form" action="https://formspree.io/f/mwvnjrba" method="POST" class="mt-5 space-y-4 text-sm">
     <div>
         <label class="mb-1 block font-medium text-slate-800">Name</label>
         <input type="text" name="name" required class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Jane Doe">
@@ -441,11 +441,17 @@
             <option>Scaling</option>
         </select>
     </div>
-    
-    <button type="submit" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">
+    <button type="submit" id="submit-btn" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">
         Book a Strategy Consultation
     </button>
 </form>
+
+<div id="form-success" class="hidden mt-5 text-center p-6 bg-green-50 rounded-xl border border-green-100">
+    <div class="text-3xl mb-2">✅</div>
+    <h3 class="text-lg font-bold text-green-900">Request Received!</h3>
+    <p class="text-sm text-green-700">We'll follow up shortly with a scheduling link.</p>
+    <button type="button" onclick="closeConsultModal()" class="mt-4 text-xs font-semibold text-green-800 underline">Back to home</button>
+</div>
     </div>
 </div>
 
@@ -557,6 +563,39 @@
     setTimeout(() => {
         openConsultModal();
     }, 5000);
-</script>
+</script>const form = document.getElementById("consult-form");
+const successMsg = document.getElementById("form-success");
+const submitBtn = document.getElementById("submit-btn");
+
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Stops the redirect to Formspree
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+
+    const data = new FormData(form);
+    
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+            form.classList.add("hidden"); // Hide form
+            successMsg.classList.remove("hidden"); // Show success message
+            form.reset();
+        } else {
+            alert("Oops! There was a problem submitting your form");
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Book a Strategy Consultation";
+        }
+    } catch (error) {
+        alert("Connection error. Please try again.");
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Book a Strategy Consultation";
+    }
+});
 </body>
 </html>
