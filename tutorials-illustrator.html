@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Illustrator – Graphic Design | Kiyomi Tutorials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['Syne','sans-serif']},colors:{brand:'#EC4899'}}}}</script>
+    <style>
+        html{overflow-x:hidden}*,*::before,*::after{box-sizing:border-box}
+        @keyframes pulse-glow{0%,100%{box-shadow:0 0 12px rgba(236,72,153,0.5)}50%{box-shadow:0 0 28px rgba(236,72,153,0.9)}}
+        .badge-glow{animation:pulse-glow 2.5s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+        .float{animation:float 6s ease-in-out infinite}.float-slow{animation:float 9s ease-in-out infinite}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        .fade-in-up{animation:fadeInUp 0.7s ease forwards}
+        .delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}
+        .shimmer-card{position:relative;overflow:hidden}
+        .shimmer-card::before{content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(to right,transparent 0%,rgba(255,255,255,0.06) 50%,transparent 100%);transform:skewX(-20deg);transition:left .6s ease}
+        .shimmer-card:hover::before{left:150%}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:#EC4899!important;box-shadow:0 0 0 3px rgba(236,72,153,0.18)}
+        .module-bar{width:3px;background:linear-gradient(to bottom,#EC4899,#F59E0B);border-radius:99px;flex-shrink:0}
+    </style>
+</head>
+<body id="top" class="antialiased" style="background:#070013;color:#F5F3FF;overflow-x:hidden;">
+
+    <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 transition-shadow">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+            <a href="index.html" class="text-xs font-semibold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+                <a href="index.html#stages" class="hover:text-slate-900">Services</a>
+                <a href="index.html#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="index.html#stack" class="hover:text-slate-900">Tech Stack</a>
+                <div style="position:relative;" >
+                    <button class="tut-drop-btn cursor-pointer flex items-center gap-1 font-semibold hover:opacity-80 bg-transparent border-none p-0" style="font-size:0.875rem;">Tutorials <span class="caret" style="font-size:.6rem;margin-left:2px;display:inline-block;transition:transform .2s;">▼</span></button>
+                    <div class="tmenu" style="display:none;" style="display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:240px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,.14);padding:8px;z-index:100;">
+                        <div style="padding:8px 12px 4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
+                        <a href="tutorials-vibe-coding.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFF0F6'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#A855F7;flex-shrink:0;"></span>Vibe Coding<span style="margin-left:auto;font-size:10px;color:#A855F7;font-weight:700;">NEW</span></a>
+                        <a href="tutorials-uiux-beginner.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFF0F6'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Beginner</a>
+                        <a href="tutorials-uiux-intermediate.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFF0F6'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Intermediate</a>
+                        <a href="tutorials-uiux-advanced.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFF0F6'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Advanced</a>
+                        <a href="tutorials-illustrator.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:600;color:#EC4899;background:#FFF0F6;text-decoration:none;"><span style="width:7px;height:7px;border-radius:50%;background:#EC4899;flex-shrink:0;"></span>Adobe Illustrator (Graphics)</a>
+                        <a href="tutorials-ai-mastery.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFF0F6'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></span>AI Mastery – Full Course</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#enroll" class="hidden whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold text-white md:inline-flex" style="background:#EC4899;">Enroll Now</a>
+            <button type="button" data-nav-toggle class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden"><svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        </div>
+        <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
+            <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
+                <a href="tutorials-vibe-coding.html" class="py-1">↳ Vibe Coding</a>
+                <a href="tutorials-uiux-beginner.html" class="py-1">↳ UI/UX – Beginner</a>
+                <a href="tutorials-illustrator.html" class="py-1 font-semibold" style="color:#EC4899;">↳ Adobe Illustrator</a>
+                <a href="tutorials-ai-mastery.html" class="py-1">↳ AI Mastery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- HERO -->
+        <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background:radial-gradient(ellipse at 70% 10%,rgba(236,72,153,0.25) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(245,158,11,0.12) 0%,transparent 55%),#070013;">
+            <div class="pointer-events-none absolute inset-0">
+                <div class="float absolute top-[15%] right-[8%] h-72 w-72 rounded-full opacity-20" style="background:radial-gradient(circle,#EC4899,transparent 70%);"></div>
+                <div class="float-slow absolute bottom-[10%] left-[5%] h-56 w-56 rounded-full opacity-15" style="background:radial-gradient(circle,#F59E0B,transparent 70%);"></div>
+            </div>
+            <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:60px 60px;"></div>
+            <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
+                <div class="max-w-3xl">
+                    <div class="fade-in-up mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 badge-glow" style="border-color:rgba(236,72,153,.4);background:rgba(236,72,153,.1);">
+                        <span class="h-2 w-2 rounded-full animate-pulse" style="background:#F9A8D4;"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest" style="color:#FBCFE8;">Kiyomi Tutorials — Adobe Illustrator · Graphic Design</span>
+                    </div>
+                    <h1 class="fade-in-up delay-1 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
+                        Create stunning visuals.<br>
+                        <span style="background:linear-gradient(135deg,#FBCFE8 0%,#EC4899 50%,#F59E0B 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Master vector design.</span>
+                    </h1>
+                    <p class="fade-in-up delay-2 mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">Adobe Illustrator is the industry standard for logos, brand identities, icons, posters, and illustrations. This course takes you from the very basics of the interface all the way to professional-grade projects used in real design agencies — with AI-powered Illustrator tools included.</p>
+                    <div class="fade-in-up delay-3 mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                        <span>⏱ 8 weeks · Self-paced</span>
+                        <span>🎨 Logo · Brand · Poster · Illustration projects</span>
+                        <span>🏅 Adobe Certified prep included</span>
+                    </div>
+                    <div class="fade-in-up delay-4 mt-10 flex flex-wrap items-center gap-4">
+                        <a href="#enroll" class="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#EC4899,#F59E0B);box-shadow:0 10px 35px rgba(236,72,153,0.4);">Enroll Now — ₦160,000 (~$119)</a>
+                        <a href="#curriculum" class="inline-flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-medium" style="border-color:rgba(236,72,153,.4);color:#FBCFE8;">View Curriculum ↓</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT YOU'LL CREATE -->
+        <section style="background:#0d0020;border-top:1px solid rgba(236,72,153,.15);border-bottom:1px solid rgba(236,72,153,.15);padding:56px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <p class="text-center text-xs font-bold uppercase tracking-widest mb-8" style="color:#F9A8D4;">Real Projects You'll Build</p>
+                <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);"><div class="text-3xl mb-2">🏷️</div><p class="text-white text-sm font-semibold">Logo Design</p><p class="text-slate-400 text-xs mt-1">Professional brand marks from scratch</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);"><div class="text-3xl mb-2">🎭</div><p class="text-white text-sm font-semibold">Poster & Print</p><p class="text-slate-400 text-xs mt-1">Event posters, flyers, and print-ready files</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);"><div class="text-3xl mb-2">✏️</div><p class="text-white text-sm font-semibold">Illustrations</p><p class="text-slate-400 text-xs mt-1">Characters, icons, and vector art</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(236,72,153,.08);border:1px solid rgba(236,72,153,.2);"><div class="text-3xl mb-2">📦</div><p class="text-white text-sm font-semibold">Brand Packaging</p><p class="text-slate-400 text-xs mt-1">Labels, product packaging & mockups</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRICULUM -->
+        <section id="curriculum" style="background:linear-gradient(135deg,#0d001f 0%,#1a0010 100%);padding:72px 0;border-bottom:1px solid rgba(236,72,153,.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="mb-10">
+                    <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(236,72,153,.15);color:#FBCFE8;">8-Week Curriculum</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">From blank canvas to professional designer.</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 1 — The Illustrator Interface & Vector Basics</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 1</span></div><p class="text-slate-400 text-sm leading-relaxed">Navigate the workspace, understand the difference between vector and raster graphics, and master essential tools: Selection, Direct Selection, Pen, Shape, and Type tools. Customise your workspace for an efficient workflow.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 2 — Shapes, Paths & the Pen Tool Mastery</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 2</span></div><p class="text-slate-400 text-sm leading-relaxed">The Pen tool is the most powerful tool in Illustrator — and the one most people avoid. We break it down step by step. Create and edit anchor points, bezier curves, compound paths, and boolean operations to build complex shapes.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 3 — Colour Theory & Advanced Colour Tools</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 3</span></div><p class="text-slate-400 text-sm leading-relaxed">CMYK vs RGB, Pantone swatches, gradients, gradient mesh, and the colour guide panel. Understand how colour behaves for print vs digital, and build professional colour palettes for real brand projects.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 4 — Typography & Text Design</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 4</span></div><p class="text-slate-400 text-sm leading-relaxed">Font pairing, kerning, tracking, and leading. Text on a path, text inside shapes, and creating custom type treatments. Design a full typographic poster from scratch. Includes packaging type for logos and brand identity work.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 5 — Logo Design: The Full Process</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 5</span></div><p class="text-slate-400 text-sm leading-relaxed">Industry-standard logo design from brief to final files. Sketching, vectorising, refining, and presenting. You'll design two complete logo systems — wordmark and icon-based — and export them in all required formats (SVG, EPS, PNG, PDF).</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 6 — Effects, Masking & Advanced Illustration</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 6</span></div><p class="text-slate-400 text-sm leading-relaxed">Clipping masks, opacity masks, blending modes, and live effects (distort, warp, liquify). Create complex layered illustrations using depth, texture, and light. Build a full character illustration and a detailed geometric pattern.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 7 — AI Tools in Illustrator & Workflow Hacks</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 7</span></div><p class="text-slate-400 text-sm leading-relaxed">Adobe Illustrator's built-in AI tools: Generative Recolor, AI-powered object selection, and Firefly vector generation. Use AI to dramatically speed up pattern creation, recolouring assets, and background removal — without leaving Illustrator.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 8 — Brand Identity Capstone Project</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(236,72,153,.2);color:#FBCFE8;">Week 8</span></div><p class="text-slate-400 text-sm leading-relaxed">Design a complete brand identity from scratch: logo suite, colour palette, typography system, brand guidelines document, social media templates, and a product mockup. This is your flagship portfolio piece — designed to the standard of a professional agency deliverable.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENROLL -->
+        <section id="enroll" style="background:#070013;padding:80px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(236,72,153,.15);color:#FBCFE8;">Pricing</span>
+                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl mb-5">One course. A lifetime of creative work.</h2>
+                        <div class="rounded-2xl p-7 mb-5" style="background:rgba(236,72,153,.1);border:1px solid rgba(236,72,153,.4);">
+                            <p class="text-pink-300 text-sm font-semibold uppercase tracking-wider mb-2">Adobe Illustrator — Graphic Design</p>
+                            <div class="font-display text-4xl font-extrabold text-white mb-1">₦160,000</div>
+                            <p class="text-slate-400 text-sm mb-5">≈ $119 USD · One-time · Lifetime access</p>
+                            <ul class="space-y-2 text-sm text-slate-200">
+                                <li>✓ 8 modules + brand identity capstone</li>
+                                <li>✓ Real project files to keep and use</li>
+                                <li>✓ Adobe Certified Professional exam prep</li>
+                                <li>✓ Live instructor Q&A sessions</li>
+                                <li>✓ Certificate of completion</li>
+                                <li>✓ Lifetime access + future updates</li>
+                            </ul>
+                        </div>
+                        <div class="rounded-xl p-4 text-sm" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);">
+                            <p class="text-yellow-300 font-semibold mb-1">💡 What you can earn after this course</p>
+                            <p class="text-slate-400">Freelance logo design rates in Nigeria range from ₦50,000–₦500,000 per project. This course pays for itself with your first client.</p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl p-7" style="background:rgba(255,255,255,.04);border:1px solid rgba(236,72,153,.25);">
+                        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
+                        <div id="enroll-form" class="space-y-4">
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label><input type="text" placeholder="Jane Doe" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(236,72,153,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Email *</label><input type="email" placeholder="you@example.com" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(236,72,153,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone</label><input type="tel" placeholder="+234 xxx xxx xxxx" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(236,72,153,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Design Experience</label><select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(236,72,153,.25);"><option disabled selected>Select...</option><option>Complete beginner</option><option>Self-taught hobbyist</option><option>Some design experience</option><option>Other creative professional</option></select></div>
+                            <button type="button" onclick="document.getElementById('enroll-form').classList.add('hidden');document.getElementById('enroll-success').classList.remove('hidden')" class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#EC4899,#F59E0B);box-shadow:0 10px 35px rgba(236,72,153,.35);">Reserve My Spot — ₦160,000</button>
+                            <p class="text-center text-xs text-slate-500">No payment here · Team contacts you within 24hrs</p>
+                        </div>
+                        <div id="enroll-success" class="hidden text-center py-8"><div class="text-5xl mb-4">🎉</div><h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4><p class="text-slate-400 text-sm">We'll be in touch within 24 hours with your payment link.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:#0d001f;border-top:1px solid rgba(236,72,153,.2);">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div><p class="font-medium text-white text-sm">Kiyomi Group</p><p class="text-xs mt-0.5" style="color:#F9A8D4;">Isheri - Olofin, Lagos, Nigeria · +234-707-0778-027</p></div>
+            <div class="flex flex-wrap items-center gap-4 text-xs" style="color:#FBCFE8;">
+                <a href="index.html" class="hover:text-white">← Main Site</a>
+                <a href="tutorials-uiux-beginner.html" class="hover:text-white">UI/UX Design</a>
+                <a href="tutorials-ai-mastery.html" class="hover:text-white">AI Mastery</a>
+            </div>
+        </div>
+        <div style="border-top:1px solid rgba(236,72,153,.12);padding:1rem 0;text-align:center;"><span class="text-xs" style="color:#EC4899;">© <span id="year"></span> Kiyomi Group · Kiyomi Tutorials.</span></div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent=new Date().getFullYear();
+        const nav=document.querySelector('[data-nav]');
+        window.addEventListener('scroll',()=>nav.classList.toggle('shadow-sm',window.scrollY>8));
+        const t=document.querySelector('[data-nav-toggle]'),m=document.querySelector('[data-nav-menu]');
+        if(t&&m){t.addEventListener('click',()=>{const o=!m.classList.contains('hidden');m.classList.toggle('hidden',o);document.body.classList.toggle('overflow-hidden',!o)});}
+    </script>
+</body>
+</html>

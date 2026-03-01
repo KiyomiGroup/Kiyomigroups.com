@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Mastery – Full Course | Kiyomi Tutorials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['Syne','sans-serif']},colors:{brand:'#F59E0B'}}}}</script>
+    <style>
+        html{overflow-x:hidden}*,*::before,*::after{box-sizing:border-box}
+        @keyframes pulse-glow{0%,100%{box-shadow:0 0 12px rgba(245,158,11,0.5)}50%{box-shadow:0 0 28px rgba(245,158,11,0.9)}}
+        .badge-glow{animation:pulse-glow 2.5s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+        .float{animation:float 6s ease-in-out infinite}.float-slow{animation:float 9s ease-in-out infinite}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        .fade-in-up{animation:fadeInUp 0.7s ease forwards}
+        .delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}
+        .shimmer-card{position:relative;overflow:hidden}
+        .shimmer-card::before{content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(to right,transparent 0%,rgba(255,255,255,0.06) 50%,transparent 100%);transform:skewX(-20deg);transition:left .6s ease}
+        .shimmer-card:hover::before{left:150%}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:#F59E0B!important;box-shadow:0 0 0 3px rgba(245,158,11,0.18)}
+        .module-bar{width:3px;background:linear-gradient(to bottom,#F59E0B,#EC4899);border-radius:99px;flex-shrink:0}
+        .tool-chip{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:600;border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.1);color:#FDE68A;}
+    </style>
+</head>
+<body id="top" class="antialiased" style="background:#070013;color:#F5F3FF;overflow-x:hidden;">
+
+    <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 transition-shadow">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+            <a href="index.html" class="text-xs font-semibold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+                <a href="index.html#stages" class="hover:text-slate-900">Services</a>
+                <a href="index.html#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="index.html#stack" class="hover:text-slate-900">Tech Stack</a>
+                <div style="position:relative;" >
+                    <button class="tut-drop-btn cursor-pointer flex items-center gap-1 font-semibold hover:opacity-80 bg-transparent border-none p-0" style="font-size:0.875rem;">Tutorials <span class="caret" style="font-size:.6rem;margin-left:2px;display:inline-block;transition:transform .2s;">▼</span></button>
+                    <div class="tmenu" style="display:none;" style="display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:240px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,.14);padding:8px;z-index:100;">
+                        <div style="padding:8px 12px 4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
+                        <a href="tutorials-vibe-coding.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFFBEB'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#A855F7;flex-shrink:0;"></span>Vibe Coding<span style="margin-left:auto;font-size:10px;color:#A855F7;font-weight:700;">NEW</span></a>
+                        <a href="tutorials-uiux-beginner.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFFBEB'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Beginner</a>
+                        <a href="tutorials-uiux-intermediate.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFFBEB'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Intermediate</a>
+                        <a href="tutorials-uiux-advanced.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFFBEB'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Advanced</a>
+                        <a href="tutorials-illustrator.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#FFFBEB'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#EC4899;flex-shrink:0;"></span>Adobe Illustrator (Graphics)</a>
+                        <a href="tutorials-ai-mastery.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:600;color:#D97706;background:#FFFBEB;text-decoration:none;"><span style="width:7px;height:7px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></span>AI Mastery – Full Course</a>
+                    </div>
+                </div>
+            </nav>
+            <a href="#enroll" class="hidden whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold text-white md:inline-flex" style="background:#D97706;">Enroll Now</a>
+            <button type="button" data-nav-toggle class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden"><svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        </div>
+        <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
+            <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
+                <a href="tutorials-vibe-coding.html" class="py-1">↳ Vibe Coding</a>
+                <a href="tutorials-uiux-beginner.html" class="py-1">↳ UI/UX – Beginner</a>
+                <a href="tutorials-illustrator.html" class="py-1">↳ Adobe Illustrator</a>
+                <a href="tutorials-ai-mastery.html" class="py-1 font-semibold" style="color:#F59E0B;">↳ AI Mastery</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-16">
+        <!-- HERO -->
+        <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background:radial-gradient(ellipse at 70% 10%,rgba(245,158,11,0.2) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(236,72,153,0.12) 0%,transparent 55%),#070013;">
+            <div class="pointer-events-none absolute inset-0">
+                <div class="float absolute top-[15%] right-[8%] h-72 w-72 rounded-full opacity-20" style="background:radial-gradient(circle,#F59E0B,transparent 70%);"></div>
+                <div class="float-slow absolute bottom-[10%] left-[5%] h-56 w-56 rounded-full opacity-15" style="background:radial-gradient(circle,#EC4899,transparent 70%);"></div>
+            </div>
+            <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:60px 60px;"></div>
+            <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
+                <div class="max-w-3xl">
+                    <div class="fade-in-up mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 badge-glow" style="border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.1);">
+                        <span class="h-2 w-2 rounded-full animate-pulse" style="background:#FDE68A;"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest" style="color:#FDE68A;">Kiyomi Tutorials — AI Mastery · Full Course</span>
+                    </div>
+                    <h1 class="fade-in-up delay-1 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
+                        Use AI like<br>
+                        <span style="background:linear-gradient(135deg,#FDE68A 0%,#F59E0B 50%,#EC4899 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">a power user.</span>
+                    </h1>
+                    <p class="fade-in-up delay-2 mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">This isn't just another ChatGPT intro. This is a complete, hands-on AI mastery program covering 20+ AI tools — from text and image generation to automation, voice, video, and custom AI agents. By the end, AI will be your most powerful daily tool, across every area of your life and work.</p>
+                    <div class="fade-in-up delay-3 mt-5 flex flex-wrap gap-2">
+                        <span class="tool-chip">ChatGPT</span><span class="tool-chip">Claude</span><span class="tool-chip">Gemini</span><span class="tool-chip">Midjourney</span><span class="tool-chip">Firefly</span><span class="tool-chip">Zapier</span><span class="tool-chip">Perplexity</span><span class="tool-chip">ElevenLabs</span><span class="tool-chip">Sora</span><span class="tool-chip">+12 more</span>
+                    </div>
+                    <div class="fade-in-up delay-4 mt-8 flex flex-wrap items-center gap-4">
+                        <a href="#enroll" class="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#F59E0B,#EC4899);box-shadow:0 10px 35px rgba(245,158,11,0.4);">Enroll Now — ₦200,000 (~$149)</a>
+                        <a href="#curriculum" class="inline-flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-medium" style="border-color:rgba(245,158,11,.4);color:#FDE68A;">View Curriculum ↓</a>
+                    </div>
+                    <div class="fade-in-up mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                        <span>⏱ 10 weeks · Self-paced</span><span>🤖 20+ AI tools covered</span><span>🚫 Zero coding required</span><span>🏅 Certificate included</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TOOLS GRID -->
+        <section style="background:#0d0020;border-top:1px solid rgba(245,158,11,.15);border-bottom:1px solid rgba(245,158,11,.15);padding:56px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <p class="text-center text-xs font-bold uppercase tracking-widest mb-8" style="color:#FDE68A;">What You'll Be Able to Do With AI</p>
+                <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-2">✍️</div><p class="text-white text-sm font-semibold">Write & Create</p><p class="text-slate-400 text-xs mt-1">Emails, reports, content, marketing copy in seconds</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-2">🖼️</div><p class="text-white text-sm font-semibold">Generate Images</p><p class="text-slate-400 text-xs mt-1">Midjourney, DALL-E, Firefly for pro-quality visuals</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-2">⚙️</div><p class="text-white text-sm font-semibold">Automate Tasks</p><p class="text-slate-400 text-xs mt-1">Build AI workflows that run while you sleep</p></div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-2">💰</div><p class="text-white text-sm font-semibold">Make Money with AI</p><p class="text-slate-400 text-xs mt-1">Freelancing, products, and content monetisation</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CURRICULUM -->
+        <section id="curriculum" style="background:linear-gradient(135deg,#0d001f 0%,#1a0800 100%);padding:72px 0;border-bottom:1px solid rgba(245,158,11,.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="mb-10">
+                    <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(245,158,11,.15);color:#FDE68A;">10-Week Curriculum</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">The most complete AI course you'll find.</h2>
+                    <p class="mt-3 text-slate-400 max-w-xl">20+ tools. Real projects. Practical from day one.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 1 — Understanding AI: How It Works & What It Can't Do</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 1</span></div><p class="text-slate-400 text-sm leading-relaxed">The fundamentals of large language models (LLMs), how AI generates responses, what hallucinations are and why they happen, and how to fact-check AI output. Compare ChatGPT vs Claude vs Gemini vs Grok — understanding which tool wins for which task.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 2 — Prompt Engineering: The Core Skill</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 2</span></div><p class="text-slate-400 text-sm leading-relaxed">The difference between a bad prompt and a great one. Frameworks: chain-of-thought, few-shot, role prompting, and context engineering. Control tone, format, length, and depth. Learn to iterate on AI output to get exactly what you need — every time.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 3 — ChatGPT Deep Dive: Advanced Features</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 3</span></div><p class="text-slate-400 text-sm leading-relaxed">Custom GPTs, Projects, memory, browsing, image generation with DALL-E 3, Advanced Data Analysis (code interpreter), and Sora for video generation. Build your own custom GPT tuned for a specific job — a writing assistant, research tool, or customer support bot.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 4 — Claude, Gemini & Perplexity Mastery</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 4</span></div><p class="text-slate-400 text-sm leading-relaxed">When and why to use Claude for long documents, nuanced reasoning, and safe content. Gemini for Google Workspace integration and multimodal tasks. Perplexity for citation-backed research and market analysis. Use all three together strategically.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 5 — AI Image Generation: Midjourney, Firefly & DALL-E</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 5</span></div><p class="text-slate-400 text-sm leading-relaxed">Master Midjourney prompts — styles, parameters, aspect ratios, and modifiers. Adobe Firefly for commercial-safe images. DALL-E 3 for inline generation. Use AI images for marketing, social media, product mockups, and branding — legally and professionally.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 6 — AI for Productivity: Microsoft Copilot & Notion AI</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 6</span></div><p class="text-slate-400 text-sm leading-relaxed">Microsoft Copilot across Word, Excel, PowerPoint, and Outlook — automate reports, summarise emails, generate presentations, and analyse spreadsheets. Notion AI for knowledge management and documentation. Build AI-powered work systems that save hours every week.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 7 — AI Automation: Zapier, Make & AI Agents</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 7</span></div><p class="text-slate-400 text-sm leading-relaxed">Build no-code AI workflows with Zapier and Make (Integromat). Create automations that post to social media, send emails, update spreadsheets, and process data — all triggered automatically. Introduction to AI agents: autonomous systems that take multi-step actions.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 8 — AI for Video & Voice: Sora, ElevenLabs & InVideo</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 8</span></div><p class="text-slate-400 text-sm leading-relaxed">Generate AI video with Sora and RunwayML. Clone your voice or create custom AI voices with ElevenLabs and Play.ht. Create full AI-powered YouTube videos, social content, and podcasts. Includes a walkthrough of launching an AI content channel from scratch.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 9 — AI Ethics, Safety & Responsible Use</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 9</span></div><p class="text-slate-400 text-sm leading-relaxed">Understand the real risks: deepfakes, misinformation, privacy, bias, and IP concerns. How to fact-check AI output, stay on the right side of copyright, and use AI responsibly in professional and creative contexts. Essential knowledge for anyone using AI at work.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Week 10 — Capstone: Build an AI-Powered Product or Business</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(245,158,11,.2);color:#FDE68A;">Week 10</span></div><p class="text-slate-400 text-sm leading-relaxed">Combine everything you've learned. Build and launch an AI-powered product, content business, or automated workflow. Options include: an AI content agency, a custom GPT business tool, an automated social media system, or an AI-assisted freelance service.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO THIS IS FOR -->
+        <section style="background:#070013;padding:60px 0;border-bottom:1px solid rgba(245,158,11,.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="text-center mb-10">
+                    <h2 class="font-display text-3xl font-extrabold text-white">Who this course is for</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5">
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">👔</div><h3 class="font-semibold text-white mb-2">Professionals</h3><p class="text-slate-400 text-sm">Use AI to do 10x more at work — reports, research, communication, and analysis in a fraction of the time.</p></div>
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">🛍️</div><h3 class="font-semibold text-white mb-2">Entrepreneurs</h3><p class="text-slate-400 text-sm">Build marketing, content, and customer systems with AI tools — at a fraction of the cost of hiring a team.</p></div>
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">🎓</div><h3 class="font-semibold text-white mb-2">Students</h3><p class="text-slate-400 text-sm">Research faster, write better, and graduate with skills that employers in every industry are desperate for.</p></div>
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">🎨</div><h3 class="font-semibold text-white mb-2">Creatives</h3><p class="text-slate-400 text-sm">Generate images, write scripts, produce music, and create content at a scale that was impossible before AI.</p></div>
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">💼</div><h3 class="font-semibold text-white mb-2">Freelancers</h3><p class="text-slate-400 text-sm">Take on more clients and deliver faster without sacrificing quality. AI is your unfair competitive advantage.</p></div>
+                    <div class="shimmer-card rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);"><div class="text-3xl mb-3">🌍</div><h3 class="font-semibold text-white mb-2">Everyone Else</h3><p class="text-slate-400 text-sm">No coding required. No tech background needed. If you can type, you can become an AI power user.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENROLL -->
+        <section id="enroll" style="background:linear-gradient(135deg,#1a0800 0%,#0d001f 100%);padding:80px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(245,158,11,.15);color:#FDE68A;">Pricing</span>
+                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl mb-5">Invest in the skill that makes every other skill faster.</h2>
+                        <div class="rounded-2xl p-7" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.4);">
+                            <p class="text-yellow-300 text-sm font-semibold uppercase tracking-wider mb-2">AI Mastery — Full Course</p>
+                            <div class="font-display text-4xl font-extrabold text-white mb-1">₦200,000</div>
+                            <p class="text-slate-400 text-sm mb-5">≈ $149 USD · One-time · Lifetime access</p>
+                            <ul class="space-y-2 text-sm text-slate-200 mb-5">
+                                <li>✓ 10 weeks, 20+ tools covered in depth</li>
+                                <li>✓ Build real AI-powered projects</li>
+                                <li>✓ Live Q&A + student community</li>
+                                <li>✓ Certificate of completion</li>
+                                <li>✓ All future course updates included</li>
+                                <li>✓ No coding or tech background required</li>
+                            </ul>
+                            <div class="rounded-xl p-4 text-sm" style="background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.2);">
+                                <p class="text-yellow-300 font-semibold mb-1">🔥 Most popular tutorial at Kiyomi</p>
+                                <p class="text-slate-400 text-xs">This course is the fastest path to becoming indispensable in any job, industry, or business in 2025.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl p-7" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.25);">
+                        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
+                        <div id="enroll-form" class="space-y-4">
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label><input type="text" placeholder="Jane Doe" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Email *</label><input type="email" placeholder="you@example.com" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone</label><input type="tel" placeholder="+234 xxx xxx xxxx" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(245,158,11,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Goal</label><select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);"><option disabled selected>What do you want to achieve?</option><option>Use AI at work to save time</option><option>Build a business with AI</option><option>Create content with AI</option><option>Learn AI for freelancing</option><option>Just want to understand AI fully</option></select></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Current AI experience</label><select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200" style="background:rgba(30,10,60,.9);border:1px solid rgba(245,158,11,.25);"><option disabled selected>Select...</option><option>Never used AI tools</option><option>Use ChatGPT occasionally</option><option>Use AI tools regularly at work</option><option>Fairly experienced, want to go deeper</option></select></div>
+                            <button type="button" onclick="document.getElementById('enroll-form').classList.add('hidden');document.getElementById('enroll-success').classList.remove('hidden')" class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#F59E0B,#EC4899);box-shadow:0 10px 35px rgba(245,158,11,.35);">Reserve My Spot — ₦200,000</button>
+                            <p class="text-center text-xs text-slate-500">No payment here · Team contacts you within 24hrs</p>
+                        </div>
+                        <div id="enroll-success" class="hidden text-center py-8"><div class="text-5xl mb-4">🎉</div><h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4><p class="text-slate-400 text-sm">We'll be in touch within 24 hours with your payment link and onboarding details.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background:#0d001f;border-top:1px solid rgba(245,158,11,.2);">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div><p class="font-medium text-white text-sm">Kiyomi Group</p><p class="text-xs mt-0.5" style="color:#FDE68A;">Isheri - Olofin, Lagos, Nigeria · +234-707-0778-027</p></div>
+            <div class="flex flex-wrap items-center gap-4 text-xs" style="color:#FDE68A;">
+                <a href="index.html" class="hover:text-white">← Main Site</a>
+                <a href="tutorials-vibe-coding.html" class="hover:text-white">Vibe Coding</a>
+                <a href="tutorials-illustrator.html" class="hover:text-white">Illustrator</a>
+            </div>
+        </div>
+        <div style="border-top:1px solid rgba(245,158,11,.12);padding:1rem 0;text-align:center;"><span class="text-xs" style="color:#F59E0B;">© <span id="year"></span> Kiyomi Group · Kiyomi Tutorials.</span></div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent=new Date().getFullYear();
+        const nav=document.querySelector('[data-nav]');
+        window.addEventListener('scroll',()=>nav.classList.toggle('shadow-sm',window.scrollY>8));
+        const t=document.querySelector('[data-nav-toggle]'),m=document.querySelector('[data-nav-menu]');
+        if(t&&m){t.addEventListener('click',()=>{const o=!m.classList.contains('hidden');m.classList.toggle('hidden',o);document.body.classList.toggle('overflow-hidden',!o)});}
+    </script>
+</body>
+</html>

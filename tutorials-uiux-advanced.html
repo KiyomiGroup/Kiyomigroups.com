@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Design – Advanced | Kiyomi Tutorials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{sans:['Inter','system-ui','sans-serif'],display:['Syne','sans-serif']},colors:{brand:'#6366F1'}}}}</script>
+    <style>
+        html{overflow-x:hidden}*,*::before,*::after{box-sizing:border-box}
+        @keyframes pulse-glow{0%,100%{box-shadow:0 0 12px rgba(99,102,241,0.5)}50%{box-shadow:0 0 28px rgba(99,102,241,0.9)}}
+        .badge-glow{animation:pulse-glow 2.5s ease-in-out infinite}
+        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-18px)}}
+        .float{animation:float 6s ease-in-out infinite}.float-slow{animation:float 9s ease-in-out infinite}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+        .fade-in-up{animation:fadeInUp 0.7s ease forwards}
+        .delay-1{animation-delay:.15s;opacity:0}.delay-2{animation-delay:.3s;opacity:0}.delay-3{animation-delay:.45s;opacity:0}.delay-4{animation-delay:.6s;opacity:0}
+        .shimmer-card{position:relative;overflow:hidden}
+        .shimmer-card::before{content:'';position:absolute;top:-50%;left:-75%;width:50%;height:200%;background:linear-gradient(to right,transparent 0%,rgba(255,255,255,0.06) 50%,transparent 100%);transform:skewX(-20deg);transition:left .6s ease}
+        .shimmer-card:hover::before{left:150%}
+        input:focus,select:focus,textarea:focus{outline:none;border-color:#6366F1!important;box-shadow:0 0 0 3px rgba(99,102,241,0.18)}
+        .module-bar{width:3px;background:linear-gradient(to bottom,#6366F1,#A855F7);border-radius:99px;flex-shrink:0}
+    </style>
+</head>
+<body id="top" class="antialiased" style="background:#070013;color:#F5F3FF;overflow-x:hidden;">
+    <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 transition-shadow">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+            <a href="index.html" class="text-xs font-semibold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex">
+                <a href="index.html#stages" class="hover:text-slate-900">Services</a>
+                <a href="index.html#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="index.html#stack" class="hover:text-slate-900">Tech Stack</a>
+                
+                    <div style="position:relative;" >
+                        <span class="cursor-pointer hover:text-slate-900 flex items-center gap-1 select-none text-indigo-600 font-semibold">Tutorials <span style="font-size:.6rem;">▼</span></span>
+                        <div class="tmenu" style="display:none;" style="display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:240px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,.14);padding:8px;z-index:100;">
+                            <div style="padding:8px 12px 4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
+                            <a href="tutorials-vibe-coding.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#A855F7;flex-shrink:0;"></span>Vibe Coding<span style="margin-left:auto;font-size:10px;color:#A855F7;font-weight:700;">NEW</span></a>
+                            <a href="tutorials-uiux-beginner.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Beginner</a>
+                            <a href="tutorials-uiux-intermediate.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Intermediate</a>
+                            <a href="tutorials-uiux-advanced.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;"></span>UI/UX Design – Advanced</a>
+                            <a href="tutorials-illustrator.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#EC4899;flex-shrink:0;"></span>Adobe Illustrator (Graphics)</a>
+                            <a href="tutorials-ai-mastery.html" style="display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;" onmouseover="this.style.background='#F5F3FF'" onmouseout="this.style.background='transparent'"><span style="width:7px;height:7px;border-radius:50%;background:#F59E0B;flex-shrink:0;"></span>AI Mastery – Full Course</a>
+                        </div>
+                    </div>
+            </nav>
+            <a href="#enroll" class="hidden whitespace-nowrap rounded-full px-4 py-2 text-xs font-semibold text-white md:inline-flex" style="background:#6366F1;">Enroll Now</a>
+            <button type="button" data-nav-toggle class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden"><svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+        </div>
+        <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
+            <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
+                <a href="index.html#stages" class="py-1">Services</a>
+                <a href="tutorials-vibe-coding.html" class="py-1">↳ Vibe Coding</a>
+                <a href="tutorials-uiux-beginner.html" class="py-1">↳ UI/UX – Beginner</a>
+                <a href="tutorials-uiux-intermediate.html" class="py-1">↳ UI/UX – Intermediate</a>
+                <a href="tutorials-uiux-advanced.html" class="py-1">↳ UI/UX – Advanced</a>
+                <a href="tutorials-illustrator.html" class="py-1">↳ Adobe Illustrator</a>
+                <a href="tutorials-ai-mastery.html" class="py-1">↳ AI Mastery</a>
+            </nav>
+        </div>
+    </header>
+    <main class="pt-16">
+        <section class="relative min-h-[88vh] flex items-center overflow-hidden" style="background:radial-gradient(ellipse at 70% 10%,rgba(99,102,241,0.3) 0%,transparent 55%),radial-gradient(ellipse at 10% 80%,rgba(168,85,247,0.15) 0%,transparent 55%),#070013;">
+            <div class="pointer-events-none absolute inset-0">
+                <div class="float absolute top-[15%] right-[8%] h-72 w-72 rounded-full opacity-20" style="background:radial-gradient(circle,#6366F1,transparent 70%);"></div>
+                <div class="float-slow absolute bottom-[10%] left-[5%] h-56 w-56 rounded-full opacity-15" style="background:radial-gradient(circle,#A855F7,transparent 70%);"></div>
+            </div>
+            <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
+                <div class="max-w-3xl">
+                    <div class="fade-in-up mb-5 inline-flex items-center gap-2 rounded-full border px-4 py-1.5 badge-glow" style="border-color:rgba(99,102,241,.4);background:rgba(99,102,241,.1);">
+                        <span class="h-2 w-2 rounded-full animate-pulse" style="background:#6366F1;"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest" style="color:#A5B4FC;">Kiyomi Tutorials — UI/UX Design · Advanced</span>
+                    </div>
+                    <h1 class="fade-in-up delay-1 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
+                        Design like a<br>
+                        <span style="background:linear-gradient(135deg,#A5B4FC 0%,#6366F1 50%,#A855F7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">senior designer.</span>
+                    </h1>
+                    <p class="fade-in-up delay-2 mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">This advanced course is for experienced designers who want to move into leadership, specialise in design strategy, or build the skills to work on complex products at scale. Cover design ops, AI automation, accessibility at depth, and how to lead design teams.</p>
+                    <div class="fade-in-up delay-3 mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                        <span class="flex items-center gap-1.5">⏱ 10 weeks · Cohort-based</span>
+                        <span class="flex items-center gap-1.5">📋 Prereq: Intermediate UI/UX or 1+ year of design experience</span>
+                        <span class="flex items-center gap-1.5">🏅 Certificate included</span>
+                    </div>
+                    <div class="fade-in-up delay-4 mt-10 flex flex-wrap items-center gap-4">
+                        <a href="#enroll" class="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#6366F1,#A855F7);box-shadow:0 10px 35px rgba(99,102,241,0.4);">Enroll Now — ₦220,000 (~$164 USD)</a>
+                        <a href="#curriculum" class="inline-flex items-center gap-2 rounded-full border px-6 py-3.5 text-sm font-medium" style="border-color:rgba(99,102,241,.4);color:#A5B4FC;">View Curriculum ↓</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section style="background:#0d0020;border-top:1px solid rgba(99,102,241,.15);border-bottom:1px solid rgba(99,102,241,.15);padding:56px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <p class="text-center text-xs font-bold uppercase tracking-widest mb-8" style="color:#A5B4FC;">What You'll Master</p>
+                <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <div class="text-3xl mb-2">🧭</div><p class="text-white text-sm font-semibold">Design Strategy</p><p class="text-slate-400 text-xs mt-1">Define product vision, own design roadmaps, and align design decisions with business goals.</p>
+                    </div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <div class="text-3xl mb-2">♿</div><p class="text-white text-sm font-semibold">Deep Accessibility</p><p class="text-slate-400 text-xs mt-1">WCAG 2.2, inclusive design principles, and building accessibility into your entire workflow.</p>
+                    </div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <div class="text-3xl mb-2">🔧</div><p class="text-white text-sm font-semibold">Design Ops</p><p class="text-slate-400 text-xs mt-1">Set up design infrastructure — workflows, tools, rituals — for teams shipping at scale.</p>
+                    </div>
+                    <div class="text-center shimmer-card rounded-xl p-4" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <div class="text-3xl mb-2">📊</div><p class="text-white text-sm font-semibold">Data-Driven Design</p><p class="text-slate-400 text-xs mt-1">Use analytics, A/B testing, and quantitative research to validate and iterate on decisions.</p>
+                    </div></div>
+            </div>
+        </section>
+
+        <section id="curriculum" style="background:linear-gradient(135deg,#0d001f 0%,#1a0035 100%);padding:72px 0;border-bottom:1px solid rgba(99,102,241,.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="mb-10">
+                    <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(99,102,241,.15);color:#A5B4FC;">Curriculum</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">Detailed, practical, project-led.</h2>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Design Strategy & Product Thinking</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 1–2</span></div><p class="text-slate-400 text-sm leading-relaxed">Move beyond execution into strategy. Learn how to define design vision, run design sprints, map opportunity areas, and present design as a business driver — not just a deliverable.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Advanced Accessibility & Inclusive Design</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 3</span></div><p class="text-slate-400 text-sm leading-relaxed">WCAG 2.2 compliance, ARIA patterns, colour contrast, keyboard navigation, screen reader UX, and how to audit existing products for accessibility gaps. Build inclusion into every design decision.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Designing with Data — Analytics & A/B Testing</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 4</span></div><p class="text-slate-400 text-sm leading-relaxed">Read and act on product analytics using tools like Mixpanel and Amplitude. Design and interpret A/B tests. Learn how to use quantitative data alongside qualitative research.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Complex Interaction Design & Motion</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 5</span></div><p class="text-slate-400 text-sm leading-relaxed">Advanced prototyping with Figma, Framer, and ProtoPie. Design meaningful micro-interactions and transition animations that improve usability — not just aesthetics.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Design Ops & Team Infrastructure</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 6</span></div><p class="text-slate-400 text-sm leading-relaxed">Set up design processes for growing teams: critique rituals, documentation standards, onboarding for new designers, tooling decisions, and how to run design at scale without quality slipping.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">AI for Advanced Designers</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 7</span></div><p class="text-slate-400 text-sm leading-relaxed">Use generative AI for pattern research, automated documentation, and rapid iteration. Understand AI product design patterns — designing AI features that users can actually trust and control.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Leadership, Mentoring & Career Growth</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 8–9</span></div><p class="text-slate-400 text-sm leading-relaxed">Lead design critiques, mentor junior designers, negotiate for design's seat at the table, and build your personal brand as a senior design professional.</p></div>
+                    </div>
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1"><div class="flex flex-wrap items-start justify-between gap-2 mb-2"><h3 class="font-semibold text-white">Capstone: Full Product Design Audit</h3><span class="rounded-full px-2 py-0.5 text-[11px] font-medium" style="background:rgba(99,102,241,.2);color:#A5B4FC;">Week 10</span></div><p class="text-slate-400 text-sm leading-relaxed">Conduct a complete UX audit of a real product: research, heuristic evaluation, competitive analysis, and a redesign proposal. This is your senior-level portfolio piece.</p></div>
+                    </div></div>
+            </div>
+        </section>
+
+        <section id="enroll" style="background:#070013;padding:80px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl mb-4">Ready to enroll?</h2>
+                        <div class="rounded-2xl p-7 mb-5" style="background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.4);">
+                            <p class="text-indigo-300 text-sm font-semibold uppercase tracking-wider mb-2">UI/UX Design · Advanced</p>
+                            <div class="font-display text-4xl font-extrabold text-white mb-1">₦220,000</div>
+                            <p class="text-slate-400 text-sm mb-4">~$164 USD · One-time · Lifetime access</p>
+                            <ul class="space-y-2 text-sm text-slate-200">
+                                <li>✓ All modules + capstone project</li>
+                                <li>✓ Live Q&A sessions</li>
+                                <li>✓ Private student community</li>
+                                <li>✓ Certificate of completion</li>
+                                <li>✓ Portfolio-ready project</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl p-7" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);">
+                        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
+                        <div id="enroll-form" class="space-y-4">
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label><input type="text" placeholder="Jane Doe" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(99,102,241,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Email *</label><input type="email" placeholder="you@example.com" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(99,102,241,.25);"></div>
+                            <div><label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone</label><input type="tel" placeholder="+234 xxx xxx xxxx" class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500" style="background:rgba(255,255,255,.07);border:1px solid rgba(99,102,241,.25);"></div>
+                            <button type="button" onclick="document.getElementById('enroll-form').classList.add('hidden');document.getElementById('enroll-success').classList.remove('hidden')" class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,#6366F1,#A855F7);box-shadow:0 10px 35px rgba(99,102,241,.35);">Reserve My Spot — ₦220,000</button>
+                            <p class="text-center text-xs text-slate-500">No payment here · Team contacts you within 24hrs</p>
+                        </div>
+                        <div id="enroll-success" class="hidden text-center py-8"><div class="text-5xl mb-4">🎉</div><h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4><p class="text-slate-400 text-sm">We'll be in touch within 24 hours.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer style="background:#0d001f;border-top:1px solid rgba(99,102,241,.2);">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div><p class="font-medium text-white text-sm">Kiyomi Group</p><p class="text-xs mt-0.5" style="color:#818CF8;">Isheri - Olofin, Lagos, Nigeria · +234-707-0778-027</p></div>
+            <div class="flex flex-wrap items-center gap-4 text-xs" style="color:#A5B4FC;">
+                <a href="index.html" class="hover:text-white">← Main Site</a>
+                <a href="tutorials-uiux-beginner.html" class="hover:text-white">Beginner</a>
+                <a href="tutorials-uiux-intermediate.html" class="hover:text-white">Intermediate</a>
+                <a href="tutorials-uiux-advanced.html" class="hover:text-white">Advanced</a>
+            </div>
+        </div>
+        <div style="border-top:1px solid rgba(99,102,241,.12);padding:1rem 0;text-align:center;"><span class="text-xs" style="color:#6366F1;">© <span id="year"></span> Kiyomi Group · Kiyomi Tutorials.</span></div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent=new Date().getFullYear();
+        const nav=document.querySelector('[data-nav]');
+        window.addEventListener('scroll',()=>nav.classList.toggle('shadow-sm',window.scrollY>8));
+        const t=document.querySelector('[data-nav-toggle]'),m=document.querySelector('[data-nav-menu]');
+        if(t&&m){t.addEventListener('click',()=>{const o=!m.classList.contains('hidden');m.classList.toggle('hidden',o);document.body.classList.toggle('overflow-hidden',!o)});}
+    </script>
+
+    <script>
+    // Click-based dropdown
+    (function() {
+        function initDropdown() {
+            var btns = document.querySelectorAll('.tut-drop-btn');
+            btns.forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    var menu = btn.nextElementSibling;
+                    var isOpen = menu.style.display === 'block';
+                    // Close all
+                    document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                    document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+                    if (!isOpen) {
+                        menu.style.display = 'block';
+                        var caret = btn.querySelector('.caret');
+                        if(caret) caret.style.transform = 'rotate(180deg)';
+                    }
+                });
+            });
+            document.addEventListener('click', function() {
+                document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
+                document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+            });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initDropdown);
+        } else {
+            initDropdown();
+        }
+    })();
+    </script>
+</body>
+</html>
