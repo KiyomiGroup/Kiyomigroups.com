@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding Tutorial – Kiyomi Tutorials</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Syne', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#6366F1',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { overflow-x: hidden; }
+        *, *::before, *::after { box-sizing: border-box; }
+
+        /* Glow pulse on hero badge */
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 12px rgba(168,85,247,0.5); }
+            50% { box-shadow: 0 0 28px rgba(168,85,247,0.9); }
+        }
+        .badge-glow { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+        /* Floating animation for decorative blobs */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-18px); }
+        }
+        .float { animation: float 6s ease-in-out infinite; }
+        .float-slow { animation: float 9s ease-in-out infinite; }
+
+        /* Fade in up */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+        .delay-1 { animation-delay: 0.15s; opacity: 0; }
+        .delay-2 { animation-delay: 0.3s; opacity: 0; }
+        .delay-3 { animation-delay: 0.45s; opacity: 0; }
+        .delay-4 { animation-delay: 0.6s; opacity: 0; }
+
+        /* Card hover shimmer */
+        .shimmer-card {
+            position: relative;
+            overflow: hidden;
+        }
+        .shimmer-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -75%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+            transform: skewX(-20deg);
+            transition: left 0.6s ease;
+        }
+        .shimmer-card:hover::before { left: 150%; }
+
+        /* Dropdown */
+        .dropdown { position: relative; }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 240px;
+            background: #fff;
+            border: 1px solid rgba(15,23,42,0.08);
+            border-radius: 14px;
+            box-shadow: 0 20px 50px rgba(15,23,42,0.14);
+            padding: 8px;
+            z-index: 100;
+        }
+        .dropdown:hover .dropdown-menu,
+        .dropdown-menu:hover { display: block; }
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 8px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #0F172A;
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+        .dropdown-item:hover { background: #F5F3FF; color: #6366F1; }
+        .dropdown-item .dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #A855F7;
+            flex-shrink: 0;
+        }
+        .dropdown-item.active { background: #F5F3FF; color: #6366F1; font-weight: 600; }
+        .dropdown-caret {
+            display: inline-block;
+            margin-left: 4px;
+            font-size: 0.6rem;
+            vertical-align: middle;
+            transition: transform 0.2s;
+        }
+        .dropdown:hover .dropdown-caret { transform: rotate(180deg); }
+
+        /* Progress bar for curriculum */
+        .module-bar {
+            width: 3px;
+            background: linear-gradient(to bottom, #A855F7, #6366F1);
+            border-radius: 99px;
+            flex-shrink: 0;
+        }
+
+        /* Enroll form focus glow */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #A855F7 !important;
+            box-shadow: 0 0 0 3px rgba(168,85,247,0.18);
+        }
+
+        /* Star rating */
+        .star { color: #FBBF24; font-size: 1rem; }
+    </style>
+</head>
+<body id="top" class="antialiased" style="background:#070013;color:#F5F3FF;overflow-x:hidden;">
+
+    <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+    <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 transition-shadow">
+        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+            <a href="index.html" class="text-xs font-semibold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
+
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex" aria-label="Primary">
+                <a href="index.html#stages" class="hover:text-slate-900">Services</a>
+                <a href="index.html#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
+                <a href="index.html#stack" class="hover:text-slate-900">Tech Stack</a>
+                <a href="index.html#cases" class="hover:text-slate-900">Case Studies</a>
+
+                <!-- Tutorials Dropdown -->
+                <div class="dropdown">
+                    <span class="cursor-pointer hover:text-slate-900 flex items-center gap-1">
+                        Tutorials <span class="dropdown-caret">▼</span>
+                    </span>
+                    <div class="dropdown-menu">
+                        <div class="px-3 py-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Kiyomi Tutorials</div>
+                        <a href="tutorials-vibe-coding.html" class="dropdown-item active">
+                            <span class="dot"></span> Vibe Coding <span class="ml-auto text-[10px] text-violet-500 font-semibold">NEW</span>
+                        </a>
+                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Beginner</a>
+                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Intermediate</a>
+                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Advanced</a>
+                        <a href="#" class="dropdown-item"><span class="dot" style="background:#EC4899;"></span> Adobe Illustrator (Graphics)</a>
+                        <a href="#" class="dropdown-item"><span class="dot" style="background:#F59E0B;"></span> AI Mastery – Full Course</a>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="flex items-center gap-4">
+                <a href="#enroll" class="hidden whitespace-nowrap rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold text-white hover:bg-violet-500 md:inline-flex transition-colors">
+                    Enroll Now
+                </a>
+                <button type="button" data-nav-toggle
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden"
+                    aria-label="Toggle navigation" aria-expanded="false">
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
+            <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
+                <a href="index.html#stages" class="py-1">Services</a>
+                <a href="index.html#playbook" class="py-1">Kiyomi Playbook</a>
+                <a href="index.html#stack" class="py-1">Tech Stack</a>
+                <a href="index.html#cases" class="py-1">Case Studies</a>
+                <hr class="border-slate-100">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 pt-1">Tutorials</p>
+                <a href="tutorials-vibe-coding.html" class="py-1 text-violet-600 font-semibold">↳ Vibe Coding</a>
+                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Beginner)</a>
+                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Intermediate)</a>
+                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Advanced)</a>
+                <a href="#" class="py-1 pl-3">↳ Adobe Illustrator</a>
+                <a href="#" class="py-1 pl-3">↳ AI Mastery</a>
+                <hr class="my-2 border-slate-200">
+                <a href="#enroll" class="inline-flex w-full items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold text-white">
+                    Enroll Now — ₦250,000
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-16">
+
+        <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+        <section class="relative min-h-[92vh] flex items-center overflow-hidden" style="background: radial-gradient(ellipse at 70% 10%, rgba(168,85,247,0.3) 0%, transparent 55%), radial-gradient(ellipse at 10% 80%, rgba(99,102,241,0.2) 0%, transparent 55%), #070013;">
+
+            <!-- Decorative blobs -->
+            <div class="pointer-events-none absolute inset-0">
+                <div class="float absolute top-[15%] right-[8%] h-72 w-72 rounded-full opacity-20" style="background:radial-gradient(circle, #A855F7, transparent 70%);"></div>
+                <div class="float-slow absolute bottom-[10%] left-[5%] h-56 w-56 rounded-full opacity-15" style="background:radial-gradient(circle, #6366F1, transparent 70%);"></div>
+                <div class="float absolute top-[55%] right-[20%] h-32 w-32 rounded-full opacity-10" style="background:radial-gradient(circle, #C4B5FD, transparent 70%);"></div>
+            </div>
+
+            <!-- Grid texture overlay -->
+            <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+            <div class="relative mx-auto max-w-6xl px-4 sm:px-6 py-20 md:py-28">
+                <div class="max-w-3xl">
+                    <div class="fade-in-up mb-5 inline-flex items-center gap-2 rounded-full border border-violet-500/30 bg-violet-500/10 px-4 py-1.5 badge-glow">
+                        <span class="h-2 w-2 rounded-full bg-violet-400 animate-pulse"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-violet-300">Kiyomi Tutorials — New Course</span>
+                    </div>
+
+                    <h1 class="fade-in-up delay-1 font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl leading-[1.1]">
+                        Build real apps<br>
+                        <span style="background: linear-gradient(135deg, #C4B5FD 0%, #A855F7 50%, #6366F1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">using AI as your co-pilot.</span>
+                    </h1>
+
+                    <p class="fade-in-up delay-2 mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">
+                        Vibe Coding is the fastest-growing way to build software in 2025 — describe what you want, and AI generates the code. No CS degree required. Kiyomi's hands-on program teaches you to direct AI tools like a pro and ship real products.
+                    </p>
+
+                    <div class="fade-in-up delay-3 mt-4 flex flex-wrap items-center gap-4 text-sm text-slate-400">
+                        <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 8 weeks · Self-paced</span>
+                        <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg> All skill levels welcome</span>
+                        <span class="flex items-center gap-1.5"><svg class="h-4 w-4 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg> Certificate of completion</span>
+                    </div>
+
+                    <div class="fade-in-up delay-4 mt-10 flex flex-wrap items-center gap-4">
+                        <a href="#enroll"
+                            class="inline-flex items-center justify-center rounded-full px-8 py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1"
+                            style="background: linear-gradient(135deg, #A855F7, #6366F1); box-shadow: 0 10px 35px rgba(168,85,247,0.4);">
+                            Enroll Now — ₦250,000 (~$186)
+                        </a>
+                        <a href="#curriculum" class="inline-flex items-center gap-2 rounded-full border border-violet-500/40 px-6 py-3.5 text-sm font-medium text-violet-300 hover:border-violet-400 hover:text-white transition-colors">
+                            View Curriculum
+                            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ STATS ═══════════════════════════ -->
+        <section style="background: #0d0020; border-top: 1px solid rgba(168,85,247,0.15); border-bottom: 1px solid rgba(168,85,247,0.15);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6 py-12">
+                <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+                    <div class="text-center">
+                        <p class="font-display text-3xl font-extrabold text-white sm:text-4xl">92%</p>
+                        <p class="mt-1 text-xs text-slate-400">of US devs use AI tools daily</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-display text-3xl font-extrabold text-white sm:text-4xl">5.8x</p>
+                        <p class="mt-1 text-xs text-slate-400">faster development speed</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-display text-3xl font-extrabold text-white sm:text-4xl">41%</p>
+                        <p class="mt-1 text-xs text-slate-400">of 2024 code was AI-generated</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-display text-3xl font-extrabold text-white sm:text-4xl">$12B</p>
+                        <p class="mt-1 text-xs text-slate-400">AI dev tools market by 2027</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ WHAT IS VIBE CODING ═══════════════════════════ -->
+        <section style="background: linear-gradient(135deg, #0d001f 0%, #1a0035 100%); padding: 80px 0; border-bottom: 1px solid rgba(168,85,247,0.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">What is Vibe Coding?</span>
+                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl leading-tight mb-6">
+                            Coined by Andrej Karpathy. Named Word of the Year 2025.
+                        </h2>
+                        <p class="text-slate-300 leading-relaxed mb-5">
+                            Vibe Coding was coined by Andrej Karpathy — OpenAI co-founder and Tesla AI director — in February 2025. Collins English Dictionary named it their <strong class="text-violet-300">Word of the Year 2025</strong>.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed mb-5">
+                            The idea is simple: instead of writing every line of code yourself, you <em>describe</em> what you want to build in plain English. AI tools like Cursor, Lovable, and Claude generate the code. You review, guide, and ship.
+                        </p>
+                        <p class="text-slate-300 leading-relaxed">
+                            You become the <strong class="text-white">architect</strong> — not the bricklayer. This course teaches you exactly how to do that, from first prompt to deployed product.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="shimmer-card rounded-2xl p-5 col-span-2" style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.25);">
+                            <p class="text-violet-300 text-xs font-semibold uppercase tracking-wider mb-2">The shift</p>
+                            <p class="text-white font-semibold">Before: Write code line by line</p>
+                            <p class="text-slate-400 text-sm mt-1">Weeks to months to build a feature</p>
+                            <div class="my-3 border-t border-violet-500/20"></div>
+                            <p class="text-white font-semibold">After: Describe it, AI builds it</p>
+                            <p class="text-slate-400 text-sm mt-1">Hours to days from idea to product</p>
+                        </div>
+                        <div class="shimmer-card rounded-2xl p-5" style="background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25);">
+                            <p class="text-indigo-300 text-2xl font-bold">🧠</p>
+                            <p class="text-white text-sm font-semibold mt-2">Mindset</p>
+                            <p class="text-slate-400 text-xs mt-1">You direct. AI executes.</p>
+                        </div>
+                        <div class="shimmer-card rounded-2xl p-5" style="background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.25);">
+                            <p class="text-indigo-300 text-2xl font-bold">🚀</p>
+                            <p class="text-white text-sm font-semibold mt-2">Speed</p>
+                            <p class="text-slate-400 text-xs mt-1">Ship MVPs in days, not months.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ WHO IT'S FOR ═══════════════════════════ -->
+        <section style="background:#070013; padding:80px 0; border-bottom: 1px solid rgba(168,85,247,0.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">Who It's For</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">Built for builders, dreamers, and doers.</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="shimmer-card rounded-2xl p-6 text-center" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="text-4xl mb-3">🌱</div>
+                        <h3 class="font-semibold text-white mb-2">Complete Beginners</h3>
+                        <p class="text-slate-400 text-sm">Zero coding experience? Perfect. You'll build your first app by week 2.</p>
+                    </div>
+                    <div class="shimmer-card rounded-2xl p-6 text-center" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="text-4xl mb-3">⚡</div>
+                        <h3 class="font-semibold text-white mb-2">Junior Developers</h3>
+                        <p class="text-slate-400 text-sm">Move 5x faster. Learn to leverage AI to punch above your experience level.</p>
+                    </div>
+                    <div class="shimmer-card rounded-2xl p-6 text-center" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="text-4xl mb-3">🎨</div>
+                        <h3 class="font-semibold text-white mb-2">Designers & PMs</h3>
+                        <p class="text-slate-400 text-sm">Turn your Figma designs into real, working products — no dev team needed.</p>
+                    </div>
+                    <div class="shimmer-card rounded-2xl p-6 text-center" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="text-4xl mb-3">💡</div>
+                        <h3 class="font-semibold text-white mb-2">Entrepreneurs</h3>
+                        <p class="text-slate-400 text-sm">Validate your startup idea and build an MVP before hiring your first engineer.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ CURRICULUM ═══════════════════════════ -->
+        <section id="curriculum" style="background: linear-gradient(135deg, #1a0035 0%, #0d001f 100%); padding:80px 0; border-bottom: 1px solid rgba(168,85,247,0.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="mb-12">
+                    <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">8-Week Curriculum</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">Everything you need. Nothing you don't.</h2>
+                </div>
+                <div class="space-y-4">
+                    <!-- Module 1 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 1 — The Vibe Coding Mindset</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 1</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">What vibe coding is, why it works, and how to think like a product director instead of a programmer. History, tools landscape, and the AI-first workflow.</p>
+                        </div>
+                    </div>
+                    <!-- Module 2 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 2 — Your AI Toolkit</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 2</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">Deep dives into Cursor, Lovable, Replit, GitHub Copilot, Claude, and ChatGPT. When to use each tool, how to configure them, and how to combine them for maximum output.</p>
+                        </div>
+                    </div>
+                    <!-- Module 3 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 3 — Prompt Engineering for Code</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 3</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">The art of writing prompts that actually work. Context windows, chaining prompts, iterating on AI output, and knowing when to debug vs re-prompt.</p>
+                        </div>
+                    </div>
+                    <!-- Module 4 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 4 — Build Your First App</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Weeks 4–5</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">Full walkthrough: idea → wireframe → AI-generated code → deployed product. You'll ship a real, live web app by the end of this module. No shortcuts.</p>
+                        </div>
+                    </div>
+                    <!-- Module 5 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 5 — Vibe Coding with Kiyomi's Stack</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 6</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">Apply vibe coding to production-grade tools: Ruby on Rails, React, and Elixir. How Kiyomi's real engineering team integrates AI into regulated, compliance-heavy workflows.</p>
+                        </div>
+                    </div>
+                    <!-- Module 6 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 6 — Security, Quality & the Pitfalls</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 7</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">AI code has known risks — security gaps, logic errors, and hallucinated dependencies. Learn how to review, test, and validate AI-generated code like a senior engineer would.</p>
+                        </div>
+                    </div>
+                    <!-- Module 7 -->
+                    <div class="flex gap-5 rounded-2xl p-6 shimmer-card" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="module-bar self-stretch"></div>
+                        <div class="flex-1">
+                            <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                                <h3 class="font-semibold text-white">Module 7 — Capstone: Ship Your Product</h3>
+                                <span class="rounded-full bg-violet-500/20 px-2 py-0.5 text-[11px] font-medium text-violet-300">Week 8</span>
+                            </div>
+                            <p class="text-slate-400 text-sm leading-relaxed">Build and deploy your capstone project from scratch using everything you've learned. Peer review, instructor feedback, and certificate of completion upon passing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ INSTRUCTOR ═══════════════════════════ -->
+        <section style="background:#070013; padding:80px 0; border-bottom: 1px solid rgba(168,85,247,0.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">Your Instructors</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">Taught by Kiyomi's engineering team.</h2>
+                    <p class="mt-3 text-slate-400 max-w-xl mx-auto text-sm">Not influencers. Not bootcamp graduates. Real engineers who build production software for health, fintech, and compliance organizations every day.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    <!-- Instructor 1 -->
+                    <div class="shimmer-card rounded-2xl p-6" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="h-16 w-16 rounded-2xl mb-4 flex items-center justify-center text-2xl font-bold text-white" style="background: linear-gradient(135deg,#A855F7,#6366F1);">KG</div>
+                        <h3 class="font-semibold text-white text-lg">Kiyomi Lead</h3>
+                        <p class="text-violet-400 text-xs font-medium mt-0.5 mb-3">Lead Instructor · Principal Engineer</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">10+ years building software for regulated industries. Specialises in AI integration, product architecture, and turning complex problems into elegant systems.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">AI/ML</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">Rails</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">React</span>
+                        </div>
+                    </div>
+                    <!-- Instructor 2 -->
+                    <div class="shimmer-card rounded-2xl p-6" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="h-16 w-16 rounded-2xl mb-4 flex items-center justify-center text-2xl font-bold text-white" style="background: linear-gradient(135deg,#6366F1,#4F46E5);">FE</div>
+                        <h3 class="font-semibold text-white text-lg">Frontend Expert</h3>
+                        <p class="text-violet-400 text-xs font-medium mt-0.5 mb-3">UI/UX & Prompt Engineering Lead</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Expert in AI-powered design-to-code workflows. Teaches the art of prompt engineering for UI and turning Figma mockups into deployed frontends using AI.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">Cursor</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">Figma</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">TypeScript</span>
+                        </div>
+                    </div>
+                    <!-- Instructor 3 -->
+                    <div class="shimmer-card rounded-2xl p-6" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.2);">
+                        <div class="h-16 w-16 rounded-2xl mb-4 flex items-center justify-center text-2xl font-bold text-white" style="background: linear-gradient(135deg,#EC4899,#A855F7);">BC</div>
+                        <h3 class="font-semibold text-white text-lg">Backend Coach</h3>
+                        <p class="text-violet-400 text-xs font-medium mt-0.5 mb-3">Security & Backend Systems Instructor</p>
+                        <p class="text-slate-400 text-sm leading-relaxed">Specialises in catching what AI gets wrong — security vulnerabilities, bad architecture, and logic errors. Makes sure your AI-generated code is production safe.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">Security</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">Elixir</span>
+                            <span class="rounded-full bg-violet-500/15 px-2 py-0.5 text-[11px] text-violet-300">DevOps</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ PRICING ═══════════════════════════ -->
+        <section style="background: linear-gradient(135deg, #1a0035 0%, #0d001f 100%); padding:80px 0; border-bottom: 1px solid rgba(168,85,247,0.1);">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">Pricing</span>
+                    <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl">One price. Everything included.</h2>
+                </div>
+                <div class="max-w-lg mx-auto rounded-3xl p-8 relative overflow-hidden" style="background:rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.4); box-shadow: 0 30px 80px rgba(168,85,247,0.2);">
+                    <!-- glow behind card -->
+                    <div class="pointer-events-none absolute -top-16 -right-16 h-48 w-48 rounded-full" style="background:radial-gradient(circle,rgba(168,85,247,0.3),transparent 70%);"></div>
+
+                    <div class="relative">
+                        <p class="text-violet-300 text-sm font-semibold uppercase tracking-wider mb-4">Vibe Coding — Full Program</p>
+                        <div class="flex items-end gap-3 mb-1">
+                            <span class="font-display text-5xl font-extrabold text-white">₦250,000</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-8">≈ $186 USD · One-time payment · Lifetime access</p>
+
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> 7 modules + capstone project</li>
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> Live Q&A sessions with instructors</li>
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> Private student community access</li>
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> Certificate of completion</li>
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> Lifetime access + future updates</li>
+                            <li class="flex items-center gap-3 text-sm text-slate-200"><span class="text-violet-400">✓</span> Real capstone project review</li>
+                        </ul>
+
+                        <a href="#enroll"
+                            class="block w-full text-center rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1"
+                            style="background: linear-gradient(135deg,#A855F7,#6366F1); box-shadow: 0 10px 35px rgba(168,85,247,0.35);">
+                            Secure Your Spot
+                        </a>
+                        <p class="text-center text-xs text-slate-500 mt-3">Cohort seats are limited · Next intake: April 2025</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════ ENROLL FORM ═══════════════════════════ -->
+        <section id="enroll" style="background:#070013; padding:80px 0;">
+            <div class="mx-auto max-w-6xl px-4 sm:px-6">
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div>
+                        <span class="inline-flex rounded-full bg-violet-500/15 px-3 py-1 text-xs font-semibold text-violet-300 mb-4">Enroll</span>
+                        <h2 class="font-display text-3xl font-extrabold text-white sm:text-4xl leading-tight mb-5">
+                            Ready to build with AI?
+                        </h2>
+                        <p class="text-slate-400 leading-relaxed mb-8">
+                            Fill in the form and a member of the Kiyomi team will reach out within 24 hours with payment details and your onboarding link. Cohort seats fill up fast.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-3 text-sm text-slate-300">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400 font-bold text-xs">1</span>
+                                Submit this form
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-300">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400 font-bold text-xs">2</span>
+                                Receive payment link within 24hrs
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-300">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400 font-bold text-xs">3</span>
+                                Get access to the student portal & community
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-300">
+                                <span class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-violet-500/20 text-violet-400 font-bold text-xs">4</span>
+                                Start building on Day 1
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="rounded-2xl p-7" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.25);">
+                        <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
+                        <div id="enroll-form" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
+                                <input type="text" placeholder="Jane Doe"
+                                    class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
+                                    style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email Address *</label>
+                                <input type="email" placeholder="you@example.com"
+                                    class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
+                                    style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone Number</label>
+                                <input type="tel" placeholder="+234 xxx xxx xxxx"
+                                    class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
+                                    style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Your Background *</label>
+                                <select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200 transition-all"
+                                    style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
+                                    <option value="" disabled selected style="color:#64748b;">Select your background</option>
+                                    <option style="background:#1a0035;">Complete beginner — no coding experience</option>
+                                    <option style="background:#1a0035;">Junior developer</option>
+                                    <option style="background:#1a0035;">Designer or product manager</option>
+                                    <option style="background:#1a0035;">Entrepreneur / founder</option>
+                                    <option style="background:#1a0035;">Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1.5">What do you want to build? <span class="text-slate-500 font-normal">(optional)</span></label>
+                                <textarea rows="3" placeholder="e.g. a marketplace app, a SaaS dashboard, a portfolio site..."
+                                    class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 resize-none transition-all"
+                                    style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);"></textarea>
+                            </div>
+                            <button type="button" onclick="submitEnroll()"
+                                class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1 active:scale-95 mt-2"
+                                style="background: linear-gradient(135deg,#A855F7,#6366F1); box-shadow: 0 10px 35px rgba(168,85,247,0.35);">
+                                Reserve My Spot — ₦250,000
+                            </button>
+                            <p class="text-center text-xs text-slate-500">No payment taken here · Our team will contact you within 24hrs</p>
+                        </div>
+
+                        <!-- Success state (hidden by default) -->
+                        <div id="enroll-success" class="hidden text-center py-8">
+                            <div class="text-5xl mb-4">🎉</div>
+                            <h4 class="font-semibold text-white text-lg mb-2">You're on the list!</h4>
+                            <p class="text-slate-400 text-sm">We'll be in touch within 24 hours. Check your email — including spam, just in case.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+    <footer style="background: #0d001f; border-top: 1px solid rgba(168,85,247,0.2);">
+        <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+            <div>
+                <p class="font-medium text-white text-sm">Kiyomi Group</p>
+                <p class="text-xs text-violet-400 mt-0.5">Isheri - Olofin, Lagos, Nigeria · +234-707-0778-027</p>
+            </div>
+            <div class="flex flex-wrap items-center gap-4 text-xs text-violet-300">
+                <a href="index.html" class="hover:text-white">← Back to Main Site</a>
+                <a href="#curriculum" class="hover:text-white">Curriculum</a>
+                <a href="#enroll" class="hover:text-white">Enroll</a>
+                <a href="#" class="hover:text-white">Other Tutorials</a>
+            </div>
+        </div>
+        <div style="border-top: 1px solid rgba(168,85,247,0.12); padding: 1rem 0; text-align: center;">
+            <span class="text-xs text-violet-500">© <span id="year"></span> Kiyomi Group · Kiyomi Tutorials. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Nav scroll shadow
+        const nav = document.querySelector('[data-nav]');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('shadow-sm', window.scrollY > 8);
+        });
+
+        // Mobile nav toggle
+        const navToggle = document.querySelector('[data-nav-toggle]');
+        const navMenu = document.querySelector('[data-nav-menu]');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                const isOpen = !navMenu.classList.contains('hidden');
+                navMenu.classList.toggle('hidden', isOpen);
+                document.body.classList.toggle('overflow-hidden', !isOpen);
+                navToggle.setAttribute('aria-expanded', String(!isOpen));
+            });
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                });
+            });
+        }
+
+        // Enroll form submit (mock)
+        function submitEnroll() {
+            const form = document.getElementById('enroll-form');
+            const success = document.getElementById('enroll-success');
+            form.classList.add('hidden');
+            success.classList.remove('hidden');
+        }
+    </script>
+
+</body>
+</html>
