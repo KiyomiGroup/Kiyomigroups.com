@@ -135,76 +135,68 @@
 
         /* Star rating */
         .star { color: #FBBF24; font-size: 1rem; }
+            .drop-menu{display:none;position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);min-width:260px;background:#fff;border:1px solid rgba(15,23,42,.08);border-radius:14px;box-shadow:0 20px 50px rgba(15,23,42,.18);padding:8px;z-index:200;}
+        .drop-menu.open{display:block;}
+        .drop-menu a{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;font-size:.875rem;font-weight:500;color:#0F172A;text-decoration:none;transition:background .15s;}
+        .drop-menu a:hover{background:#F5F3FF;color:#6366F1;}
     </style>
 </head>
 <body id="top" class="antialiased" style="background:#070013;color:#F5F3FF;overflow-x:hidden;">
 
     <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
     <header data-nav class="fixed inset-x-0 top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-200 transition-shadow">
-        <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-            <a href="index.html" class="text-xs font-semibold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
-
-            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-700 md:flex" aria-label="Primary">
-                <a href="index.html#stages" class="hover:text-slate-900">Services</a>
-                <a href="index.html#playbook" class="hover:text-slate-900">Kiyomi Playbook</a>
-                <a href="index.html#stack" class="hover:text-slate-900">Tech Stack</a>
-                <a href="index.html#cases" class="hover:text-slate-900">Case Studies</a>
-
-                <!-- Tutorials Dropdown -->
-                <div class="dropdown">
-                    <span class="cursor-pointer hover:text-slate-900 flex items-center gap-1">
-                        Tutorials <span class="dropdown-caret">▼</span>
-                    </span>
-                    <div class="dropdown-menu">
-                        <div class="px-3 py-2 text-[10px] font-semibold uppercase tracking-widest text-slate-400">Kiyomi Tutorials</div>
-                        <a href="tutorials-vibe-coding.html" class="dropdown-item active">
-                            <span class="dot"></span> Vibe Coding <span class="ml-auto text-[10px] text-violet-500 font-semibold">NEW</span>
-                        </a>
-                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Beginner</a>
-                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Intermediate</a>
-                        <a href="#" class="dropdown-item"><span class="dot" style="background:#6366F1;"></span> UI/UX Design – Advanced</a>
-                        <a href="#" class="dropdown-item"><span class="dot" style="background:#EC4899;"></span> Adobe Illustrator (Graphics)</a>
-                        <a href="#" class="dropdown-item"><span class="dot" style="background:#F59E0B;"></span> AI Mastery – Full Course</a>
-                    </div>
-                </div>
-            </nav>
-
-            <div class="flex items-center gap-4">
-                <a href="#enroll" class="hidden whitespace-nowrap rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold text-white hover:bg-violet-500 md:inline-flex transition-colors">
-                    Enroll Now
-                </a>
-                <button type="button" data-nav-toggle
-                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden"
-                    aria-label="Toggle navigation" aria-expanded="false">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" aria-hidden="true">
-                        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
-                    </svg>
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+        <a href="index.html" class="text-xs font-bold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
+        <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
+            <a href="index.html#about"    class="hover:text-slate-900">About</a>
+            <a href="index.html#services" class="hover:text-slate-900">Services</a>
+            <a href="index.html#portfolio"class="hover:text-slate-900">Portfolio</a>
+            <a href="index.html#process"  class="hover:text-slate-900">How We Work</a>
+            <a href="index.html#cta"      class="hover:text-slate-900">Contact</a>
+            <a href="about.html" class="font-semibold text-violet-600 hover:text-violet-800">About Us</a>
+            <div style="position:relative;">
+                <button id="tut-btn" onclick="toggleDrop('tut-menu','tut-caret',event)" class="flex items-center gap-1 font-semibold text-violet-600 hover:text-violet-800 bg-transparent border-none cursor-pointer text-sm">
+                    Tutorials <span id="tut-caret" style="font-size:.6rem;transition:transform .2s;display:inline-block;">▼</span>
                 </button>
+                <div id="tut-menu" class="drop-menu">
+                    <div style="padding:6px 12px 4px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8;">Kiyomi Tutorials</div>
+                    <a href="tutorials-vibe-coding.html"><span style="width:7px;height:7px;border-radius:50%;background:#A855F7;flex-shrink:0;display:inline-block;"></span>Vibe Coding<span style="margin-left:auto;font-size:10px;color:#A855F7;font-weight:700;">NEW</span></a>
+                    <a href="tutorials-uiux-beginner.html"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;display:inline-block;"></span>UI/UX – Beginner</a>
+                    <a href="tutorials-uiux-intermediate.html"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;display:inline-block;"></span>UI/UX – Intermediate</a>
+                    <a href="tutorials-uiux-advanced.html"><span style="width:7px;height:7px;border-radius:50%;background:#6366F1;flex-shrink:0;display:inline-block;"></span>UI/UX – Advanced</a>
+                    <a href="tutorials-illustrator.html"><span style="width:7px;height:7px;border-radius:50%;background:#EC4899;flex-shrink:0;display:inline-block;"></span>Adobe Illustrator</a>
+                    <a href="tutorials-ai-mastery.html"><span style="width:7px;height:7px;border-radius:50%;background:#F59E0B;flex-shrink:0;display:inline-block;"></span>AI Mastery</a>
+                </div>
             </div>
+        </nav>
+        <div class="flex items-center gap-3">
+            <button type="button" data-open-consult class="hidden whitespace-nowrap rounded-full border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-900 hover:border-brand hover:text-brand md:inline-flex transition-colors">Start a Project</button>
+            <button type="button" data-nav-toggle class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-700 md:hidden" aria-label="Toggle navigation" aria-expanded="false">
+                <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </button>
         </div>
-
-        <!-- Mobile menu -->
-        <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
-            <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
-                <a href="index.html#stages" class="py-1">Services</a>
-                <a href="index.html#playbook" class="py-1">Kiyomi Playbook</a>
-                <a href="index.html#stack" class="py-1">Tech Stack</a>
-                <a href="index.html#cases" class="py-1">Case Studies</a>
-                <hr class="border-slate-100">
-                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 pt-1">Tutorials</p>
-                <a href="tutorials-vibe-coding.html" class="py-1 text-violet-600 font-semibold">↳ Vibe Coding</a>
-                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Beginner)</a>
-                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Intermediate)</a>
-                <a href="#" class="py-1 pl-3">↳ UI/UX Design (Advanced)</a>
-                <a href="#" class="py-1 pl-3">↳ Adobe Illustrator</a>
-                <a href="#" class="py-1 pl-3">↳ AI Mastery</a>
-                <hr class="my-2 border-slate-200">
-                <a href="#enroll" class="inline-flex w-full items-center justify-center rounded-full bg-violet-600 px-4 py-2 text-xs font-semibold text-white">
-                    Enroll Now — ₦250,000
-                </a>
-            </nav>
-        </div>
-    </header>
+    </div>
+    <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
+        <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
+            <a href="index.html#about"     class="py-1">About</a>
+            <a href="index.html#services"  class="py-1">Services</a>
+            <a href="index.html#portfolio" class="py-1">Portfolio</a>
+            <a href="index.html#process"   class="py-1">How We Work</a>
+            <a href="index.html#cta"       class="py-1">Contact</a>
+            <a href="about.html"           class="py-1 font-semibold text-violet-600">About Us</a>
+            <hr class="border-slate-100">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 pt-1">Tutorials</p>
+            <a href="tutorials-vibe-coding.html"       class="py-1 text-violet-600 font-semibold">↳ Vibe Coding ✦ NEW</a>
+            <a href="tutorials-uiux-beginner.html"     class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Beginner)</a>
+            <a href="tutorials-uiux-intermediate.html" class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Intermediate)</a>
+            <a href="tutorials-uiux-advanced.html"     class="py-1 pl-3 text-slate-600">↳ UI/UX Design (Advanced)</a>
+            <a href="tutorials-illustrator.html"       class="py-1 pl-3 text-slate-600">↳ Adobe Illustrator</a>
+            <a href="tutorials-ai-mastery.html"        class="py-1 pl-3 text-slate-600">↳ AI Mastery</a>
+            <hr class="my-2 border-slate-200">
+            <button type="button" data-open-consult class="inline-flex w-full items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-xs font-semibold text-slate-900">Start a Project</button>
+        </nav>
+    </div>
+</header>
 
     <main class="pt-16">
 
@@ -572,25 +564,25 @@
 <form id="enroll-ajax-form" action="https://formspree.io/f/xaqdrkoq" method="POST">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
-                                <input type="text" placeholder="Jane Doe"
+                                <input name="name" type="text" placeholder="Jane Doe"
                                     class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
                                     style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">Email Address *</label>
-                                <input type="email" placeholder="you@example.com"
+                                <input name="email" type="email" placeholder="you@example.com"
                                     class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
                                     style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">Phone Number</label>
-                                <input type="tel" placeholder="+234 xxx xxx xxxx"
+                                <input name="phone" type="tel" placeholder="+234 xxx xxx xxxx"
                                     class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 transition-all"
                                     style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">Your Background *</label>
-                                <select class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200 transition-all"
+                                <select name="background" class="block w-full rounded-xl px-4 py-3 text-sm text-slate-200 transition-all"
                                     style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);">
                                     <option value="" disabled selected style="color:#64748b;">Select your background</option>
                                     <option style="background:#1a0035;">Complete beginner — no coding experience</option>
@@ -602,11 +594,11 @@
                             </div>
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">What do you want to build? <span class="text-slate-500 font-normal">(optional)</span></label>
-                                <textarea rows="3" placeholder="e.g. a marketplace app, a SaaS dashboard, a portfolio site..."
+                                <textarea name="message" rows="3" placeholder="e.g. a marketplace app, a SaaS dashboard, a portfolio site..."
                                     class="block w-full rounded-xl px-4 py-3 text-sm text-white placeholder-slate-500 resize-none transition-all"
                                     style="background:rgba(255,255,255,0.07); border:1px solid rgba(168,85,247,0.25);"></textarea>
                             </div>
-                            <button type="button" onclick="submitEnroll()"
+                            <button type="submit"
                                 class="w-full rounded-full py-3.5 text-sm font-bold text-white transition-all hover:-translate-y-1 active:scale-95 mt-2"
                                 style="background: linear-gradient(135deg,#A855F7,#6366F1); box-shadow: 0 10px 35px rgba(168,85,247,0.35);">
                                 Reserve My Spot — ₦250,000
@@ -672,63 +664,15 @@
                 });
             });
         }
-
-        // Enroll form submit (mock)
-        function submitEnroll() {
-            const form = document.getElementById('enroll-form');
-            const success = document.getElementById('enroll-success');
-            form.classList.add('hidden');
-            success.classList.remove('hidden');
-        }
     </script>
 
 
-    <script>
-    // Click-based dropdown
-    (function() {
-        function initDropdown() {
-            var btns = document.querySelectorAll('.tut-drop-btn');
-            btns.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    var menu = btn.nextElementSibling;
-                    var isOpen = menu.style.display === 'block';
-                    // Close all
-                    document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
-                    document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
-                    if (!isOpen) {
-                        menu.style.display = 'block';
-                        var caret = btn.querySelector('.caret');
-                        if(caret) caret.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-            document.addEventListener('click', function() {
-                document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
-                document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
-            });
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initDropdown);
-        } else {
-            initDropdown();
-        }
-    })();
-    </script>
+    
+
+
 
 <script>
-// Poppins font
-(function(){
-    if(!document.querySelector('link[href*="Poppins"]')){
-        var l=document.createElement('link');
-        l.rel='stylesheet';
-        l.href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap';
-        document.head.appendChild(l);
-    }
-    document.body.style.fontFamily="'Poppins',system-ui,sans-serif";
-})();
-
-// Formspree AJAX submit — stays on page, shows confirmation
+// ── FORM: AJAX submit to Formspree — stays on page ──
 (function(){
     function initForm(){
         var form = document.getElementById('enroll-ajax-form');
@@ -737,30 +681,63 @@
             e.preventDefault();
             var btn = form.querySelector('button[type="submit"]');
             if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
-            var data = new FormData(form);
-            fetch(form.action, {
+            fetch('https://formspree.io/f/xaqdrkoq', {
                 method:'POST',
-                body:data,
-                headers:{'Accept':'application/json'}
+                body: new FormData(form),
+                headers:{ 'Accept':'application/json' }
             }).then(function(r){
                 if(r.ok){
-                    document.getElementById('enroll-form').classList.add('hidden');
-                    document.getElementById('enroll-success').classList.remove('hidden');
+                    var fw = document.getElementById('enroll-form');
+                    var fs = document.getElementById('enroll-success');
+                    if(fw) fw.classList.add('hidden');
+                    if(fs) fs.classList.remove('hidden');
                 } else {
                     if(btn){ btn.disabled=false; btn.textContent='Try Again'; }
                     alert('Something went wrong. Please try again.');
                 }
             }).catch(function(){
                 if(btn){ btn.disabled=false; btn.textContent='Try Again'; }
-                alert('Network error. Please check your connection.');
+                alert('Network error. Please check your connection and try again.');
             });
         });
     }
     if(document.readyState==='loading'){
-        document.addEventListener('DOMContentLoaded',initForm);
+        document.addEventListener('DOMContentLoaded', initForm);
     } else { initForm(); }
 })();
-</script>
 
+    // ── NAV SCROLL ──
+    const nav = document.querySelector('[data-nav]');
+    if(nav) window.addEventListener('scroll', () => nav.classList.toggle('shadow-sm', window.scrollY > 8));
+    // ── MOBILE NAV ──
+    const navToggle = document.querySelector('[data-nav-toggle]');
+    const navMenu   = document.querySelector('[data-nav-menu]');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            const isOpen = !navMenu.classList.contains('hidden');
+            navMenu.classList.toggle('hidden', isOpen);
+            document.body.classList.toggle('overflow-hidden', !isOpen);
+        });
+        navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            navMenu.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }));
+    }
+    // ── DROPDOWN ──
+    function toggleDrop(menuId, caretId, e) {
+        e.stopPropagation();
+        const menu  = document.getElementById(menuId);
+        const caret = document.getElementById(caretId);
+        if(!menu || !caret) return;
+        const isOpen = menu.classList.contains('open');
+        document.querySelectorAll('.drop-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('[id$="-caret"]').forEach(c => c.style.transform = 'rotate(0deg)');
+        if (!isOpen) { menu.classList.add('open'); caret.style.transform = 'rotate(180deg)'; }
+    }
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.drop-menu').forEach(m => m.classList.remove('open'));
+        document.querySelectorAll('[id$="-caret"]').forEach(c => c.style.transform = 'rotate(0deg)');
+    });
+</script>
 </body>
 </html>
