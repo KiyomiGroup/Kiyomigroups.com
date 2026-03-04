@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kiyomi Group – Software that scales. Compliance that protects.</title>
+    <title>Kiyomi Group – We Design & Build Software People Actually Use</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,11 +37,11 @@
     <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" class="text-xs font-bold tracking-[0.28em] text-slate-900">KIYOMI GROUP</a>
         <nav class="hidden items-center gap-6 text-sm font-medium text-slate-700 md:flex">
-            <a href="#stages"    class="hover:text-slate-900">Services</a>
+            <a href="#about"     class="hover:text-slate-900">About</a>
+            <a href="#services"  class="hover:text-slate-900">Services</a>
             <a href="#portfolio" class="hover:text-slate-900">Portfolio</a>
-            <a href="#playbook"  class="hover:text-slate-900">Playbook</a>
-            <a href="#stack"     class="hover:text-slate-900">Tech Stack</a>
-            <a href="#cases"     class="hover:text-slate-900">Case Studies</a>
+            <a href="#process"   class="hover:text-slate-900">How We Work</a>
+            <a href="#cta"       class="hover:text-slate-900">Contact</a>
             <div style="position:relative;">
                 <button id="tut-btn" onclick="toggleDrop('tut-menu','tut-caret',event)" class="flex items-center gap-1 font-semibold text-violet-600 hover:text-violet-800 bg-transparent border-none cursor-pointer text-sm">
                     Tutorials <span id="tut-caret" style="font-size:.6rem;transition:transform .2s;display:inline-block;">▼</span>
@@ -66,11 +66,11 @@
     </div>
     <div data-nav-menu class="hidden border-t border-slate-200 bg-white md:hidden">
         <nav class="mx-auto flex max-w-6xl flex-col gap-2 px-4 pb-4 pt-3 text-sm font-medium text-slate-800">
-            <a href="#stages"    class="py-1">Services</a>
+            <a href="#about"     class="py-1">About</a>
+            <a href="#services"  class="py-1">Services</a>
             <a href="#portfolio" class="py-1">Portfolio</a>
-            <a href="#playbook"  class="py-1">Playbook</a>
-            <a href="#stack"     class="py-1">Tech Stack</a>
-            <a href="#cases"     class="py-1">Case Studies</a>
+            <a href="#process"   class="py-1">How We Work</a>
+            <a href="#cta"       class="py-1">Contact</a>
             <hr class="border-slate-100">
             <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 pt-1">Tutorials</p>
             <a href="tutorials-vibe-coding.html"       class="py-1 text-violet-600 font-semibold">↳ Vibe Coding ✦ NEW</a>
@@ -92,25 +92,63 @@
     <div class="pointer-events-none absolute inset-0" style="background:linear-gradient(to bottom,rgba(7,0,19,.15) 0%,rgba(0,0,0,.72) 55%,#070013 100%);"></div>
     <div class="relative mx-auto flex min-h-[520px] max-w-6xl flex-col gap-10 px-4 pb-24 pt-16 text-white sm:px-6 md:flex-row md:items-center md:pb-32 md:pt-20">
         <div class="md:w-3/5">
-            <p class="mb-3 text-xs font-semibold uppercase tracking-[0.28em] text-slate-200">Design-led engineering for regulated teams</p>
-            <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl leading-tight">
-                Build the right product,<br class="hidden sm:block">
-                <span class="text-brand">the right way.</span>
-            </h1>
-            <p class="mt-5 max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">From discovery sprints to production-grade compliance, Kiyomi Group helps health, fintech, and compliance-heavy organizations turn complex ideas into resilient, scalable systems.</p>
-            <div class="mt-8 flex flex-wrap items-center gap-4">
-                <button type="button" data-open-consult class="inline-flex items-center justify-center rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors">Book a Strategy Consultation</button>
-                <span class="text-xs text-slate-300">20-minute discovery • No sales pitches</span>
+            <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-violet-400/30 px-3 py-1" style="background:rgba(168,85,247,.12);">
+                <span class="h-1.5 w-1.5 rounded-full bg-violet-400"></span>
+                <span class="text-xs font-semibold text-violet-300 tracking-wide">Software · Web · App · UI/UX Design</span>
             </div>
+            <h1 class="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl leading-tight">
+                We design and build<br class="hidden sm:block">
+                <span class="text-brand">software people actually use.</span>
+            </h1>
+            <p class="mt-5 max-w-xl text-base leading-relaxed text-slate-200">
+                Got an idea for a product? We turn it into a real, working digital product — from the first sketch to the day it goes live.
+                No unnecessary complexity. Just clear work, honest communication, and a team that shows up.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-3">
+                <button type="button" data-open-consult
+                    class="inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700 transition-colors">
+                    Start a Project
+                    <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <button type="button" data-open-consult
+                    class="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur hover:border-white/40 hover:bg-white/10 transition-colors">
+                    Book a Free Discovery Call
+                </button>
+            </div>
+            <p class="mt-4 text-xs text-slate-400">Free call · No obligation · 20 minutes</p>
         </div>
         <div class="md:w-2/5">
             <div class="rounded-2xl border border-white/10 bg-white/5 p-5 shadow-lg backdrop-blur">
-                <p class="text-xs font-semibold text-slate-200 mb-1">For high-stakes systems</p>
-                <dl class="mt-3 space-y-3 text-sm text-slate-50">
-                    <div class="flex items-start justify-between gap-4"><dt class="font-semibold">Healthtech</dt><dd class="text-right text-xs text-slate-300">Audit-ready experiences, HIPAA-aware flows, and patient-safe data.</dd></div>
-                    <div class="flex items-start justify-between gap-4"><dt class="font-semibold">Fintech</dt><dd class="text-right text-xs text-slate-300">High-frequency transaction stability with transparent risk controls.</dd></div>
-                    <div class="flex items-start justify-between gap-4"><dt class="font-semibold">Compliance</dt><dd class="text-right text-xs text-slate-300">Governance, policy enforcement, and evidence trails by design.</dd></div>
-                </dl>
+                <p class="text-xs font-semibold text-violet-300 uppercase tracking-widest mb-4">Who we help</p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-xl flex-shrink-0" style="background:rgba(168,85,247,.2);">
+                            <svg class="h-4 w-4 text-violet-300" fill="none" viewBox="0 0 20 20"><path d="M10 2a8 8 0 1 0 0 16A8 8 0 0 0 10 2Zm0 3a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm0 9.5c-2 0-3.75-1-4.75-2.5.02-1.58 3.17-2.45 4.75-2.45s4.73.87 4.75 2.45C13.75 13.5 12 14.5 10 14.5Z" fill="currentColor"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Founders &amp; Startups</p>
+                            <p class="text-xs text-slate-400">Turn your idea into a real product, fast.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-xl flex-shrink-0" style="background:rgba(99,102,241,.2);">
+                            <svg class="h-4 w-4 text-indigo-300" fill="none" viewBox="0 0 20 20"><path d="M3 4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4Zm0 6a1 1 0 0 1 1-1h5a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Zm0 4a1 1 0 0 1 1-1h3a1 1 0 1 1 0 2H4a1 1 0 0 1-1-1Z" fill="currentColor"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Small &amp; Mid-size Businesses</p>
+                            <p class="text-xs text-slate-400">Upgrade or build the tools your business needs.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="flex h-8 w-8 items-center justify-center rounded-xl flex-shrink-0" style="background:rgba(236,72,153,.15);">
+                            <svg class="h-4 w-4 text-pink-300" fill="none" viewBox="0 0 20 20"><path d="M13 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM18 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM14 15a4 4 0 0 0-8 0v1h8v-1ZM6 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM16 15h2v-1a3 3 0 0 0-3-3 4 4 0 0 1 1 4ZM4 15H2v-1a3 3 0 0 1 3-3 4 4 0 0 0-1 4Z" fill="currentColor"/></svg>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-white">Teams Needing Support</p>
+                            <p class="text-xs text-slate-400">Extra engineers and designers when you need them.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -178,81 +216,282 @@
     </div>
 </section>
 
-<!-- SERVICES -->
-<section id="stages" class="relative bg-[#050509]" style="overflow:visible;padding-top:48px;">
-    <div class="pointer-events-none absolute -left-24 top-40 h-64 w-64 rounded-[40%] bg-[radial-gradient(circle_at_top,_rgba(124,58,237,0.6),_transparent_60%)] blur-3xl"></div>
-    <div class="pointer-events-none absolute -right-24 bottom-24 h-64 w-64 rounded-[40%] bg-[radial-gradient(circle_at_bottom,_rgba(129,140,248,0.7),_transparent_60%)] blur-3xl"></div>
-    <div class="section-icon-wrap">
-        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_18px_45px_rgba(0,0,0,0.9)] ring-2 ring-white/10">
-            <svg class="h-7 w-7 text-white" viewBox="0 0 24 24" fill="none"><path d="M5 11.5 10 7l4 4 5-4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 17h14M7 20h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
-        </div>
+<!-- ═══════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════ -->
+<section id="about" style="background:linear-gradient(135deg,#0d001f 0%,#1a0035 50%,#0d001f 100%);padding:80px 0;border-top:1px solid rgba(168,85,247,.1);overflow:hidden;position:relative;">
+    <div class="pointer-events-none absolute inset-0">
+        <div style="position:absolute;top:10%;right:5%;width:350px;height:350px;background:radial-gradient(circle,rgba(99,102,241,.15),transparent 70%);border-radius:50%;"></div>
+        <div style="position:absolute;bottom:5%;left:-5%;width:280px;height:280px;background:radial-gradient(circle,rgba(168,85,247,.12),transparent 70%);border-radius:50%;"></div>
     </div>
-    <div class="relative mx-auto max-w-6xl px-4 pb-14 text-white sm:px-6 sm:pb-16">
-        <div class="mb-10">
-            <span class="inline-flex rounded-full bg-violet-500/20 px-3 py-1 text-xs font-semibold text-violet-300">Service</span>
-            <h2 class="mt-4 text-2xl font-bold tracking-tight text-white sm:text-3xl">A product lifecycle built for regulated teams.</h2>
-            <p class="mt-2 max-w-xl text-sm text-slate-200 sm:text-base">Whether you are validating an idea, scaling a v1, or building the platform that will run your organization, Kiyomi Group meets you where you are.</p>
-        </div>
-        <div class="grid gap-8 md:grid-cols-3">
-            <article class="relative flex flex-col justify-between rounded-3xl bg-[#050509] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.9)] md:p-6">
-                <div class="relative z-10">
-                    <div class="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/5 text-white"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><rect x="4" y="3" width="8" height="12" rx="1.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 6h6a1 1 0 0 1 1 1v9.5a.5.5 0 0 1-.8.4L12 15.5l-2.2 1.4a.5.5 0 0 1-.8-.4V6Z" stroke="currentColor" stroke-width="1.2"/></svg></div>
-                    <h3 class="text-base font-semibold text-white">Phase 1: Validation &amp; Discovery</h3>
-                    <p class="mt-3 text-sm text-slate-300">Sprints, strategy, and clickable prototypes that align stakeholders and de‑risk your roadmap before you commit code and budget.</p>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid gap-12 md:grid-cols-2 md:items-center">
+            <div>
+                <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(168,85,247,.15);color:#C4B5FD;">About Kiyomi Group</span>
+                <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl leading-snug">
+                    We help businesses build digital products — without the stress.
+                </h2>
+                <p class="mt-4 text-sm leading-relaxed text-violet-200">
+                    Kiyomi Group is a Nigerian software company that designs and builds digital products for startups, founders, and growing businesses. We work on websites, web apps, mobile apps, and product design — anything that lives on a screen.
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-violet-200">
+                    Here's how we work: once you sign on, we pull together the right team of engineers, designers, and product thinkers specifically for your project. We don't keep a huge in-house team just sitting around — we match your project with the right people, every time.
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-violet-200">
+                    The result? You get senior-level talent on your project without the overhead of hiring a full team yourself.
+                </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);">
+                    <div class="text-3xl mb-3">🧩</div>
+                    <h3 class="text-sm font-semibold text-white mb-2">Built around your project</h3>
+                    <p class="text-xs text-violet-300 leading-relaxed">We assemble the exact team your project needs — no generic packages, no wasted resources.</p>
                 </div>
-                <ul class="mt-4 space-y-1.5 text-xs text-slate-400"><li>• Discovery &amp; framing workshops</li><li>• UX flows and rapid prototyping</li><li>• Product / compliance feasibility notes</li></ul>
-                <button type="button" class="absolute bottom-4 right-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-violet-500 text-white"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none"><path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </article>
-            <article class="relative flex flex-col justify-between rounded-3xl bg-white/5 p-5 text-center shadow-[0_24px_70px_rgba(0,0,0,0.95)] backdrop-blur md:p-6">
-                <div>
-                    <h3 class="text-base font-semibold text-white">Phase 2: Growth &amp; Engineering</h3>
-                    <p class="mt-3 text-sm text-slate-100">MVPs and core platforms engineered for uptime, observability, and security-first development in regulated environments.</p>
+                <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                    <div class="text-3xl mb-3">🤝</div>
+                    <h3 class="text-sm font-semibold text-white mb-2">A real partnership</h3>
+                    <p class="text-xs text-violet-300 leading-relaxed">We stay involved from first idea to final launch. You're never left in the dark.</p>
                 </div>
-                <div class="mt-4 space-y-3">
-                    <ul class="space-y-1.5 text-xs text-slate-200"><li>• Production-grade Ruby on Rails, React, Elixir</li><li>• Security‑first CI/CD and review workflows</li><li>• Metrics, logging, and incident playbooks</li></ul>
-                    <button type="button" class="mt-4 inline-flex items-center justify-center rounded-full bg-violet-500 px-5 py-2 text-xs font-semibold text-white hover:bg-violet-400">Explore Growth <svg class="ml-2 h-3.5 w-3.5" viewBox="0 0 16 16" fill="none"><path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+                <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.2);">
+                    <div class="text-3xl mb-3">🇳🇬</div>
+                    <h3 class="text-sm font-semibold text-white mb-2">Based in Lagos</h3>
+                    <p class="text-xs text-violet-300 leading-relaxed">We understand the Nigerian market — and we build products that work for African users and businesses.</p>
                 </div>
-            </article>
-            <article class="relative flex flex-col justify-between rounded-3xl bg-[#050509] p-5 shadow-[0_18px_45px_rgba(0,0,0,0.9)] md:p-6">
-                <div class="relative z-10">
-                    <div class="mb-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-white/5 text-white"><svg class="h-4 w-4" viewBox="0 0 20 20" fill="none"><path d="M5 11v4M9 8v7M13 5v10M4 15h12" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-                    <h3 class="text-base font-semibold text-white">Phase 3: Team &amp; Platform</h3>
-                    <p class="mt-3 text-sm text-slate-300">We help you grow the team and platform: DevOps, platform engineering, and fractional leadership that keeps quality high as you scale.</p>
+                <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);">
+                    <div class="text-3xl mb-3">⚡</div>
+                    <h3 class="text-sm font-semibold text-white mb-2">Fast without cutting corners</h3>
+                    <p class="text-xs text-violet-300 leading-relaxed">We move quickly, but we do it properly. Speed and quality aren't opposites to us.</p>
                 </div>
-                <ul class="mt-4 space-y-1.5 text-xs text-slate-400"><li>• DevOps and platform engineering support</li><li>• Pairing, mentoring, and hiring assistance</li><li>• Fractional CTO and architecture guidance</li></ul>
-                <button type="button" class="absolute bottom-4 right-4 inline-flex h-8 w-8 items-center justify-center rounded-2xl bg-violet-500 text-white"><svg class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="none"><path d="M4 12L11 5M7 4h4.5a.5.5 0 0 1 .5.5V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-            </article>
-        </div>
-    </div>
-</section>
-
-<!-- PLAYBOOK -->
-<section id="playbook" class="relative" style="background:linear-gradient(135deg,#1a0035 0%,#2d0060 40%,#1a0035 100%);overflow:hidden;">
-    <div class="pointer-events-none absolute inset-0"><div style="position:absolute;top:10%;left:5%;width:320px;height:320px;background:radial-gradient(circle,rgba(168,85,247,.25),transparent 70%);border-radius:50%;"></div><div style="position:absolute;bottom:10%;right:5%;width:280px;height:280px;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);border-radius:50%;"></div></div>
-    <div class="pointer-events-none absolute left-4 -top-6 sm:left-8" style="z-index:10;"><div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_14px_40px_rgba(168,85,247,.55)] ring-2 ring-violet-400/40"><svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"><path d="M6.5 6.25H12a2 2 0 0 1 2 2v9.5a.5.5 0 0 1-.8.4L12 17.75l-1.2.8a.5.5 0 0 1-.8-.4v-9.9a2 2 0 0 0-2-2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 6.25h3.5a1.5 1.5 0 0 1 1.5 1.5V18a.75.75 0 0 1-1.17.6L16 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-    <div class="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        <div class="max-w-xl"><h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">The Kiyomi Playbook</h2><p class="mt-3 text-sm text-violet-200 sm:text-base">Kiyomi Group is a design-led engineering partner. We bring an open-source mindset to proprietary systems: clear documentation, transparent decisions, and continuous improvement baked into every engagement.</p></div>
-        <div class="mt-8 grid gap-6 md:grid-cols-3">
-            <div class="rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><h3 class="text-sm font-semibold text-white">Open-source mindset</h3><p class="mt-3 text-sm text-violet-200">We favour techniques from open-source: readable code, small pull requests, and public‑style changelogs so your team can understand how and why the system evolved.</p></div>
-            <div class="rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><h3 class="text-sm font-semibold text-white">Product &amp; engineering style guides</h3><p class="mt-3 text-sm text-violet-200">We leave behind design systems, API standards, and engineering playbooks so your internal teams can ship with the same consistency long after we ship v1.</p></div>
-            <div class="rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><h3 class="text-sm font-semibold text-white">Continuous improvement</h3><p class="mt-3 text-sm text-violet-200">Retrospectives, metrics, and feedback loops are part of our default engagement model—we tune the system and the team, not just the release.</p></div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- TECH STACK -->
-<section id="stack" class="relative" style="background:linear-gradient(135deg,#0d001f 0%,#1a0035 50%,#0d001f 100%);overflow:hidden;">
-    <div class="pointer-events-none absolute inset-0"><div style="position:absolute;top:20%;right:10%;width:350px;height:350px;background:radial-gradient(circle,rgba(99,102,241,.2),transparent 70%);border-radius:50%;"></div><div style="position:absolute;bottom:5%;left:15%;width:250px;height:250px;background:radial-gradient(circle,rgba(168,85,247,.18),transparent 70%);border-radius:50%;"></div></div>
-    <div class="pointer-events-none absolute right-4 -top-6 sm:right-8" style="z-index:10;"><div class="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-tr from-violet-600 to-indigo-400 shadow-[0_14px_40px_rgba(168,85,247,.55)] ring-2 ring-violet-400/40"><svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"><path d="M5 9.5 12 5l7 4.5-7 4.5L5 9.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M5 14.5 12 19l7-4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
-    <div class="relative mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
-        <div class="mb-8 max-w-2xl"><h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Compliance-heavy, product-ready stack.</h2><p class="mt-3 text-sm text-violet-200 sm:text-base">We specialise in modern, battle‑tested tools—Ruby on Rails, React, and Elixir—paired with AI/ML integrations that keep sensitive data safe while unlocking real leverage for your teams.</p></div>
+<!-- ═══════════════════════════════════════
+     SERVICES
+═══════════════════════════════════════ -->
+<section id="services" style="background:#050509;padding:80px 0;border-top:1px solid rgba(168,85,247,.1);overflow:hidden;position:relative;">
+    <div class="pointer-events-none absolute inset-0">
+        <div style="position:absolute;top:0%;left:10%;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.18),transparent 70%);border-radius:50%;"></div>
+        <div style="position:absolute;bottom:0%;right:5%;width:300px;height:300px;background:radial-gradient(circle,rgba(129,140,248,.14),transparent 70%);border-radius:50%;"></div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center mb-12 max-w-2xl mx-auto">
+            <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(99,102,241,.15);color:#A5B4FC;">What We Do</span>
+            <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">Three things we do really well.</h2>
+            <p class="mt-3 text-sm text-violet-200">Whether you're starting from scratch or need to improve something that already exists, we've got the right skill set.</p>
+        </div>
         <div class="grid gap-6 md:grid-cols-3">
-            <article class="flex flex-col justify-between rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><div><h3 class="text-sm font-semibold text-white">Ruby on Rails</h3><p class="mt-3 text-sm text-violet-200">Fast, opinionated backends with strong conventions, great test tooling, and a mature ecosystem for payments, admin, and reporting.</p></div><ul class="mt-4 space-y-1.5 text-xs text-violet-300"><li>• Audit-friendly ActiveRecord patterns</li><li>• Secure authentication &amp; authorization</li><li>• Background jobs for long-running work</li></ul></article>
-            <article class="flex flex-col justify-between rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><div><h3 class="text-sm font-semibold text-white">React</h3><p class="mt-3 text-sm text-violet-200">Product‑first interfaces with component libraries, design systems, and accessibility baked into every flow.</p></div><ul class="mt-4 space-y-1.5 text-xs text-violet-300"><li>• TypeScript‑first frontends</li><li>• Design systems &amp; Storybook docs</li><li>• WCAG‑aware UI patterns</li></ul></article>
-            <article class="flex flex-col justify-between rounded-2xl border border-violet-500/30 p-5" style="background:rgba(255,255,255,.05);backdrop-filter:blur(10px);"><div><h3 class="text-sm font-semibold text-white">Elixir &amp; AI/ML</h3><p class="mt-3 text-sm text-violet-200">Highly concurrent services and AI‑assisted workflows where safety, traceability, and performance are non‑negotiable.</p></div><ul class="mt-4 space-y-1.5 text-xs text-violet-300"><li>• Real‑time pipelines and event streams</li><li>• Guardrailed AI/ML integrations</li><li>• Data contracts and lineage for compliance</li></ul></article>
+
+            <!-- Service 1 -->
+            <article class="relative group rounded-3xl p-6 overflow-hidden transition-all hover:-translate-y-1" style="background:rgba(255,255,255,.03);border:1px solid rgba(168,85,247,.2);">
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" style="background:radial-gradient(circle at top left,rgba(168,85,247,.08),transparent 60%);"></div>
+                <div class="relative z-10">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl" style="background:linear-gradient(135deg,#7C3AED,#6366F1);">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Software Engineering</h3>
+                    <p class="text-sm text-violet-200 leading-relaxed mb-4">We build the back-end systems, databases, and APIs that make your product work reliably — even under pressure.</p>
+                    <ul class="space-y-2 text-xs text-violet-300">
+                        <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Custom web applications</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> API design &amp; integrations</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Database architecture</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-400">✓</span> Performance &amp; security</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Service 2 — featured -->
+            <article class="relative group rounded-3xl p-6 overflow-hidden transition-all hover:-translate-y-1" style="background:linear-gradient(135deg,rgba(168,85,247,.12),rgba(99,102,241,.08));border:1px solid rgba(168,85,247,.35);">
+                <div class="absolute top-4 right-4">
+                    <span class="rounded-full px-2 py-0.5 text-[10px] font-bold" style="background:#6366F1;color:#fff;">MOST REQUESTED</span>
+                </div>
+                <div class="relative z-10">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl" style="background:linear-gradient(135deg,#A855F7,#EC4899);">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Web &amp; App Development</h3>
+                    <p class="text-sm text-violet-100 leading-relaxed mb-4">We build websites, web apps, and mobile apps that look good, load fast, and actually do what your users need them to do.</p>
+                    <ul class="space-y-2 text-xs text-violet-200">
+                        <li class="flex items-center gap-2"><span class="text-violet-300">✓</span> Business websites &amp; landing pages</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-300">✓</span> Web applications (dashboards, portals)</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-300">✓</span> Mobile apps (iOS &amp; Android)</li>
+                        <li class="flex items-center gap-2"><span class="text-violet-300">✓</span> E-commerce platforms</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- Service 3 -->
+            <article class="relative group rounded-3xl p-6 overflow-hidden transition-all hover:-translate-y-1" style="background:rgba(255,255,255,.03);border:1px solid rgba(236,72,153,.2);">
+                <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity" style="background:radial-gradient(circle at top right,rgba(236,72,153,.07),transparent 60%);"></div>
+                <div class="relative z-10">
+                    <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl" style="background:linear-gradient(135deg,#EC4899,#F59E0B);">
+                        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-base font-bold text-white mb-3">Product &amp; UI/UX Design</h3>
+                    <p class="text-sm text-violet-200 leading-relaxed mb-4">Good design isn't just about looking nice. We design products that are easy to use, make sense to your users, and keep them coming back.</p>
+                    <ul class="space-y-2 text-xs text-violet-300">
+                        <li class="flex items-center gap-2"><span class="text-pink-400">✓</span> User research &amp; wireframing</li>
+                        <li class="flex items-center gap-2"><span class="text-pink-400">✓</span> UI design &amp; prototyping</li>
+                        <li class="flex items-center gap-2"><span class="text-pink-400">✓</span> Design systems &amp; brand identity</li>
+                        <li class="flex items-center gap-2"><span class="text-pink-400">✓</span> Usability testing</li>
+                    </ul>
+                </div>
+            </article>
         </div>
     </div>
 </section>
+
+<!-- ═══════════════════════════════════════
+     HOW WE WORK (PROCESS)
+═══════════════════════════════════════ -->
+<section id="process" style="background:linear-gradient(135deg,#1a0035 0%,#2d0060 40%,#1a0035 100%);padding:80px 0;overflow:hidden;position:relative;">
+    <div class="pointer-events-none absolute inset-0">
+        <div style="position:absolute;top:15%;left:50%;width:500px;height:500px;background:radial-gradient(circle,rgba(168,85,247,.1),transparent 70%);border-radius:50%;transform:translateX(-50%);"></div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="text-center mb-14 max-w-2xl mx-auto">
+            <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(168,85,247,.15);color:#C4B5FD;">How We Work</span>
+            <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">From your idea to a live product — here's what the journey looks like.</h2>
+            <p class="mt-3 text-sm text-violet-200">We keep things transparent every step of the way. No surprises, no disappearing acts.</p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-2xl p-6 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full font-bold text-lg text-white" style="background:linear-gradient(135deg,#7C3AED,#6366F1);">1</div>
+                <h3 class="text-sm font-bold text-white mb-2">Discovery &amp; Planning</h3>
+                <p class="text-xs text-violet-300 leading-relaxed">We sit down with you (virtually or in person) to understand your idea, your users, and what success looks like. No jargon, just honest conversation.</p>
+                <div class="mt-4 text-xs font-semibold text-violet-400">~1–2 weeks</div>
+            </div>
+            <div class="rounded-2xl p-6 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full font-bold text-lg text-white" style="background:linear-gradient(135deg,#6366F1,#818CF8);">2</div>
+                <h3 class="text-sm font-bold text-white mb-2">Design &amp; Strategy</h3>
+                <p class="text-xs text-violet-300 leading-relaxed">We create wireframes, user flows, and screen designs before writing a single line of code. You see exactly what we're building before we build it.</p>
+                <div class="mt-4 text-xs font-semibold text-violet-400">~1–3 weeks</div>
+            </div>
+            <div class="rounded-2xl p-6 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full font-bold text-lg text-white" style="background:linear-gradient(135deg,#A855F7,#EC4899);">3</div>
+                <h3 class="text-sm font-bold text-white mb-2">Build &amp; Develop</h3>
+                <p class="text-xs text-violet-300 leading-relaxed">We build your product using clean, modern code. We give you regular updates so you always know where things stand — weekly check-ins, always.</p>
+                <div class="mt-4 text-xs font-semibold text-violet-400">Varies by scope</div>
+            </div>
+            <div class="rounded-2xl p-6 text-center" style="background:rgba(255,255,255,.04);border:1px solid rgba(245,158,11,.2);">
+                <div class="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full font-bold text-lg text-white" style="background:linear-gradient(135deg,#F59E0B,#EC4899);">4</div>
+                <h3 class="text-sm font-bold text-white mb-2">Launch &amp; Support</h3>
+                <p class="text-xs text-violet-300 leading-relaxed">We test everything thoroughly, launch your product, and stay on hand to fix any issues. We don't disappear after go-live.</p>
+                <div class="mt-4 text-xs font-semibold text-yellow-500">Ongoing</div>
+            </div>
+        </div>
+        <div class="mt-10 text-center">
+            <p class="text-sm text-violet-300 italic">You bring the vision — we build the system and the team around it.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     WHY CHOOSE US
+═══════════════════════════════════════ -->
+<section id="why-us" style="background:linear-gradient(135deg,#0d001f 0%,#1a0035 50%,#0d001f 100%);padding:80px 0;border-top:1px solid rgba(168,85,247,.1);overflow:hidden;position:relative;">
+    <div class="pointer-events-none absolute inset-0">
+        <div style="position:absolute;bottom:0%;right:-5%;width:400px;height:400px;background:radial-gradient(circle,rgba(168,85,247,.12),transparent 70%);border-radius:50%;"></div>
+    </div>
+    <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid gap-10 md:grid-cols-2 md:items-center">
+            <div>
+                <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(99,102,241,.15);color:#A5B4FC;">Why Kiyomi</span>
+                <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl leading-snug">
+                    Honest work. Clear communication. Results you can see.
+                </h2>
+                <p class="mt-4 text-sm leading-relaxed text-violet-200">
+                    We know there are a lot of agencies out there making big promises. We'd rather just show you what we do and let the work speak for itself.
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-violet-200">
+                    Here's what you actually get when you work with us:
+                </p>
+                <div class="mt-6 space-y-3">
+                    <div class="flex items-start gap-3">
+                        <div class="flex h-6 w-6 items-center justify-center rounded-full flex-shrink-0 mt-0.5" style="background:rgba(168,85,247,.2);">
+                            <svg class="h-3 w-3 text-violet-300" fill="currentColor" viewBox="0 0 12 12"><path d="M10 3L5 9 2 6l-1 1 4 4 6-8z"/></svg>
+                        </div>
+                        <div><p class="text-sm font-semibold text-white">Clear, honest communication</p><p class="text-xs text-violet-300 mt-0.5">You'll always know what's happening with your project. We reply fast and explain things in plain English.</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex h-6 w-6 items-center justify-center rounded-full flex-shrink-0 mt-0.5" style="background:rgba(168,85,247,.2);">
+                            <svg class="h-3 w-3 text-violet-300" fill="currentColor" viewBox="0 0 12 12"><path d="M10 3L5 9 2 6l-1 1 4 4 6-8z"/></svg>
+                        </div>
+                        <div><p class="text-sm font-semibold text-white">Pricing that makes sense</p><p class="text-xs text-violet-300 mt-0.5">We give you a clear price before we start. No surprise invoices halfway through the project.</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex h-6 w-6 items-center justify-center rounded-full flex-shrink-0 mt-0.5" style="background:rgba(168,85,247,.2);">
+                            <svg class="h-3 w-3 text-violet-300" fill="currentColor" viewBox="0 0 12 12"><path d="M10 3L5 9 2 6l-1 1 4 4 6-8z"/></svg>
+                        </div>
+                        <div><p class="text-sm font-semibold text-white">The right team for your project</p><p class="text-xs text-violet-300 mt-0.5">We don't give you a junior team with a senior price tag. Every project gets experienced engineers and designers.</p></div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="flex h-6 w-6 items-center justify-center rounded-full flex-shrink-0 mt-0.5" style="background:rgba(168,85,247,.2);">
+                            <svg class="h-3 w-3 text-violet-300" fill="currentColor" viewBox="0 0 12 12"><path d="M10 3L5 9 2 6l-1 1 4 4 6-8z"/></svg>
+                        </div>
+                        <div><p class="text-sm font-semibold text-white">We focus on business results</p><p class="text-xs text-violet-300 mt-0.5">A beautiful product that doesn't solve your problem is useless. We keep your actual goals in mind, always.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <div class="rounded-2xl p-5" style="background:rgba(255,255,255,.04);border:1px solid rgba(168,85,247,.2);">
+                    <p class="text-sm text-violet-100 leading-relaxed italic">"The best software projects aren't just about writing code. They're about understanding the problem first, then building the simplest thing that solves it properly."</p>
+                    <p class="mt-3 text-xs font-semibold text-violet-400">— Kiyomi Group, Engineering Philosophy</p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="rounded-2xl p-5 text-center" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <p class="text-2xl font-bold text-white">100%</p>
+                        <p class="text-xs text-violet-300 mt-1">Client-owned code — it's yours forever</p>
+                    </div>
+                    <div class="rounded-2xl p-5 text-center" style="background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);">
+                        <p class="text-2xl font-bold text-white">0</p>
+                        <p class="text-xs text-violet-300 mt-1">Hidden fees or surprise costs</p>
+                    </div>
+                    <div class="rounded-2xl p-5 text-center" style="background:rgba(168,85,247,.08);border:1px solid rgba(168,85,247,.2);">
+                        <p class="text-2xl font-bold text-white">24hr</p>
+                        <p class="text-xs text-violet-300 mt-1">Response time on all client queries</p>
+                    </div>
+                    <div class="rounded-2xl p-5 text-center" style="background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);">
+                        <p class="text-2xl font-bold text-white">Weekly</p>
+                        <p class="text-xs text-violet-300 mt-1">Progress updates — always in the loop</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA
+═══════════════════════════════════════ -->
+<section id="cta" style="background:#050509;padding:80px 0;border-top:1px solid rgba(168,85,247,.1);overflow:hidden;position:relative;">
+    <div class="pointer-events-none absolute inset-0">
+        <div style="position:absolute;top:20%;left:50%;width:600px;height:400px;background:radial-gradient(circle,rgba(168,85,247,.12),transparent 70%);border-radius:50%;transform:translateX(-50%);"></div>
+    </div>
+    <div class="relative mx-auto max-w-3xl px-4 sm:px-6 text-center">
+        <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-6" style="background:rgba(168,85,247,.15);color:#C4B5FD;">Ready to build?</span>
+        <h2 class="text-2xl font-bold tracking-tight text-white sm:text-3xl md:text-4xl leading-snug">
+            Have a project in mind?<br>Let's talk about it.
+        </h2>
+        <p class="mt-4 text-sm text-violet-200 max-w-xl mx-auto leading-relaxed">
+            It costs nothing to have a conversation. Book a free 20-minute call and tell us what you're building. We'll be honest about whether we're the right fit — and what it would take to get it done.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button type="button" data-open-consult
+                class="inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold text-white transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_40px_rgba(168,85,247,.4)]"
+                style="background:linear-gradient(135deg,#A855F7,#6366F1);">
+                📅 Book a Free Discovery Call
+            </button>
+            <button type="button" data-open-consult
+                class="inline-flex items-center gap-2 rounded-full border border-violet-400/40 px-7 py-3.5 text-sm font-semibold text-violet-200 hover:border-violet-300 hover:text-white transition-colors">
+                📩 Send us your project details
+            </button>
+        </div>
+        <p class="mt-6 text-xs text-violet-500">No commitment. No sales pressure. Just a conversation.</p>
+    </div>
+</section>
+
 
 <!-- TUTORIALS -->
 <section id="tutorials" style="background:linear-gradient(135deg,#0d001f 0%,#1a0035 60%,#0d001f 100%);padding:80px 0;border-top:1px solid rgba(168,85,247,.15);border-bottom:1px solid rgba(168,85,247,.15);position:relative;overflow:hidden;">
@@ -292,9 +531,10 @@
     <div class="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-6">
         <div><p class="font-bold text-white text-sm">Kiyomi Group</p><p class="text-xs text-violet-400 mt-0.5">Isheri - Olofin, Lagos, Nigeria • +234-707-0778-027</p></div>
         <div class="flex flex-wrap items-center gap-4 text-xs">
+            <a href="#about"     class="text-violet-300 hover:text-white">About</a>
+            <a href="#services"  class="text-violet-300 hover:text-white">Services</a>
             <a href="#portfolio" class="text-violet-300 hover:text-white">Portfolio</a>
-            <a href="#playbook"  class="text-violet-300 hover:text-white">Playbook</a>
-            <a href="#stack"     class="text-violet-300 hover:text-white">Tech Stack</a>
+            <a href="#process"   class="text-violet-300 hover:text-white">How We Work</a>
             <a href="#tutorials" class="text-violet-300 hover:text-white">Tutorials</a>
             <button type="button" data-open-consult class="rounded-full px-4 py-2 font-semibold text-white border border-violet-500/50 hover:border-violet-400 hover:bg-violet-500/20 transition-colors">Book a Consultation</button>
         </div>
@@ -306,15 +546,15 @@
 <div id="consult-modal" class="modal-overlay">
     <div class="relative w-full max-w-md rounded-2xl bg-white p-6 shadow-2xl sm:p-7" style="max-height:90vh;overflow-y:auto;">
         <button onclick="closeConsultModal()" class="absolute right-3 top-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-slate-700"><svg class="h-3.5 w-3.5" viewBox="0 0 14 14"><path d="M3 3l8 8m0-8L3 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
-        <h2 class="text-lg font-bold text-slate-900">Let's validate your roadmap.</h2>
-        <p class="mt-2 text-sm text-slate-600">Book a 20-minute technical discovery call to discuss your product stage, compliance requirements, and engineering hurdles.</p>
+        <h2 class="text-lg font-bold text-slate-900">Let's talk about your project.</h2>
+        <p class="mt-2 text-sm text-slate-600">Tell us a bit about your idea. We'll reply within 24 hours and set up a free 20-minute call to explore it together — no pressure, no jargon.</p>
         <div class="mt-5 space-y-4 text-sm">
             <div><label class="mb-1 block font-semibold text-slate-800">Name</label><input type="text" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Jane Doe"></div>
             <div><label class="mb-1 block font-semibold text-slate-800">Work Email</label><input type="email" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="you@company.com"></div>
             <div><label class="mb-1 block font-semibold text-slate-800">Industry</label><select class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm"><option>Health</option><option>Fintech</option><option>Compliance</option><option>Other</option></select></div>
             <div><label class="mb-1 block font-semibold text-slate-800">Product Stage</label><select class="block w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 shadow-sm"><option>Early</option><option>Growth</option><option>Scaling</option></select></div>
-            <button onclick="closeConsultModal()" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">Book a Strategy Consultation</button>
-            <p class="text-[11px] leading-relaxed text-slate-500">We'll review your details and follow up with a scheduling link. No marketing lists, no noise.</p>
+            <button onclick="closeConsultModal()" class="mt-2 inline-flex w-full items-center justify-center rounded-full bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700">Send My Project Details</button>
+            <p class="text-[11px] leading-relaxed text-slate-500">We respond within 24 hours. No spam, no pushy follow-ups — just a genuine reply from our team.</p>
             <button onclick="closeConsultModal()" class="w-full pt-1 text-center text-xs text-slate-400 hover:text-slate-600">Not now</button>
         </div>
     </div>
