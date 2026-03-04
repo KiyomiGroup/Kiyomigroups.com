@@ -6,14 +6,14 @@
     <title>Vibe Coding Tutorial – Kiyomi Tutorials</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        sans: ['Poppins', 'system-ui', 'sans-serif'],
                         display: ['Syne', 'sans-serif'],
                     },
                     colors: {
@@ -569,6 +569,7 @@
                     <div class="rounded-2xl p-7" style="background:rgba(255,255,255,0.04); border:1px solid rgba(168,85,247,0.25);">
                         <h3 class="text-white font-semibold text-lg mb-6">Reserve your seat</h3>
                         <div id="enroll-form" class="space-y-4">
+<form id="enroll-ajax-form" action="https://formspree.io/f/xaqdrkoq" method="POST">
                             <div>
                                 <label class="block text-xs font-semibold text-slate-300 mb-1.5">Full Name *</label>
                                 <input type="text" placeholder="Jane Doe"
@@ -714,5 +715,52 @@
         }
     })();
     </script>
+
+<script>
+// Poppins font
+(function(){
+    if(!document.querySelector('link[href*="Poppins"]')){
+        var l=document.createElement('link');
+        l.rel='stylesheet';
+        l.href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap';
+        document.head.appendChild(l);
+    }
+    document.body.style.fontFamily="'Poppins',system-ui,sans-serif";
+})();
+
+// Formspree AJAX submit — stays on page, shows confirmation
+(function(){
+    function initForm(){
+        var form = document.getElementById('enroll-ajax-form');
+        if(!form) return;
+        form.addEventListener('submit', function(e){
+            e.preventDefault();
+            var btn = form.querySelector('button[type="submit"]');
+            if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
+            var data = new FormData(form);
+            fetch(form.action, {
+                method:'POST',
+                body:data,
+                headers:{'Accept':'application/json'}
+            }).then(function(r){
+                if(r.ok){
+                    document.getElementById('enroll-form').classList.add('hidden');
+                    document.getElementById('enroll-success').classList.remove('hidden');
+                } else {
+                    if(btn){ btn.disabled=false; btn.textContent='Try Again'; }
+                    alert('Something went wrong. Please try again.');
+                }
+            }).catch(function(){
+                if(btn){ btn.disabled=false; btn.textContent='Try Again'; }
+                alert('Network error. Please check your connection.');
+            });
+        });
+    }
+    if(document.readyState==='loading'){
+        document.addEventListener('DOMContentLoaded',initForm);
+    } else { initForm(); }
+})();
+</script>
+
 </body>
 </html>
