@@ -248,46 +248,10 @@
         </div>
         <div style="border-top:1px solid rgba(99,102,241,.12);padding:1rem 0;text-align:center;"><span class="text-xs" style="color:#6366F1;">© <span id="year"></span> Kiyomi Group · Kiyomi Tutorials.</span></div>
     </footer>
-    <script>
-        document.getElementById('year').textContent=new Date().getFullYear();
-        const nav=document.querySelector('[data-nav]');
-        window.addEventListener('scroll',()=>nav.classList.toggle('shadow-sm',window.scrollY>8));
-        const t=document.querySelector('[data-nav-toggle]'),m=document.querySelector('[data-nav-menu]');
-        if(t&&m){t.addEventListener('click',()=>{const o=!m.classList.contains('hidden');m.classList.toggle('hidden',o);document.body.classList.toggle('overflow-hidden',!o)});}
-    </script>
+    
 
-    <script>
-    // Click-based dropdown
-    (function() {
-        function initDropdown() {
-            var btns = document.querySelectorAll('.tut-drop-btn');
-            btns.forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    var menu = btn.nextElementSibling;
-                    var isOpen = menu.style.display === 'block';
-                    // Close all
-                    document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
-                    document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
-                    if (!isOpen) {
-                        menu.style.display = 'block';
-                        var caret = btn.querySelector('.caret');
-                        if(caret) caret.style.transform = 'rotate(180deg)';
-                    }
-                });
-            });
-            document.addEventListener('click', function() {
-                document.querySelectorAll('.tmenu').forEach(function(m){ m.style.display='none'; });
-                document.querySelectorAll('.tut-drop-btn .caret').forEach(function(c){ c.style.transform='rotate(0deg)'; });
-            });
-        }
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initDropdown);
-        } else {
-            initDropdown();
-        }
-    })();
-    </script>
+    
+
 
 
 
@@ -317,7 +281,7 @@
                 }
             }).catch(function(){
                 if(btn){ btn.disabled=false; btn.textContent='Try Again'; }
-                alert('Network error. Please check your connection and try again.');
+                alert('Network error. Please check your connection.');
             });
         });
     }
@@ -326,38 +290,43 @@
     } else { initForm(); }
 })();
 
-    // ── NAV SCROLL ──
-    const nav = document.querySelector('[data-nav]');
-    if(nav) window.addEventListener('scroll', () => nav.classList.toggle('shadow-sm', window.scrollY > 8));
-    // ── MOBILE NAV ──
-    const navToggle = document.querySelector('[data-nav-toggle]');
-    const navMenu   = document.querySelector('[data-nav-menu]');
-    if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            const isOpen = !navMenu.classList.contains('hidden');
-            navMenu.classList.toggle('hidden', isOpen);
-            document.body.classList.toggle('overflow-hidden', !isOpen);
-        });
-        navMenu.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+// ── NAV SCROLL ──
+var navEl = document.querySelector('[data-nav]');
+if(navEl) window.addEventListener('scroll', function(){ navEl.classList.toggle('shadow-sm', window.scrollY > 8); });
+// ── MOBILE NAV ──
+var navToggle = document.querySelector('[data-nav-toggle]');
+var navMenu   = document.querySelector('[data-nav-menu]');
+if(navToggle && navMenu){
+    navToggle.addEventListener('click', function(){
+        var isOpen = !navMenu.classList.contains('hidden');
+        navMenu.classList.toggle('hidden', isOpen);
+        document.body.classList.toggle('overflow-hidden', !isOpen);
+    });
+    navMenu.querySelectorAll('a').forEach(function(l){
+        l.addEventListener('click', function(){
             navMenu.classList.add('hidden');
             document.body.classList.remove('overflow-hidden');
-        }));
-    }
-    // ── DROPDOWN ──
-    function toggleDrop(menuId, caretId, e) {
-        e.stopPropagation();
-        const menu  = document.getElementById(menuId);
-        const caret = document.getElementById(caretId);
-        if(!menu || !caret) return;
-        const isOpen = menu.classList.contains('open');
-        document.querySelectorAll('.drop-menu').forEach(m => m.classList.remove('open'));
-        document.querySelectorAll('[id$="-caret"]').forEach(c => c.style.transform = 'rotate(0deg)');
-        if (!isOpen) { menu.classList.add('open'); caret.style.transform = 'rotate(180deg)'; }
-    }
-    document.addEventListener('click', () => {
-        document.querySelectorAll('.drop-menu').forEach(m => m.classList.remove('open'));
-        document.querySelectorAll('[id$="-caret"]').forEach(c => c.style.transform = 'rotate(0deg)');
+        });
     });
+}
+// ── DROPDOWN ──
+function toggleDrop(menuId, caretId, e) {
+    e.stopPropagation();
+    var menu  = document.getElementById(menuId);
+    var caret = document.getElementById(caretId);
+    if(!menu || !caret) return;
+    var isOpen = menu.classList.contains('open');
+    document.querySelectorAll('.drop-menu').forEach(function(m){ m.classList.remove('open'); });
+    document.querySelectorAll('[id$="-caret"]').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+    if(!isOpen){ menu.classList.add('open'); caret.style.transform='rotate(180deg)'; }
+}
+document.addEventListener('click', function(){
+    document.querySelectorAll('.drop-menu').forEach(function(m){ m.classList.remove('open'); });
+    document.querySelectorAll('[id$="-caret"]').forEach(function(c){ c.style.transform='rotate(0deg)'; });
+});
+// Year
+var yr = document.getElementById('year');
+if(yr) yr.textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
