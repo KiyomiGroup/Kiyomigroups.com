@@ -9,351 +9,217 @@
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>tailwind.config={theme:{extend:{fontFamily:{display:['Syne','system-ui','sans-serif'],sans:['DM Sans','system-ui','sans-serif']},colors:{brand:'#7C3AED','brand-light':'#A78BFA'}}}}</script>
-    <style>
-        /* ─── THEME VARIABLES ─── */
+        <style>
         :root {
-            --page-bg: #08060f;
-            --surface: #0f0b1a;
-            --surface2: #150f22;
-            --text-primary: #e2ddf0;
-            --text-secondary: #a09ab8;
-            --text-muted: #6b6480;
-            --glass-bg: rgba(255,255,255,0.07);
-            --glass-border: rgba(255,255,255,0.13);
-            --glass-shadow: 0 8px 32px rgba(0,0,0,0.4);
-            --neo-out: 6px 6px 16px rgba(0,0,0,0.55), -4px -4px 10px rgba(255,255,255,0.04);
-            --neo-in: inset 4px 4px 10px rgba(0,0,0,0.5), inset -3px -3px 8px rgba(255,255,255,0.04);
-            --hr-color: rgba(167,139,250,0.3);
-            --nav-bg: rgba(8,6,15,0.80);
-            --nav-scrolled-bg: rgba(8,6,15,0.95);
-            --card-bg: linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
-            --card-border: rgba(255,255,255,0.08);
-            --footer-bg: linear-gradient(180deg,#08060f 0%,#04030a 100%);
-            --footer-border: rgba(255,255,255,0.06);
-            --badge-bg: rgba(124,58,237,0.18);
-            --badge-border: rgba(167,139,250,0.25);
-            --badge-color: #c4b5fd;
-            --input-bg: #150f22;
-            --input-border: rgba(255,255,255,0.08);
-            --modal-bg: linear-gradient(145deg,#1a1330,#120e22);
-            --modal-border: rgba(167,139,250,0.2);
-            --port-card-bg: rgba(255,255,255,0.04);
-            --port-card-border: rgba(255,255,255,0.07);
-            --stat-bg: #150f22;
+            --page-bg:#08060f;--surface:#0f0b1a;--surface2:#150f22;
+            --text-primary:#e2ddf0;--text-secondary:#a09ab8;--text-muted:#6b6480;
+            --glass-bg:rgba(255,255,255,0.07);--glass-border:rgba(255,255,255,0.13);
+            --glass-shadow:0 8px 32px rgba(0,0,0,0.4);
+            --neo-out:6px 6px 16px rgba(0,0,0,0.55),-4px -4px 10px rgba(255,255,255,0.04);
+            --neo-in:inset 4px 4px 10px rgba(0,0,0,0.5),inset -3px -3px 8px rgba(255,255,255,0.04);
+            --hr-color:rgba(167,139,250,0.3);--nav-bg:rgba(8,6,15,0.80);
+            --nav-scrolled-bg:rgba(8,6,15,0.95);
+            --card-bg:linear-gradient(145deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));
+            --card-border:rgba(255,255,255,0.08);
+            --footer-bg:linear-gradient(180deg,#08060f 0%,#04030a 100%);
+            --footer-border:rgba(255,255,255,0.06);
+            --badge-bg:rgba(124,58,237,0.18);--badge-border:rgba(167,139,250,0.25);--badge-color:#c4b5fd;
+            --input-bg:#150f22;--input-border:rgba(255,255,255,0.08);
+            --modal-bg:linear-gradient(145deg,#1a1330,#120e22);--modal-border:rgba(167,139,250,0.2);
+            --stat-bg:#150f22;--drop-bg:#1a1230;--drop-item-hover:rgba(255,255,255,0.08);
+            --nav-link-color:#94a3b8;--nav-link-hover:#fff;
         }
-
-        /* ─── LIGHT MODE ─── */
         body.light {
-            --page-bg: #f8f6ff;
-            --surface: #ede9fe;
-            --surface2: #f3f0ff;
-            --text-primary: #1a1033;
-            --text-secondary: #4b4465;
-            --text-muted: #8b7fb3;
-            --glass-bg: rgba(255,255,255,0.65);
-            --glass-border: rgba(124,58,237,0.15);
-            --glass-shadow: 0 8px 32px rgba(124,58,237,0.1);
-            --neo-out: 6px 6px 16px rgba(167,139,250,0.25), -4px -4px 10px rgba(255,255,255,0.9);
-            --neo-in: inset 4px 4px 10px rgba(167,139,250,0.15), inset -3px -3px 8px rgba(255,255,255,0.8);
-            --hr-color: rgba(124,58,237,0.2);
-            --nav-bg: rgba(248,246,255,0.85);
-            --nav-scrolled-bg: rgba(248,246,255,0.97);
-            --card-bg: linear-gradient(145deg,rgba(255,255,255,0.9),rgba(237,233,254,0.5));
-            --card-border: rgba(124,58,237,0.12);
-            --footer-bg: linear-gradient(180deg,#f8f6ff 0%,#ede9fe 100%);
-            --footer-border: rgba(124,58,237,0.15);
-            --badge-bg: rgba(124,58,237,0.1);
-            --badge-border: rgba(124,58,237,0.2);
-            --badge-color: #6d28d9;
-            --input-bg: #fff;
-            --input-border: rgba(124,58,237,0.2);
-            --modal-bg: linear-gradient(145deg,#ffffff,#f3f0ff);
-            --modal-border: rgba(124,58,237,0.2);
-            --port-card-bg: rgba(255,255,255,0.8);
-            --port-card-border: rgba(124,58,237,0.12);
-            --stat-bg: #fff;
+            --page-bg:#f5f3ff;--surface:#ede9fe;--surface2:#f3f0ff;
+            --text-primary:#1a1033;--text-secondary:#4b4465;--text-muted:#7c6fa0;
+            --glass-bg:rgba(255,255,255,0.75);--glass-border:rgba(124,58,237,0.18);
+            --glass-shadow:0 8px 32px rgba(124,58,237,0.1);
+            --neo-out:4px 4px 12px rgba(124,58,237,0.15),-4px -4px 12px rgba(255,255,255,0.95);
+            --neo-in:inset 3px 3px 8px rgba(124,58,237,0.12),inset -3px -3px 8px rgba(255,255,255,0.9);
+            --hr-color:rgba(124,58,237,0.2);--nav-bg:rgba(245,243,255,0.92);
+            --nav-scrolled-bg:rgba(245,243,255,0.99);
+            --card-bg:linear-gradient(145deg,rgba(255,255,255,0.95),rgba(237,233,254,0.6));
+            --card-border:rgba(124,58,237,0.15);
+            --footer-bg:linear-gradient(180deg,#ede9fe 0%,#ddd6fe 100%);
+            --footer-border:rgba(124,58,237,0.2);
+            --badge-bg:rgba(124,58,237,0.12);--badge-border:rgba(124,58,237,0.25);--badge-color:#6d28d9;
+            --input-bg:#fff;--input-border:rgba(124,58,237,0.25);
+            --modal-bg:linear-gradient(145deg,#ffffff,#f3f0ff);--modal-border:rgba(124,58,237,0.25);
+            --stat-bg:#fff;--drop-bg:#fff;--drop-item-hover:rgba(124,58,237,0.08);
+            --nav-link-color:#4b4465;--nav-link-hover:#1a1033;
         }
-
-        * { box-sizing:border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
-        body {
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{
             font-family:'DM Sans',system-ui,sans-serif;
             background-color:var(--page-bg);
             color:var(--text-primary);
-            line-height:1.6;
-            -webkit-font-smoothing:antialiased;
-            transition: background-color 0.4s ease, color 0.4s ease;
+            line-height:1.6;-webkit-font-smoothing:antialiased;
+            transition:background-color .4s ease,color .4s ease;
         }
-        body::before {
+        body::before{
             content:'';position:fixed;inset:0;
             background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
-            pointer-events:none;z-index:999;opacity:0.4;
+            pointer-events:none;z-index:999;opacity:.4;
         }
-        body.light::before { opacity:0.12; }
+        body.light::before{opacity:.08}
 
-        /* ─── GLASS ─── */
-        .glass {
-            background:var(--glass-bg);
-            backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-            border:1px solid var(--glass-border);
-            box-shadow:var(--glass-shadow);
-            transition: background 0.4s, border-color 0.4s, box-shadow 0.4s;
-        }
-        .glass-strong {
-            background:rgba(255,255,255,0.1);
-            backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
-            border:1px solid rgba(255,255,255,0.18);
-            box-shadow:0 12px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.1);
-            transition: background 0.4s, border-color 0.4s;
-        }
-        body.light .glass-strong {
-            background:rgba(255,255,255,0.7);
-            border:1px solid rgba(124,58,237,0.18);
-            box-shadow:0 12px 40px rgba(124,58,237,0.1),inset 0 1px 0 rgba(255,255,255,0.9);
-        }
+        /* GLASS */
+        .glass{background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--glass-border);box-shadow:var(--glass-shadow);transition:background .4s,border-color .4s,box-shadow .4s}
+        .glass-strong{background:rgba(255,255,255,0.10);backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);border:1px solid rgba(255,255,255,0.18);box-shadow:0 12px 40px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.1);transition:background .4s,border-color .4s,box-shadow .4s}
+        body.light .glass-strong{background:rgba(255,255,255,0.85);border:1px solid rgba(124,58,237,0.2);box-shadow:0 8px 30px rgba(124,58,237,0.1),inset 0 1px 0 rgba(255,255,255,1)}
 
-        /* ─── NEOMORPHIC ─── */
-        .neo { background:var(--surface);box-shadow:var(--neo-out);border:1px solid var(--card-border); transition:all 0.4s; }
-        .neo-inset { background:var(--surface);box-shadow:var(--neo-in); transition:all 0.4s; }
+        /* NEO */
+        .neo{background:var(--surface);box-shadow:var(--neo-out);border:1px solid var(--card-border);transition:all .4s}
+        .neo-inset{background:var(--surface);box-shadow:var(--neo-in);transition:all .4s}
 
-        /* ─── GRADIENT TEXT ─── */
-        .grad-text {
-            background:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 40%,#7c3aed 100%);
-            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-        }
-        body.light .grad-text {
-            background:linear-gradient(135deg,#6d28d9 0%,#7c3aed 50%,#a855f7 100%);
-            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-        }
+        /* TEXT */
+        .grad-text{background:linear-gradient(135deg,#c4b5fd 0%,#a78bfa 40%,#7c3aed 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        body.light .grad-text{background:linear-gradient(135deg,#6d28d9 0%,#7c3aed 50%,#a855f7 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-        /* ─── BADGE ─── */
-        .badge {
-            background:var(--badge-bg);border:1px solid var(--badge-border);color:var(--badge-color);
-            font-size:0.7rem;font-family:'Syne',sans-serif;letter-spacing:0.12em;
-            text-transform:uppercase;padding:4px 12px;border-radius:999px;
-            transition:all 0.4s;
-        }
+        /* LIGHT MODE FULL TEXT OVERRIDES - hits every hardcoded Tailwind text colour */
+        body.light .text-white{color:#1a1033!important}
+        body.light .text-slate-100{color:#2d1f4e!important}
+        body.light .text-slate-200{color:#3d2d5c!important}
+        body.light .text-slate-300{color:#4b3d6e!important}
+        body.light .text-slate-400{color:#6b5f8a!important}
+        body.light .text-slate-500{color:#8878a8!important}
+        body.light .text-slate-600{color:#9e90ba!important}
+        body.light .text-purple-200{color:#5b21b6!important}
+        body.light .text-purple-300{color:#6d28d9!important}
+        body.light .text-purple-400{color:#7c3aed!important}
+        body.light .border-white\/5{border-color:rgba(124,58,237,0.08)!important}
 
-        /* ─── NAV ─── */
-        .nav-glass {
-            background:var(--nav-bg);
-            backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
-            border-bottom:1px solid var(--glass-border);
-            transition:box-shadow 0.3s ease,background 0.3s ease,border-color 0.3s;
-        }
-        .nav-scrolled { background:var(--nav-scrolled-bg);box-shadow:0 4px 30px rgba(0,0,0,0.3);border-bottom-color:rgba(124,58,237,0.25); }
-        body.light .nav-scrolled { box-shadow:0 4px 20px rgba(124,58,237,0.12); }
+        /* BADGE */
+        .badge{background:var(--badge-bg);border:1px solid var(--badge-border);color:var(--badge-color);font-size:.7rem;font-family:'Syne',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:999px;transition:all .4s}
 
-        /* ─── DARK/LIGHT MODE TOGGLE ─── */
-        .theme-toggle {
-            display:flex;align-items:center;justify-content:center;gap:6px;
-            background:var(--glass-bg);border:1px solid var(--glass-border);
-            border-radius:999px;padding:5px 12px;cursor:pointer;
-            font-size:0.75rem;font-weight:600;color:var(--text-secondary);
-            transition:all 0.25s ease;white-space:nowrap;
-        }
-        .theme-toggle:hover { background:rgba(124,58,237,0.15);border-color:rgba(167,139,250,0.4);color:var(--text-primary); }
+        /* NAV */
+        .nav-glass{background:var(--nav-bg);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-bottom:1px solid var(--glass-border);transition:box-shadow .3s,background .3s,border-color .3s}
+        .nav-scrolled{background:var(--nav-scrolled-bg)!important;box-shadow:0 4px 24px rgba(0,0,0,0.25);border-bottom-color:rgba(124,58,237,0.25)}
+        body.light .nav-scrolled{box-shadow:0 4px 16px rgba(124,58,237,0.12)}
 
-        /* ─── DROPDOWN ─── */
-        .drop-menu {
-            display:none;position:absolute;top:calc(100% + 10px);right:0;
-            min-width:220px;border-radius:16px;overflow:hidden;z-index:100;
-        }
-        .drop-menu.open { display:block;animation:fadeDown 0.18s ease; }
-        @keyframes fadeDown { from{opacity:0;transform:translateY(-8px)} to{opacity:1;transform:translateY(0)} }
+        /* NAV LINKS - use var so light mode works */
+        .nav-link{color:var(--nav-link-color);transition:color .2s}
+        .nav-link:hover{color:var(--nav-link-hover)}
+        .nav-link.active{color:#7c3aed;font-weight:600}
+        body.light .nav-link.active{color:#6d28d9}
 
-        /* ─── BUTTONS ─── */
-        .btn-primary {
-            background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;
-            border:1px solid rgba(167,139,250,0.3);
-            box-shadow:0 4px 24px rgba(124,58,237,0.45),inset 0 1px 0 rgba(255,255,255,0.15);
-            transition:all 0.25s ease;
-        }
-        .btn-primary:hover { transform:translateY(-2px);box-shadow:0 8px 32px rgba(124,58,237,0.65); }
-        .btn-ghost {
-            background:var(--glass-bg);color:#c4b5fd;
-            border:1px solid rgba(167,139,250,0.25);
-            backdrop-filter:blur(8px);transition:all 0.25s ease;
-        }
-        body.light .btn-ghost { color:#6d28d9;border-color:rgba(124,58,237,0.3); }
-        .btn-ghost:hover { background:rgba(124,58,237,0.18);border-color:rgba(167,139,250,0.5);transform:translateY(-1px); }
+        /* THEME TOGGLE */
+        .theme-toggle{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:999px;padding:5px 12px;cursor:pointer;font-size:.75rem;font-weight:600;color:var(--text-secondary);transition:all .25s ease;white-space:nowrap}
+        .theme-toggle:hover{background:rgba(124,58,237,0.12);border-color:rgba(167,139,250,0.35);color:var(--text-primary)}
 
-        /* ─── CARDS ─── */
-        .phase-card {
-            background:var(--card-bg);border:1px solid var(--card-border);
-            box-shadow:0 12px 40px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.05);
-            transition:all 0.3s ease;
-        }
-        body.light .phase-card { box-shadow:0 4px 20px rgba(124,58,237,0.08); }
-        .phase-card:hover { border-color:rgba(167,139,250,0.35);transform:translateY(-4px);box-shadow:0 20px 50px rgba(0,0,0,0.4),0 0 30px rgba(124,58,237,0.15); }
-        body.light .phase-card:hover { box-shadow:0 12px 40px rgba(124,58,237,0.15); }
+        /* DROPDOWN - uses CSS var for bg */
+        .drop-menu{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:230px;border-radius:16px;overflow:hidden;z-index:100;background:var(--drop-bg);border:1px solid var(--glass-border);box-shadow:0 16px 48px rgba(0,0,0,0.4);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}
+        .drop-menu.open{display:block;animation:fadeDown .18s ease}
+        @keyframes fadeDown{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+        .drop-item{display:flex;align-items:center;gap:8px;padding:9px 14px;font-size:.875rem;color:var(--text-primary);transition:background .15s,color .15s;cursor:pointer;text-decoration:none}
+        .drop-item:hover{background:var(--drop-item-hover);color:var(--nav-link-hover)}
+        .drop-label{font-size:.65rem;font-family:'Syne',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#7c3aed;padding:10px 14px 6px;font-weight:700}
 
-        .service-card {
-            background:var(--card-bg);border:1px solid var(--card-border);
-            box-shadow:var(--neo-out);transition:all 0.3s ease;
-        }
-        .service-card:hover { border-color:rgba(124,58,237,0.3);transform:translateY(-3px); }
+        /* BUTTONS — NO glow shadows, white text always */
+        .btn-primary{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff!important;border:1px solid rgba(167,139,250,0.3);transition:all .25s ease;box-shadow:none}
+        .btn-primary:hover{transform:translateY(-2px);background:linear-gradient(135deg,#8b5cf6,#7c3aed);box-shadow:none}
+        .btn-ghost{background:var(--glass-bg);color:var(--badge-color);border:1px solid var(--glass-border);backdrop-filter:blur(8px);transition:all .25s ease;box-shadow:none}
+        body.light .btn-ghost{color:#6d28d9;background:rgba(124,58,237,0.08);border-color:rgba(124,58,237,0.25)}
+        .btn-ghost:hover{background:rgba(124,58,237,0.15);border-color:rgba(124,58,237,0.4);transform:translateY(-1px)}
 
-        .port-card {
-            background:var(--port-card-bg);border:1px solid var(--port-card-border);
-            box-shadow:0 8px 30px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.05);
-            transition:all 0.3s ease;display:block;text-decoration:none;
-        }
-        body.light .port-card { box-shadow:0 4px 20px rgba(124,58,237,0.08); }
-        .port-card:hover { border-color:rgba(167,139,250,0.35);transform:translateY(-4px);box-shadow:0 16px 50px rgba(0,0,0,0.4),0 0 30px rgba(124,58,237,0.15); }
+        /* CARDS */
+        .card{background:var(--card-bg);border:1px solid var(--card-border);box-shadow:0 4px 20px rgba(0,0,0,0.2);transition:all .3s ease}
+        body.light .card{box-shadow:0 2px 12px rgba(124,58,237,0.07)}
+        .card-hover:hover{border-color:rgba(124,58,237,0.3);transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,0.2),0 0 20px rgba(124,58,237,0.08)}
+        .stat-box{background:var(--stat-bg);box-shadow:var(--neo-out);border:1px solid var(--card-border);transition:all .4s}
+        .step-circle{background:linear-gradient(135deg,rgba(124,58,237,0.25),rgba(109,40,217,0.1));border:1px solid rgba(167,139,250,0.25);box-shadow:none}
 
-        .tut-card {
-            background:var(--card-bg);border:1px solid var(--card-border);
-            box-shadow:0 8px 32px rgba(0,0,0,0.35),inset 0 1px 0 rgba(255,255,255,0.04);
-            transition:all 0.3s ease;display:block;text-decoration:none;
-        }
-        body.light .tut-card { box-shadow:0 4px 20px rgba(124,58,237,0.08); }
-        .tut-card:hover { border-color:rgba(167,139,250,0.35);transform:translateY(-5px);box-shadow:0 16px 50px rgba(0,0,0,0.4),0 0 30px rgba(124,58,237,0.18); }
+        /* FORM INPUTS */
+        .neo-input{background:var(--input-bg);border:1px solid var(--input-border);color:var(--text-primary);transition:all .2s ease;width:100%;box-shadow:none}
+        body.light .neo-input{box-shadow:inset 1px 1px 4px rgba(124,58,237,0.08)}
+        .neo-input::placeholder{color:var(--text-muted)}
+        .neo-input:focus{outline:none;border-color:rgba(124,58,237,0.5);box-shadow:0 0 0 3px rgba(124,58,237,0.12)}
 
-        .stat-neo { background:var(--stat-bg);box-shadow:var(--neo-out);border:1px solid var(--card-border);transition:all 0.4s; }
-        .step-num { background:linear-gradient(135deg,rgba(124,58,237,0.3),rgba(109,40,217,0.15));border:1px solid rgba(167,139,250,0.3);box-shadow:0 4px 16px rgba(124,58,237,0.3),inset 0 1px 0 rgba(255,255,255,0.1); }
+        /* MODAL */
+        .modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;opacity:0;pointer-events:none;transition:opacity .25s ease}
+        body.light .modal-overlay{background:rgba(80,60,140,0.45)}
+        .modal-overlay.active{opacity:1;pointer-events:auto}
+        .modal-box{background:var(--modal-bg);border:1px solid var(--modal-border);box-shadow:0 32px 80px rgba(0,0,0,0.6);border-radius:24px;width:100%;max-width:480px;position:relative;max-height:90vh;overflow-y:auto;transition:background .4s,border-color .4s}
+        body.light .modal-box{box-shadow:0 16px 48px rgba(124,58,237,0.18)}
 
-        /* ─── FORM ─── */
-        .neo-input {
-            background:var(--input-bg);border:1px solid var(--input-border);
-            box-shadow:var(--neo-in);color:var(--text-primary);transition:all 0.2s ease;
-            width:100%;
-        }
-        .neo-input::placeholder { color:var(--text-muted); }
-        .neo-input:focus { outline:none;border-color:rgba(124,58,237,0.5);box-shadow:var(--neo-in),0 0 0 3px rgba(124,58,237,0.15); }
+        /* DIVIDERS */
+        .hr-glow{border:none;height:1px;background:linear-gradient(90deg,transparent,var(--hr-color),transparent)}
+        .section-glow{position:relative}
+        .section-glow::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(124,58,237,0.06) 0%,transparent 70%);pointer-events:none}
+        .orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+        .footer-glass{background:var(--footer-bg);border-top:1px solid var(--footer-border);transition:background .4s,border-color .4s}
 
-        /* ─── MODAL ─── */
-        .modal-overlay {
-            position:fixed;inset:0;background:rgba(0,0,0,0.75);
-            backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-            z-index:200;display:flex;align-items:center;justify-content:center;padding:1rem;
-            opacity:0;pointer-events:none;transition:opacity 0.25s ease;
-        }
-        body.light .modal-overlay { background:rgba(100,80,150,0.4); }
-        .modal-overlay.active { opacity:1;pointer-events:auto; }
-        .modal-box {
-            background:var(--modal-bg);border:1px solid var(--modal-border);
-            box-shadow:0 40px 100px rgba(0,0,0,0.7),0 0 60px rgba(124,58,237,0.12),inset 0 1px 0 rgba(255,255,255,0.07);
-            border-radius:24px;width:100%;max-width:480px;position:relative;
-            max-height:90vh;overflow-y:auto;transition:background 0.4s,border-color 0.4s;
-        }
-        body.light .modal-box { box-shadow:0 20px 60px rgba(124,58,237,0.15),inset 0 1px 0 rgba(255,255,255,0.9); }
+        /* SCROLL REVEAL */
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
 
-        /* ─── PORTFOLIO PREVIEW IFRAME ─── */
-        .port-preview-wrap {
-            position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;
-            border-radius:12px;background:var(--surface2);
-            box-shadow:var(--neo-in);
-        }
-        .port-preview-wrap iframe {
-            position:absolute;top:0;left:0;width:200%;height:200%;
-            border:none;border-radius:8px;
-            transform:scale(0.5);transform-origin:top left;
-            pointer-events:none;
-        }
-        .port-preview-overlay {
-            position:absolute;inset:0;z-index:2;cursor:pointer;
-            border-radius:12px;
-        }
+        /* SCROLLBAR */
+        ::-webkit-scrollbar{width:6px}
+        ::-webkit-scrollbar-track{background:var(--page-bg)}
+        ::-webkit-scrollbar-thumb{background:rgba(124,58,237,0.35);border-radius:3px}
+        ::-webkit-scrollbar-thumb:hover{background:rgba(167,139,250,0.55)}
 
-        /* ─── DIVIDERS ─── */
-        .hr-glow { border:none;height:1px;background:linear-gradient(90deg,transparent,var(--hr-color),transparent); }
-        .section-glow { position:relative; }
-        .section-glow::before { content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(124,58,237,0.08) 0%,transparent 70%);pointer-events:none; }
-        body.light .section-glow::before { background:radial-gradient(ellipse 60% 40% at 50% 0%,rgba(124,58,237,0.05) 0%,transparent 70%); }
-
-        /* ─── ORB ─── */
-        .orb { position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none; }
-
-        /* ─── FOOTER ─── */
-        .footer-glass { background:var(--footer-bg);border-top:1px solid var(--footer-border);transition:background 0.4s,border-color 0.4s; }
-
-        /* ─── SCROLL REVEAL ─── */
-        .reveal { opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease; }
-        .reveal.visible { opacity:1;transform:translateY(0); }
-
-        /* ─── SCROLLBAR ─── */
-        ::-webkit-scrollbar { width:6px; }
-        ::-webkit-scrollbar-track { background:var(--page-bg); }
-        ::-webkit-scrollbar-thumb { background:rgba(124,58,237,0.4);border-radius:3px; }
-        ::-webkit-scrollbar-thumb:hover { background:rgba(167,139,250,0.6); }
-
-        /* ─── LIGHT TEXT OVERRIDES ─── */
-        body.light .text-slate-300 { color:#4b4465 !important; }
-        body.light .text-slate-400 { color:#6b6480 !important; }
-        body.light .text-slate-500 { color:#8b7fb3 !important; }
-        body.light .text-slate-600 { color:#9b8fb8 !important; }
-        body.light .text-white { color:#1a1033 !important; }
-        body.light .text-purple-300 { color:#6d28d9 !important; }
-        body.light .text-purple-400 { color:#7c3aed !important; }
-
-        .week-card { background:var(--glass-bg);border:1px solid var(--glass-border);transition:all 0.25s ease; }
-        .week-card:hover { border-color:rgba(167,139,250,0.3);background:rgba(124,58,237,0.08); }
+        /* DETAILS / FAQ */
+        details summary{list-style:none}
+        details summary::-webkit-details-marker{display:none}
     </style>
 </head>
 <body id="top">
 
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
         <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
-            <a href="index.html" class="font-display text-sm font-bold tracking-[0.22em] text-white uppercase hover:text-purple-300 transition-colors">
-                KIYOMI GROUP
-            </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
-                <a href="about.html" class="text-purple-400 hover:text-purple-200 font-semibold transition-colors">About Us</a>
-                <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
-                <a href="index.html#portfolio" class="hover:text-white transition-colors">Portfolio</a>
-                <a href="index.html#process" class="hover:text-white transition-colors">How We Work</a>
-                <a href="index.html#cta" class="hover:text-white transition-colors">Contact</a>
-                <div class="relative">
-                    <button id="tut-btn" onclick="toggleDrop('tut-menu','tut-caret',event)"
-                        class="flex items-center gap-1.5 text-purple-300 hover:text-purple-100 font-semibold transition-colors">
+            <a href="index.html" class="font-display text-sm font-bold tracking-[0.22em] uppercase transition-colors" style="color:var(--text-primary)">KIYOMI GROUP</a>
+            <nav class="hidden md:flex items-center gap-1 text-sm font-medium">
+                <a href="index.html" data-navlink="index.html" class="nav-link rounded-full px-3 py-1.5">Home</a>
+                <a href="about.html" data-navlink="about.html" class="nav-link rounded-full px-3 py-1.5">About Us</a>
+                <a href="services.html" data-navlink="services.html" class="nav-link rounded-full px-3 py-1.5">Services</a>
+                <a href="portfolio.html" data-navlink="portfolio.html" class="nav-link rounded-full px-3 py-1.5">Portfolio</a>
+                <a href="how-we-work.html" data-navlink="how-we-work.html" class="nav-link rounded-full px-3 py-1.5">How We Work</a>
+                <a href="contact.html" data-navlink="contact.html" class="nav-link rounded-full px-3 py-1.5">Contact</a>
+                <div class="relative ml-1">
+                    <button id="tut-btn" onclick="toggleDrop('tut-menu','tut-caret',event)" class="nav-link flex items-center gap-1.5 rounded-full px-3 py-1.5 font-semibold" style="color:#7c3aed">
                         Tutorials
-                        <svg id="tut-caret" class="h-3.5 w-3.5 transition-transform duration-200" viewBox="0 0 12 12" fill="none">
-                            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+                        <svg id="tut-caret" class="h-3.5 w-3.5 transition-transform duration-200" viewBox="0 0 12 12" fill="none"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
-                    <div id="tut-menu" class="drop-menu glass-strong p-2">
-                        <p class="px-3 pt-1 pb-2 text-[10px] font-display font-bold tracking-widest text-purple-400 uppercase">Kiyomi Tutorials</p>
-                        <a href="tutorials-vibe-coding.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">🤖 <span>Vibe Coding <span class="badge ml-1" style="font-size:0.6rem;padding:2px 8px">NEW</span></span></a>
-                        <a href="tutorials-uiux-beginner.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">🎨 AI First UI/UX Beginner</a>
-                        <a href="tutorials-uiux-intermediate.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">📐 AI First UI/UX Intermediate</a>
-                        <a href="tutorials-uiux-advanced.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">🏆 AI First UI/UX Advanced</a>
-                        <a href="tutorials-illustrator.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">✏️ Adobe Illustrator</a>
-                        <a href="tutorials-ai-mastery.html" class="flex items-center gap-2 rounded-xl px-3 py-2 text-sm text-slate-200 hover:bg-white/10 hover:text-white transition-colors">⚡ AI Mastery</a>
+                    <div id="tut-menu" class="drop-menu">
+                        <p class="drop-label">Kiyomi Tutorials</p>
+                        <a href="tutorials-vibe-coding.html" class="drop-item">🤖 <span>Vibe Coding <span class="badge ml-1" style="font-size:.6rem;padding:2px 8px">NEW</span></span></a>
+                        <a href="tutorials-uiux-beginner.html" class="drop-item">🎨 AI First UI/UX Beginner</a>
+                        <a href="tutorials-uiux-intermediate.html" class="drop-item">📐 AI First UI/UX Intermediate</a>
+                        <a href="tutorials-uiux-advanced.html" class="drop-item">🏆 AI First UI/UX Advanced</a>
+                        <a href="tutorials-illustrator.html" class="drop-item">✏️ Adobe Illustrator</a>
+                        <a href="tutorials-ai-mastery.html" class="drop-item">⚡ AI Mastery</a>
                     </div>
                 </div>
             </nav>
             <div class="flex items-center gap-2">
-                <button id="theme-toggle" class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme">
-                    <span id="theme-icon">☀️</span><span id="theme-label">Light</span>
-                </button>
-                <button type="button" data-open-enroll class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 cursor-pointer text-white">Enroll Now</button>
-                <button type="button" data-nav-toggle aria-label="Toggle navigation"
-                    class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass text-slate-300 hover:text-white transition-colors">
+                <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
             </div>
         </div>
-        <div data-nav-menu class="hidden border-t border-white/5 md:hidden">
-            <nav class="mx-auto flex max-w-6xl flex-col gap-1 px-4 pb-5 pt-3 text-sm font-medium">
-                <a href="about.html" class="py-2.5 text-purple-400 font-semibold">About Us</a>
-                <a href="index.html#services" class="py-2.5 text-slate-300 hover:text-white">Services</a>
-                <a href="index.html#portfolio" class="py-2.5 text-slate-300 hover:text-white">Portfolio</a>
-                <a href="index.html#process" class="py-2.5 text-slate-300 hover:text-white">How We Work</a>
-                <a href="index.html#cta" class="py-2.5 text-slate-300 hover:text-white">Contact</a>
-                <hr class="my-2 border-white/5">
-                <p class="pt-1 pb-1 text-[10px] font-display font-bold tracking-widest text-purple-400 uppercase">Tutorials</p>
-                <a href="tutorials-vibe-coding.html" class="py-2 text-slate-300 hover:text-white">🤖 Vibe Coding</a>
-                <a href="tutorials-uiux-beginner.html" class="py-2 text-slate-300 hover:text-white">🎨 AI First UI/UX Beginner</a>
-                <a href="tutorials-uiux-intermediate.html" class="py-2 text-slate-300 hover:text-white">📐 AI First UI/UX Intermediate</a>
-                <a href="tutorials-uiux-advanced.html" class="py-2 text-slate-300 hover:text-white">🏆 AI First UI/UX Advanced</a>
-                <a href="tutorials-illustrator.html" class="py-2 text-slate-300 hover:text-white">✏️ Adobe Illustrator</a>
-                <a href="tutorials-ai-mastery.html" class="py-2 text-slate-300 hover:text-white">⚡ AI Mastery</a>
-                <hr class="my-2 border-white/5">
-                <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2">
-                    <span id="theme-icon-mobile">☀️</span><span id="theme-label-mobile">Light Mode</span>
-                </button>
-                <button type="button" data-open-enroll class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white cursor-pointer mt-1">Enroll Now</button>
+        <div data-nav-menu class="hidden border-t md:hidden" style="border-color:var(--card-border)">
+            <nav class="mx-auto flex max-w-6xl flex-col gap-0.5 px-4 pb-5 pt-3 text-sm font-medium">
+                <a href="index.html" data-navlink="index.html" class="nav-link py-2.5 px-2 rounded-xl">Home</a>
+                <a href="about.html" data-navlink="about.html" class="nav-link py-2.5 px-2 rounded-xl">About Us</a>
+                <a href="services.html" data-navlink="services.html" class="nav-link py-2.5 px-2 rounded-xl">Services</a>
+                <a href="portfolio.html" data-navlink="portfolio.html" class="nav-link py-2.5 px-2 rounded-xl">Portfolio</a>
+                <a href="how-we-work.html" data-navlink="how-we-work.html" class="nav-link py-2.5 px-2 rounded-xl">How We Work</a>
+                <a href="contact.html" data-navlink="contact.html" class="nav-link py-2.5 px-2 rounded-xl">Contact</a>
+                <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
+                <p class="drop-label pl-2 pt-1">Tutorials</p>
+                <a href="tutorials-vibe-coding.html" class="nav-link py-2 px-2 rounded-xl">🤖 Vibe Coding</a>
+                <a href="tutorials-uiux-beginner.html" class="nav-link py-2 px-2 rounded-xl">🎨 AI First UI/UX Beginner</a>
+                <a href="tutorials-uiux-intermediate.html" class="nav-link py-2 px-2 rounded-xl">📐 AI First UI/UX Intermediate</a>
+                <a href="tutorials-uiux-advanced.html" class="nav-link py-2 px-2 rounded-xl">🏆 AI First UI/UX Advanced</a>
+                <a href="tutorials-illustrator.html" class="nav-link py-2 px-2 rounded-xl">✏️ Adobe Illustrator</a>
+                <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
+                <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
+                <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -436,7 +302,7 @@
             <button type="button" data-open-enroll class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold cursor-pointer text-white">
                 Enroll for &#8358;220,000
             </button>
-            <p class="text-xs text-slate-600 mt-3">Questions? Email <a href="mailto:hello@kiyomigroups.com" class="text-purple-400 hover:underline">hello@kiyomigroups.com</a></p>
+            <p class="text-xs text-slate-600 mt-3">Questions? Email <a href="/cdn-cgi/l/email-protection#b1d9d4dddddef1dad8c8dedcd8d6c3dec4c1c29fd2dedc" class="text-purple-400 hover:underline"><span class="__cf_email__" data-cfemail="dab2bfb6b6b59ab1b3a3b5b7b3bda8b5afaaa9f4b9b5b7">[email&#160;protected]</span></a></p>
         </div>
     </section>
 </main>
@@ -450,9 +316,9 @@
                 </div>
                 <div class="flex flex-wrap items-center gap-4 text-xs text-slate-400">
                     <a href="about.html" class="text-purple-400 hover:text-white">About Us</a>
-                    <a href="index.html#services" class="hover:text-white transition-colors">Services</a>
+                    <a href="services.html" class="hover:text-white transition-colors">Services</a>
                     <a href="index.html#tutorials" class="hover:text-white transition-colors">All Tutorials</a>
-                    <a href="index.html#cta" class="hover:text-white transition-colors">Contact</a>
+                    <a href="contact.html" class="hover:text-white transition-colors">Contact</a>
                 </div>
             </div>
             <hr class="hr-glow mb-4">
@@ -466,8 +332,8 @@
                 <svg class="h-3.5 w-3.5" viewBox="0 0 14 14"><path d="M3 3l8 8m0-8L3 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
             <div class="badge inline-flex mb-4">Enroll</div>
-            <h2 class="font-display text-xl font-bold text-white mb-2">Enroll in AI First UI/UX Design Advanced</h2>
-            <p class="text-slate-400 text-sm mb-5">Fill out your details below. We will reach out within 24 hours with next steps.</p>
+            <h2 class="font-display text-xl font-bold mb-2" style="color:var(--text-primary)">Enroll in AI First UI/UX Design Advanced</h2>
+            <p class="text-sm mb-5" style="color:var(--text-secondary)">Fill out your details below. We will reach out within 24 hours with next steps.</p>
             <form id="enroll-ajax-form" action="https://formspree.io/f/mqedrjqp" method="POST" class="space-y-3">
                 <input type="text" name="name" placeholder="Your full name" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <input type="email" name="email" placeholder="Email address" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
@@ -480,13 +346,13 @@
                 <textarea name="message" placeholder="Anything you would like us to know?" rows="2" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
                 <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Submit Enrollment</button>
                 <div id="enroll-success" class="hidden text-center py-2 text-green-400 text-sm font-semibold">Received! We will be in touch within 24 hours.</div>
-                <p class="text-[11px] text-slate-500 text-center">No commitment required. We will confirm availability first.</p>
-                <button type="button" id="enroll-not-now" class="w-full text-center text-xs text-slate-600 hover:text-slate-400 transition-colors pt-1 cursor-pointer">Maybe later</button>
+                <p class="text-[11px] text-center" style="color:var(--text-muted)">No commitment required. We will confirm availability first.</p>
+                <button type="button" id="enroll-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Maybe later</button>
             </form>
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('year').textContent = new Date().getFullYear();
         
         // ─── THEME ───
@@ -573,11 +439,4 @@
         
         // ─── SCROLL REVEAL ───
         const revealEls = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(el => { if (el.isIntersecting) el.target.classList.add('visible'); });
-        }, { threshold: 0.1 });
-        revealEls.forEach(el => observer.observe(el));
-
-    </script>
-</body>
-</html>
+        const observer = new Int
