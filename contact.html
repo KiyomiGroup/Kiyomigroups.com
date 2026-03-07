@@ -89,6 +89,8 @@
         body.light .text-purple-300{color:#6d28d9!important}
         body.light .text-purple-400{color:#7c3aed!important}
         body.light .border-white\/5{border-color:rgba(124,58,237,0.08)!important}
+        body.light .btn-primary,body.light .btn-primary *{color:#fff!important}
+        body.light .btn-primary{background:linear-gradient(135deg,#7c3aed,#6d28d9)!important}
 
         /* BADGE */
         .badge{background:var(--badge-bg);border:1px solid var(--badge-border);color:var(--badge-color);font-size:.7rem;font-family:'Syne',sans-serif;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:999px;transition:all .4s}
@@ -255,7 +257,7 @@
                             <div class="step-circle h-10 w-10 rounded-xl flex items-center justify-center shrink-0"><span class="text-lg">📧</span></div>
                             <div>
                                 <p class="text-sm font-semibold" style="color:var(--text-primary)">Email us</p>
-                                <a href="mailto:kiyomigroups@gmail.com" class="contact-link text-xs">kiyomigroups@gmail.com</a>
+                                <a href="/cdn-cgi/l/email-protection#4b2022322426222c39243e3b380b2c262a222765282426" class="contact-link text-xs"><span class="__cf_email__" data-cfemail="513a38283e3c3836233e24212211363c30383d7f323e3c">[email&#160;protected]</span></a>
                             </div>
                         </div>
                         <div class="glass rounded-xl p-4 flex items-center gap-4">
@@ -385,7 +387,7 @@
             </form>
         </div>
     </div>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         document.getElementById('year').textContent = new Date().getFullYear();
 
         /* ── THEME ── */
@@ -489,10 +491,4 @@
         }})();
         document.querySelectorAll('details.faq-item').forEach(d=>{{
             d.addEventListener('toggle',()=>{{
-                document.querySelectorAll('details.faq-item').forEach(o=>{{if(o!==d)o.removeAttribute('open')}});
-                d.querySelector('summary .text-purple-400').textContent=d.open?'−':'+';
-            }});
-        }});
-    </script>
-</body>
-</html>
+              
