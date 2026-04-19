@@ -1,0 +1,325 @@
+/* ============================================================
+   KIYOMI GROUP — Shared Animation Library
+   Clean, minimal, premium motion — zero heavy dependencies.
+   ============================================================ */
+
+/* ── PAGE LOAD ── */
+@keyframes ki-fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ki-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes ki-fade-left {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes ki-fade-right {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes ki-scale-up {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── AMBIENT FLOAT ── */
+@keyframes ki-float {
+  0%, 100% { transform: translateY(0)   scale(1); }
+  50%       { transform: translateY(-18px) scale(1.04); }
+}
+@keyframes ki-float-slow {
+  0%, 100% { transform: translateY(0)   scale(1); }
+  50%       { transform: translateY(-28px) scale(1.06); }
+}
+
+/* ── SHIMMER / GLOW PULSE ── */
+@keyframes ki-pulse-glow {
+  0%, 100% { box-shadow: 0 0 0   0   rgba(124,58,237,0); }
+  50%       { box-shadow: 0 0 22px 4px rgba(124,58,237,0.30); }
+}
+@keyframes ki-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── SPIN (for decorative elements) ── */
+@keyframes ki-spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+/* ── UNDERLINE WIPE ── */
+@keyframes ki-underline-wipe {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ── COUNTER TICK ── */
+@keyframes ki-count-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   SCROLL REVEAL SYSTEM
+   Add .ki-reveal / .ki-reveal-left / .ki-reveal-right to any
+   element. JS adds .ki-in when it enters the viewport.
+   ─────────────────────────────────────────────────────────── */
+.ki-reveal,
+.ki-reveal-left,
+.ki-reveal-right,
+.ki-reveal-scale {
+  opacity: 0;
+  will-change: opacity, transform;
+  transition:
+    opacity  0.65s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.65s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.ki-reveal       { transform: translateY(24px); }
+.ki-reveal-left  { transform: translateX(28px); }
+.ki-reveal-right { transform: translateX(-28px); }
+.ki-reveal-scale { transform: scale(0.95); }
+
+/* Active state */
+.ki-reveal.ki-in,
+.ki-reveal-left.ki-in,
+.ki-reveal-right.ki-in,
+.ki-reveal-scale.ki-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger delays — add ki-d-{1-8} alongside ki-reveal */
+.ki-d-1 { transition-delay: 0.08s; }
+.ki-d-2 { transition-delay: 0.16s; }
+.ki-d-3 { transition-delay: 0.24s; }
+.ki-d-4 { transition-delay: 0.32s; }
+.ki-d-5 { transition-delay: 0.40s; }
+.ki-d-6 { transition-delay: 0.48s; }
+.ki-d-7 { transition-delay: 0.56s; }
+.ki-d-8 { transition-delay: 0.64s; }
+
+/* ─────────────────────────────────────────────────────────── 
+   HERO ENTRANCE  — fired once on load
+   ─────────────────────────────────────────────────────────── */
+.ki-hero-badge {
+  animation: ki-fade-up 0.55s cubic-bezier(0.4,0,0.2,1) 0.15s both;
+}
+.ki-hero-h1 {
+  animation: ki-fade-up 0.65s cubic-bezier(0.4,0,0.2,1) 0.28s both;
+}
+.ki-hero-sub {
+  animation: ki-fade-up 0.65s cubic-bezier(0.4,0,0.2,1) 0.42s both;
+}
+.ki-hero-cta {
+  animation: ki-fade-up 0.65s cubic-bezier(0.4,0,0.2,1) 0.56s both;
+}
+.ki-hero-card {
+  animation: ki-fade-left 0.70s cubic-bezier(0.4,0,0.2,1) 0.50s both;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   ORB FLOAT  — ambient background shapes
+   ─────────────────────────────────────────────────────────── */
+.ki-orb {
+  animation: ki-float 10s ease-in-out infinite;
+}
+.ki-orb:nth-child(2) { animation-duration: 13s; animation-delay: -4s; }
+.ki-orb:nth-child(3) { animation-duration:  9s; animation-delay: -7s; }
+.ki-orb:nth-child(4) { animation-duration: 11s; animation-delay: -2s; }
+
+/* ─────────────────────────────────────────────────────────── 
+   CARD HOVER
+   ─────────────────────────────────────────────────────────── */
+.ki-card {
+  transition:
+    transform   0.30s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.25s ease,
+    box-shadow   0.25s ease;
+}
+.ki-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(167,139,250,0.4) !important;
+  box-shadow: 0 16px 40px rgba(124,58,237,0.18) !important;
+}
+
+/* Subtle card — no vertical lift, just glow */
+.ki-card-subtle {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.ki-card-subtle:hover {
+  border-color: rgba(167,139,250,0.35) !important;
+  box-shadow: 0 8px 28px rgba(124,58,237,0.12) !important;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   BUTTON MICRO-INTERACTIONS
+   ─────────────────────────────────────────────────────────── */
+.ki-btn {
+  transition: transform 0.22s cubic-bezier(0.34,1.56,0.64,1),
+              box-shadow 0.22s ease,
+              background  0.22s ease;
+}
+.ki-btn:hover  { transform: translateY(-2px); }
+.ki-btn:active { transform: translateY(0) scale(0.97); }
+
+/* Ripple — add ki-ripple class, JS injects the ink div */
+.ki-ripple { position: relative; overflow: hidden; }
+.ki-ripple .ki-ink {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.18);
+  transform: scale(0);
+  animation: ki-ripple-expand 0.55s linear;
+  pointer-events: none;
+}
+@keyframes ki-ripple-expand {
+  to { transform: scale(4); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   NAV LINK ACTIVE INDICATOR
+   ─────────────────────────────────────────────────────────── */
+.ki-nav-link {
+  position: relative;
+}
+.ki-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: #7c3aed;
+  transition: width 0.25s ease, left 0.25s ease;
+  transform: translateX(-50%);
+}
+.ki-nav-link:hover::after,
+.ki-nav-link.active::after {
+  width: 80%;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   STAT COUNTER  — counts up on scroll
+   ─────────────────────────────────────────────────────────── */
+.ki-stat-num {
+  display: inline-block;
+  animation: ki-count-in 0.55s cubic-bezier(0.4,0,0.2,1) both;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   GRADIENT TEXT SHIMMER  (optional accent)
+   ─────────────────────────────────────────────────────────── */
+.ki-shimmer-text {
+  background: linear-gradient(
+    120deg,
+    #c4b5fd 0%, #a78bfa 25%, #7c3aed 50%, #a78bfa 75%, #c4b5fd 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: ki-shimmer 4s linear infinite;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   PAGE TRANSITION CURTAIN  (fade-in on load)
+   ─────────────────────────────────────────────────────────── */
+.ki-page-enter {
+  animation: ki-fade-in 0.40s ease both;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   SECTION DIVIDER PULSE
+   ─────────────────────────────────────────────────────────── */
+.ki-hr-animated {
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(167,139,250,0.6), transparent);
+  background-size: 200% 100%;
+  animation: ki-shimmer 3s linear infinite;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   SCROLL PROGRESS BAR (fixed top)
+   ─────────────────────────────────────────────────────────── */
+#ki-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, #7c3aed, #c4b5fd);
+  z-index: 9999;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   CURSOR GLOW  (desktop only, subtle)
+   ─────────────────────────────────────────────────────────── */
+#ki-cursor-glow {
+  position: fixed;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+  transform: translate(-50%,-50%);
+  transition: opacity 0.3s ease;
+  will-change: transform;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   TUTORIAL CARD HOVER  (special treatment)
+   ─────────────────────────────────────────────────────────── */
+.ki-tut-card {
+  transition:
+    transform    0.30s cubic-bezier(0.34,1.56,0.64,1),
+    border-color 0.25s ease,
+    box-shadow   0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.ki-tut-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124,58,237,0.10), transparent);
+  opacity: 0;
+  transition: opacity 0.30s ease;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.ki-tut-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(167,139,250,0.45) !important;
+  box-shadow: 0 20px 48px rgba(124,58,237,0.20) !important;
+}
+.ki-tut-card:hover::before { opacity: 1; }
+
+/* ─────────────────────────────────────────────────────────── 
+   FOCUS RING  (accessibility)
+   ─────────────────────────────────────────────────────────── */
+.ki-focus:focus-visible {
+  outline: 2px solid rgba(167,139,250,0.7);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────── 
+   REDUCED MOTION  — respects OS preference
+   ─────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ki-reveal, .ki-reveal-left, .ki-reveal-right, .ki-reveal-scale,
+  .ki-hero-badge, .ki-hero-h1, .ki-hero-sub, .ki-hero-cta, .ki-hero-card,
+  .ki-orb, .ki-card, .ki-tut-card, .ki-shimmer-text, .ki-hr-animated {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #ki-progress, #ki-cursor-glow { display: none; }
+}

@@ -172,6 +172,7 @@
         .timeline-line{position:absolute;left:15px;top:24px;bottom:0;width:2px;background:linear-gradient(to bottom,rgba(124,58,237,0.6),transparent)}
         .tl-dot{width:10px;height:10px;border-radius:50%;background:#7c3aed;border:2px solid rgba(167,139,250,0.5);flex-shrink:0;margin-top:5px}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body id="top">
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
@@ -202,7 +203,7 @@
             </nav>
             <div class="flex items-center gap-2">
                 <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
-                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 ki-btn ki-ripple ki-focus">Get in Touch</a>
                 <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
@@ -226,7 +227,7 @@
                 <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
                 <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
                 <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
-                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block ki-btn ki-ripple ki-focus">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -234,20 +235,20 @@
 
     <!-- HERO -->
     <section class="relative py-24 sm:py-32 overflow-hidden section-glow">
-        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 left-1/3"></div>
-        <div class="orb w-64 h-64 bg-indigo-800/15 bottom-10 -right-10"></div>
+        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 left-1/3 ki-orb"></div>
+        <div class="orb w-64 h-64 bg-indigo-800/15 bottom-10 -right-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
-            <div class="max-w-3xl reveal">
-                <div class="badge inline-flex mb-5">Our Story Our People Our Purpose</div>
-                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6" style="color:var(--text-primary)">
+            <div class="max-w-3xl reveal ki-reveal">
+                <div class="badge inline-flex mb-5 ki-hero-badge">Our Story Our People Our Purpose</div>
+                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6 ki-hero-h1" style="color:var(--text-primary)">
                     We are a team that <span class="grad-text">genuinely loves</span> building things.
                 </h1>
                 <p class="text-lg leading-relaxed mb-8 max-w-2xl" style="color:var(--text-secondary)">
                     Kiyomi Group is a software company built on a simple idea: great digital products come from great collaboration. We work with founders and businesses who have an idea worth building and we bring the team, the skills, and the process to make it real.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="#our-story" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white">Read our story</a>
-                    <a href="#team" class="btn-ghost inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">Meet the team</a>
+                    <a href="#our-story" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">Read our story</a>
+                    <a href="#team" class="btn-ghost inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold ki-btn ki-focus">Meet the team</a>
                 </div>
             </div>
         </div>
@@ -256,7 +257,7 @@
     <!-- STATS -->
     <section class="py-10 border-y" style="border-color:var(--card-border)">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center reveal">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center reveal ki-reveal">
                 <div><p class="font-display font-bold text-3xl" style="color:var(--text-primary)">3+</p><p class="text-xs mt-1 text-purple-400 font-medium">Years Building Products</p></div>
                 <div><p class="font-display font-bold text-3xl" style="color:var(--text-primary)">20+</p><p class="text-xs mt-1 text-purple-400 font-medium">Projects Delivered</p></div>
                 <div><p class="font-display font-bold text-3xl" style="color:var(--text-primary)">100%</p><p class="text-xs mt-1 text-purple-400 font-medium">Client Owned Code</p></div>
@@ -265,25 +266,25 @@
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- OUR STORY -->
     <section id="our-story" class="section-glow relative py-20 sm:py-28">
-        <div class="orb w-72 h-72 bg-indigo-800/15 top-10 right-0"></div>
+        <div class="orb w-72 h-72 bg-indigo-800/15 top-10 right-0 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
             <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-                <div class="reveal">
-                    <div class="badge inline-flex mb-4">Our Story</div>
+                <div class="reveal ki-reveal">
+                    <div class="badge inline-flex mb-4 ki-hero-badge">Our Story</div>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold leading-tight mb-5" style="color:var(--text-primary)">
                         Started with a simple frustration. <span class="grad-text">Built into something real.</span>
                     </h2>
-                    <div class="space-y-4 text-sm leading-relaxed mb-6" style="color:var(--text-secondary)">
+                    <div class="space-y-4 text-sm leading-relaxed mb-6" data-ki-stagger="0.07"> style="color:var(--text-secondary)">
                         <p>Kiyomi Group was founded because we kept seeing the same problem: businesses and founders with genuinely good ideas, but no reliable team to help them build those ideas into products.</p>
                         <p>Too many agencies over-promised and under-delivered. Too many freelancers disappeared mid-project. Too many great ideas ended up as half-finished products collecting dust.</p>
                         <p>We decided to do it differently. When a client signs with us, we do not just assign a developer. We sit down, understand the project deeply, and then pull together the exact team it needs — designers, engineers, product thinkers — matched specifically for that work.</p>
                         <p>That model gives our clients access to senior level talent without the overhead of hiring a full team. And it means every person working on your project is genuinely the right fit for it.</p>
                     </div>
-                    <div class="glass-strong rounded-2xl p-5">
+                    <div class="glass-strong rounded-2xl p-5 ki-card">
                         <p class="text-sm leading-relaxed italic mb-4" style="color:var(--text-secondary)">"We built Kiyomi because we believe every business deserves access to a skilled, honest, reliable tech team — not just the ones with the biggest budgets."</p>
                         <div class="flex items-center gap-3">
                             <div class="h-10 w-10 rounded-full flex items-center justify-center font-bold text-white text-sm shrink-0" style="background:linear-gradient(135deg,#7c3aed,#6d28d9)">KG</div>
@@ -291,7 +292,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mt-12 md:mt-0 reveal">
+                <div class="mt-12 md:mt-0 reveal ki-reveal">
                     <p class="text-xs font-bold uppercase tracking-widest text-purple-400 mb-8">How we got here</p>
                     <div class="relative pl-8">
                         <div class="timeline-line"></div>
@@ -307,16 +308,16 @@
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- VALUES -->
     <section class="section-glow relative py-20 sm:py-24">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="text-center mb-12 reveal">
+            <div class="text-center mb-12 reveal ki-reveal ki-reveal">
                 <div class="badge inline-flex mb-3">What We Believe</div>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color:var(--text-primary)">The values that guide everything we do.</h2>
             </div>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal ki-reveal">
                 <div class="glass rounded-2xl p-6"><div class="text-2xl mb-3">🎯</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Clarity over complexity</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">We explain things in plain language. No jargon, no smoke and mirrors. What you see is what you get.</p></div>
                 <div class="glass rounded-2xl p-6"><div class="text-2xl mb-3">🤝</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Ownership and accountability</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">If something goes wrong, we own it and fix it. No blame shifting, no excuses. Just solutions.</p></div>
                 <div class="glass rounded-2xl p-6"><div class="text-2xl mb-3">💡</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Curiosity drives quality</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">We ask why constantly. Why this feature? Why this approach? Better questions lead to better products.</p></div>
@@ -327,13 +328,13 @@
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- TEAM -->
     <section id="team" class="section-glow relative py-20 sm:py-28">
-        <div class="orb w-80 h-80 bg-purple-800/15 top-10 -right-10"></div>
+        <div class="orb w-80 h-80 bg-purple-800/15 top-10 -right-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 reveal">
+            <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12 reveal ki-reveal">
                 <div>
                     <div class="badge inline-flex mb-3">The People</div>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color:var(--text-primary)">Meet the team.</h2>
@@ -344,7 +345,7 @@
                     Interested in working with us? <a href="contact.html" class="text-purple-400 hover:underline font-semibold">Get in touch</a>
                 </div>
             </div>
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 reveal ki-reveal ki-reveal">
                 <!-- Adunola -->
                 <div class="team-card">
                     <div style="height:260px;overflow:hidden;background:var(--surface2)">
@@ -394,13 +395,13 @@
 
     <!-- CTA -->
     <section class="relative py-20 overflow-hidden">
-        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2"></div>
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal">
+        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2 ki-orb"></div>
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal ki-reveal">
             <h2 class="font-display text-3xl font-bold mb-4" style="color:var(--text-primary)">Want to work with us?</h2>
             <p class="text-sm leading-relaxed mb-8" style="color:var(--text-secondary)">Whether you have a project to build or you want to join the team, we would love to hear from you.</p>
-            <div class="flex flex-wrap gap-3 justify-center">
-                <a href="contact.html" class="btn-primary inline-flex rounded-full px-7 py-3.5 text-sm font-semibold text-white">Start a Project</a>
-                <a href="contact.html" class="btn-ghost inline-flex rounded-full px-7 py-3.5 text-sm font-semibold">Join the Team</a>
+            <div class="flex flex-wrap gap-3 justify-center ki-hero-cta">
+                <a href="contact.html" class="btn-primary inline-flex rounded-full px-7 py-3.5 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">Start a Project</a>
+                <a href="contact.html" class="btn-ghost inline-flex rounded-full px-7 py-3.5 text-sm font-semibold ki-btn ki-focus">Join the Team</a>
             </div>
         </div>
     </section>
@@ -420,10 +421,10 @@
                     <a href="portfolio.html" class="hover:text-purple-400 transition-colors">Portfolio</a>
                     <a href="how-we-work.html" class="hover:text-purple-400 transition-colors">How We Work</a>
                     <a href="index.html#tutorials" class="hover:text-purple-400 transition-colors">Tutorials</a>
-                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs">Get in Touch</a>
+                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs ki-btn ki-ripple ki-focus">Get in Touch</a>
                 </div>
             </div>
-            <hr class="hr-glow mb-4">
+            <hr class="hr-glow mb-4 ki-hr-animated">
             <p class="text-center text-xs" style="color:var(--text-muted)">&#169; <span id="year"></span> Kiyomi Group. All rights reserved.</p>
         </div>
     </footer>
@@ -440,7 +441,7 @@
                 <input type="email" name="email" placeholder="Work email" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <select name="industry" class="neo-input rounded-xl px-4 py-2.5 text-sm"><option value="">Industry</option><option>Health</option><option>Fintech</option><option>E-commerce</option><option>Other</option></select>
                 <textarea name="message" placeholder="Briefly describe your project..." rows="3" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
-                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Send My Project Details</button>
+                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send My Project Details</button>
                 <div id="consult-success" class="hidden text-center py-2 text-green-500 text-sm font-semibold">Sent! We will be in touch within 24 hours.</div>
                 <button type="button" id="modal-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Not now</button>
             </form>
@@ -536,5 +537,6 @@
         revEls.forEach(el=>obs.observe(el));
     </script>
 
+  <script src="kiyomi-animations.js" defer></script>
 </body>
 </html>

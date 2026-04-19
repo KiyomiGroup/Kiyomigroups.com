@@ -176,6 +176,7 @@
         .preview-wrap iframe{display:block;width:200%;height:300px;border:none;transform:scale(0.5);transform-origin:top left;pointer-events:none}
         .preview-overlay{position:absolute;inset:0;z-index:2}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body id="top">
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
@@ -206,7 +207,7 @@
             </nav>
             <div class="flex items-center gap-2">
                 <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
-                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 ki-btn ki-ripple ki-focus">Get in Touch</a>
                 <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
@@ -230,7 +231,7 @@
                 <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
                 <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
                 <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
-                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block ki-btn ki-ripple ki-focus">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -238,11 +239,11 @@
 
     <!-- HERO -->
     <section class="relative py-24 sm:py-32 overflow-hidden section-glow">
-        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20"></div>
+        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
-            <div class="max-w-3xl reveal">
-                <div class="badge inline-flex mb-5">Our Work</div>
-                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6" style="color:var(--text-primary)">
+            <div class="max-w-3xl reveal ki-reveal">
+                <div class="badge inline-flex mb-5 ki-hero-badge">Our Work</div>
+                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6 ki-hero-h1" style="color:var(--text-primary)">
                     Products we built. <span class="grad-text">Stories behind them.</span>
                 </h1>
                 <p class="text-lg leading-relaxed mb-4" style="color:var(--text-secondary)">
@@ -257,7 +258,7 @@
         <div class="mx-auto max-w-6xl px-4 sm:px-6 space-y-10">
 
             <!-- PROJECT 1: PORTFOLIA -->
-            <div class="case-card reveal">
+            <div class="case-card reveal ki-reveal">
                 <div class="md:grid md:grid-cols-5 md:items-stretch">
                     <div class="md:col-span-2 preview-wrap" style="min-height:260px">
                         <iframe src="https://kiyomigroup.github.io/portfolia/" title="Portfolia" loading="lazy" scrolling="no"></iframe>
@@ -273,7 +274,7 @@
                                 <span class="outcome-pill">Featured</span>
                             </div>
                             <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--text-primary)">Portfolia</h2>
-                            <div class="space-y-4 text-sm leading-relaxed">
+                            <div class="space-y-4 text-sm leading-relaxed" data-ki-stagger="0.07">>
                                 <div class="glass rounded-xl p-4">
                                     <p class="text-purple-400 font-semibold text-xs uppercase tracking-wide mb-1">The Problem</p>
                                     <p style="color:var(--text-secondary)">Designers, developers, and creatives needed a professional portfolio but lacked the time or technical skill to build one from scratch. Existing tools were either too complex or too generic.</p>
@@ -299,7 +300,7 @@
             </div>
 
             <!-- PROJECT 2: NEIGHBOURHOOD LINK -->
-            <div class="case-card reveal">
+            <div class="case-card reveal ki-reveal">
                 <div class="md:grid md:grid-cols-5 md:items-stretch">
                     <div class="md:col-span-2 preview-wrap" style="min-height:260px">
                         <iframe src="https://kiyomigroup.github.io/Neighborhood-Link/" title="Neighbourhood Link" loading="lazy" scrolling="no"></iframe>
@@ -314,7 +315,7 @@
                                 <span class="badge">Web App</span>
                             </div>
                             <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--text-primary)">Neighbourhood Link</h2>
-                            <div class="space-y-4 text-sm leading-relaxed">
+                            <div class="space-y-4 text-sm leading-relaxed" data-ki-stagger="0.07">>
                                 <div class="glass rounded-xl p-4">
                                     <p class="text-purple-400 font-semibold text-xs uppercase tracking-wide mb-1">The Problem</p>
                                     <p style="color:var(--text-secondary)">Local communities in Lagos lacked a digital hub to connect neighbours, share local services, and coordinate events. Existing platforms were either too broad or not accessible enough for the local market.</p>
@@ -340,7 +341,7 @@
             </div>
 
             <!-- PROJECT 3: SWAPPY -->
-            <div class="case-card reveal">
+            <div class="case-card reveal ki-reveal">
                 <div class="md:grid md:grid-cols-5 md:items-stretch">
                     <div class="md:col-span-2 preview-wrap" style="min-height:260px">
                         <iframe src="https://kiyomigroup.github.io/Swappy/" title="Swappy" loading="lazy" scrolling="no"></iframe>
@@ -355,7 +356,7 @@
                                 <span class="badge">Fintech Adjacent</span>
                             </div>
                             <h2 class="font-display font-bold text-2xl mb-4" style="color:var(--text-primary)">Swappy</h2>
-                            <div class="space-y-4 text-sm leading-relaxed">
+                            <div class="space-y-4 text-sm leading-relaxed" data-ki-stagger="0.07">>
                                 <div class="glass rounded-xl p-4">
                                     <p class="text-purple-400 font-semibold text-xs uppercase tracking-wide mb-1">The Problem</p>
                                     <p style="color:var(--text-secondary)">Selling or swapping used gadgets in Nigeria was filled with friction: opaque pricing, unverified buyers, and no trusted platform to connect gadget owners with legitimate swap agencies.</p>
@@ -381,12 +382,12 @@
             </div>
 
             <!-- CONFIDENTIAL WORK -->
-            <div class="glass-strong rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 reveal">
+            <div class="glass-strong rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 reveal ki-card ki-reveal">
                 <div>
                     <h3 class="font-display font-bold text-lg mb-2" style="color:var(--text-primary)">There is more we cannot show publicly.</h3>
                     <p class="text-sm leading-relaxed max-w-lg" style="color:var(--text-secondary)">Several of our projects run under strict NDAs. We helped a startup launch their MVP in 6 weeks and onboard their first 1,000 users. Get in touch and we will walk you through anonymised case studies that match your product stage and industry.</p>
                 </div>
-                <a href="contact.html" class="btn-primary inline-flex rounded-full px-5 py-2.5 text-sm font-semibold text-white shrink-0 whitespace-nowrap">Request Case Studies</a>
+                <a href="contact.html" class="btn-primary inline-flex rounded-full px-5 py-2.5 text-sm font-semibold text-white shrink-0 whitespace-nowrap ki-btn ki-ripple ki-focus">Request Case Studies</a>
             </div>
         </div>
     </section>
@@ -406,10 +407,10 @@
                     <a href="portfolio.html" class="hover:text-purple-400 transition-colors">Portfolio</a>
                     <a href="how-we-work.html" class="hover:text-purple-400 transition-colors">How We Work</a>
                     <a href="index.html#tutorials" class="hover:text-purple-400 transition-colors">Tutorials</a>
-                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs">Get in Touch</a>
+                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs ki-btn ki-ripple ki-focus">Get in Touch</a>
                 </div>
             </div>
-            <hr class="hr-glow mb-4">
+            <hr class="hr-glow mb-4 ki-hr-animated">
             <p class="text-center text-xs" style="color:var(--text-muted)">&#169; <span id="year"></span> Kiyomi Group. All rights reserved.</p>
         </div>
     </footer>
@@ -426,7 +427,7 @@
                 <input type="email" name="email" placeholder="Work email" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <select name="industry" class="neo-input rounded-xl px-4 py-2.5 text-sm"><option value="">Industry</option><option>Health</option><option>Fintech</option><option>E-commerce</option><option>Other</option></select>
                 <textarea name="message" placeholder="Briefly describe your project..." rows="3" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
-                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Send My Project Details</button>
+                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send My Project Details</button>
                 <div id="consult-success" class="hidden text-center py-2 text-green-500 text-sm font-semibold">Sent! We will be in touch within 24 hours.</div>
                 <button type="button" id="modal-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Not now</button>
             </form>
@@ -522,5 +523,6 @@
         revEls.forEach(el=>obs.observe(el));
     </script>
 
+  <script src="kiyomi-animations.js" defer></script>
 </body>
 </html>

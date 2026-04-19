@@ -166,6 +166,7 @@
         details summary{list-style:none}
         details summary::-webkit-details-marker{display:none}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body id="top">
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
@@ -196,7 +197,7 @@
             </nav>
             <div class="flex items-center gap-2">
                 <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
-                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 ki-btn ki-ripple ki-focus">Get in Touch</a>
                 <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
@@ -220,7 +221,7 @@
                 <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
                 <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
                 <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
-                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block ki-btn ki-ripple ki-focus">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -228,22 +229,22 @@
 
     <!-- HERO -->
     <section class="relative py-24 sm:py-32 overflow-hidden section-glow">
-        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20"></div>
-        <div class="orb w-64 h-64 bg-indigo-800/15 bottom-10 -left-10"></div>
+        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20 ki-orb"></div>
+        <div class="orb w-64 h-64 bg-indigo-800/15 bottom-10 -left-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
-            <div class="max-w-3xl reveal">
-                <div class="badge inline-flex mb-5">Our Services</div>
-                <h1 class="font-display text-5xl sm:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+            <div class="max-w-3xl reveal ki-reveal">
+                <div class="badge inline-flex mb-5 ki-hero-badge">Our Services</div>
+                <h1 class="font-display text-5xl sm:text-6xl font-bold text-white leading-[1.05] tracking-tight mb-6 ki-hero-h1">
                     We build software that <span class="grad-text">actually works.</span>
                 </h1>
-                <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+                <p class="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl ki-hero-sub">
                     From a rough idea scribbled on paper to a fully deployed, production grade product used by thousands of people. We cover the full stack of software creation: strategy, design, engineering, and delivery.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white">
+                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">
                         Start a Project <svg class="h-4 w-4" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </a>
-                    <a href="how-we-work.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold">See How We Work</a>
+                    <a href="how-we-work.html" class="btn-ghost inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-semibold ki-btn ki-focus">See How We Work</a>
                 </div>
             </div>
         </div>
@@ -252,7 +253,7 @@
     <!-- STAT BAR -->
     <section class="py-10 border-y border-white/5">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center reveal">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center reveal ki-reveal">
                 <div><p class="font-display font-bold text-3xl text-white">50+</p><p class="text-slate-400 text-xs mt-1">Projects shipped</p></div>
                 <div><p class="font-display font-bold text-3xl text-white">5yr</p><p class="text-slate-400 text-xs mt-1">In the industry</p></div>
                 <div><p class="font-display font-bold text-3xl text-white">3</p><p class="text-slate-400 text-xs mt-1">Core disciplines</p></div>
@@ -263,10 +264,10 @@
 
     <!-- SERVICE 1: SOFTWARE ENGINEERING -->
     <section id="engineering" class="section-glow relative py-20 sm:py-28">
-        <div class="orb w-80 h-80 bg-purple-800/15 top-10 -right-10"></div>
+        <div class="orb w-80 h-80 bg-purple-800/15 top-10 -right-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
             <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-                <div class="reveal">
+                <div class="reveal ki-reveal">
                     <div class="badge inline-flex mb-4">01 Software Engineering</div>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
                         Backend systems built to <span class="grad-text">handle real load.</span>
@@ -277,9 +278,9 @@
                     <p class="text-slate-400 text-sm leading-relaxed mb-8">
                         Whether you are building a greenfield product, scaling a legacy system, or need a specialist team to take over a codebase, we have seen it all. We write clean, documented, maintainable code that your future team will thank you for.
                     </p>
-                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white">Discuss your engineering needs</a>
+                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">Discuss your engineering needs</a>
                 </div>
-                <div class="mt-10 md:mt-0 space-y-4 reveal">
+                <div class="mt-10 md:mt-0 space-y-4 reveal ki-reveal" data-ki-stagger="0.07">>
                     <div class="card card-hover rounded-2xl p-5">
                         <div class="flex items-center gap-3 mb-3"><div class="step-circle h-8 w-8 rounded-xl flex items-center justify-center"><svg class="h-4 w-4 text-purple-300" viewBox="0 0 20 20" fill="none"><path d="M3 6l7-3 7 3v8l-7 3-7-3V6Z" stroke="currentColor" stroke-width="1.3"/></svg></div><h3 class="font-display font-semibold text-white text-sm">Custom Web Applications</h3></div>
                         <p class="text-slate-400 text-xs leading-relaxed">Full stack web apps built with modern frameworks. Dashboards, portals, SaaS tools, internal platforms, anything browser based.</p>
@@ -301,15 +302,15 @@
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- SERVICE 2: WEB AND APP DEV -->
     <section id="development" class="section-glow relative py-20 sm:py-28">
-        <div class="orb w-72 h-72 bg-indigo-800/18 bottom-10 -left-10"></div>
+        <div class="orb w-72 h-72 bg-indigo-800/18 bottom-10 -left-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
             <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-                <div class="mt-10 md:mt-0 order-2 md:order-1 reveal">
-                    <div class="glass-strong rounded-2xl p-6 mb-4">
+                <div class="mt-10 md:mt-0 order-2 md:order-1 reveal ki-reveal">
+                    <div class="glass-strong rounded-2xl p-6 mb-4 ki-card">
                         <p class="text-xs font-display font-bold tracking-widest text-purple-400 uppercase mb-4">Technologies we work with</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="badge">React</span><span class="badge">Next.js</span><span class="badge">Node.js</span><span class="badge">Python</span>
@@ -318,11 +319,11 @@
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="card rounded-2xl p-4 text-center"><p class="font-display font-bold text-2xl text-white">2wk</p><p class="text-slate-400 text-xs mt-1">Average time to first working prototype</p></div>
+                        <div class="card rounded-2xl p-4 text-center"><p class="font-display font-bold text-2xl text-white" data-ki-count="2" data-ki-suffix="wk"></p><p class="text-slate-400 text-xs mt-1">Average time to first working prototype</p></div>
                         <div class="card rounded-2xl p-4 text-center"><p class="font-display font-bold text-2xl text-white">iOS + Android</p><p class="text-slate-400 text-xs mt-1">One codebase, both platforms</p></div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2 reveal">
+                <div class="order-1 md:order-2 reveal ki-reveal">
                     <div class="badge inline-flex mb-4">02 Web and App Development</div>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
                         Products that look great and <span class="grad-text">load even faster.</span>
@@ -340,20 +341,20 @@
                         <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> E-commerce platforms and marketplaces</li>
                         <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Progressive web apps (PWAs)</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white">Start building your product</a>
+                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">Start building your product</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- SERVICE 3: PRODUCT AND DESIGN -->
     <section id="design" class="section-glow relative py-20 sm:py-28">
-        <div class="orb w-80 h-80 bg-violet-700/15 top-10 right-0"></div>
+        <div class="orb w-80 h-80 bg-violet-700/15 top-10 right-0 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
             <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-                <div class="reveal">
+                <div class="reveal ki-reveal">
                     <div class="badge inline-flex mb-4">03 Product and UI/UX Design</div>
                     <h2 class="font-display text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
                         Design that <span class="grad-text">earns trust</span> from the first screen.
@@ -372,13 +373,13 @@
                         <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Design systems and component libraries</li>
                         <li class="flex items-center gap-2"><span class="text-purple-400">✓</span> Brand identity and visual language</li>
                     </ul>
-                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white">Talk about your design project</a>
+                    <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white ki-btn ki-ripple ki-focus">Talk about your design project</a>
                 </div>
-                <div class="mt-10 md:mt-0 reveal">
-                    <div class="space-y-4">
-                        <div class="glass-strong rounded-2xl p-6">
+                <div class="mt-10 md:mt-0 reveal ki-reveal">
+                    <div class="space-y-4" data-ki-stagger="0.07">>
+                        <div class="glass-strong rounded-2xl p-6 ki-card">
                             <p class="text-xs font-display font-bold tracking-widest text-purple-400 uppercase mb-4">Our design process</p>
-                            <div class="space-y-4">
+                            <div class="space-y-4" data-ki-stagger="0.07">>
                                 <div class="flex items-start gap-3"><div class="step-circle h-7 w-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold text-purple-300">1</div><div><p class="text-white text-sm font-semibold">Research</p><p class="text-slate-400 text-xs mt-0.5">User interviews, competitor analysis, and market research.</p></div></div>
                                 <div class="flex items-start gap-3"><div class="step-circle h-7 w-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold text-purple-300">2</div><div><p class="text-white text-sm font-semibold">Define</p><p class="text-slate-400 text-xs mt-0.5">User flows, information architecture, and design strategy.</p></div></div>
                                 <div class="flex items-start gap-3"><div class="step-circle h-7 w-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold text-purple-300">3</div><div><p class="text-white text-sm font-semibold">Design</p><p class="text-slate-400 text-xs mt-0.5">Wireframes to high fidelity screens in Figma, fully annotated.</p></div></div>
@@ -393,17 +394,17 @@
         </div>
     </section>
 
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
 
     <!-- HOW WE ENGAGE -->
     <section class="section-glow relative py-20 sm:py-24">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="text-center mb-12 reveal">
+            <div class="text-center mb-12 reveal ki-reveal ki-reveal">
                 <div class="badge inline-flex mb-3">Engagement Models</div>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold text-white">How we work with you</h2>
                 <p class="mt-3 text-slate-400 text-sm max-w-xl mx-auto">We adapt to your needs. Whether you want a full product team or just a specialist to plug in.</p>
             </div>
-            <div class="grid gap-6 md:grid-cols-3 reveal">
+            <div class="grid gap-6 md:grid-cols-3 reveal ki-reveal ki-reveal" data-ki-stagger="0.09">>
                 <div class="card card-hover rounded-2xl p-6">
                     <div class="text-3xl mb-4">🚀</div>
                     <h3 class="font-display font-semibold text-white mb-2">Full Product Build</h3>
@@ -428,11 +429,11 @@
 
     <!-- BOTTOM CTA -->
     <section class="relative py-20 overflow-hidden">
-        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2"></div>
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal">
+        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2 ki-orb"></div>
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal ki-reveal">
             <h2 class="font-display text-3xl sm:text-4xl font-bold text-white mb-4">Not sure which service you need?</h2>
             <p class="text-slate-400 text-sm leading-relaxed mb-8">Book a free 20 minute call with us. We will listen to what you are trying to build and point you in the right direction. No obligation.</p>
-            <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white">Book a Free Discovery Call</a>
+            <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white ki-btn ki-ripple ki-focus">Book a Free Discovery Call</a>
         </div>
     </section>
 
@@ -451,10 +452,10 @@
                     <a href="portfolio.html" class="hover:text-purple-400 transition-colors">Portfolio</a>
                     <a href="how-we-work.html" class="hover:text-purple-400 transition-colors">How We Work</a>
                     <a href="index.html#tutorials" class="hover:text-purple-400 transition-colors">Tutorials</a>
-                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs">Get in Touch</a>
+                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs ki-btn ki-ripple ki-focus">Get in Touch</a>
                 </div>
             </div>
-            <hr class="hr-glow mb-4">
+            <hr class="hr-glow mb-4 ki-hr-animated">
             <p class="text-center text-xs" style="color:var(--text-muted)">&#169; <span id="year"></span> Kiyomi Group. All rights reserved.</p>
         </div>
     </footer>
@@ -471,7 +472,7 @@
                 <input type="email" name="email" placeholder="Work email" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <select name="industry" class="neo-input rounded-xl px-4 py-2.5 text-sm"><option value="">Industry</option><option>Health</option><option>Fintech</option><option>E-commerce</option><option>Other</option></select>
                 <textarea name="message" placeholder="Briefly describe your project..." rows="3" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
-                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Send My Project Details</button>
+                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send My Project Details</button>
                 <div id="consult-success" class="hidden text-center py-2 text-green-500 text-sm font-semibold">Sent! We will be in touch within 24 hours.</div>
                 <button type="button" id="modal-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Not now</button>
             </form>
@@ -567,5 +568,6 @@
         revEls.forEach(el=>obs.observe(el));
     </script>
 
+  <script src="kiyomi-animations.js" defer></script>
 </body>
 </html>

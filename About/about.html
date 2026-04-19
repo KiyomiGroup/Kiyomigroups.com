@@ -68,6 +68,7 @@
         /* ── SECTION DIVIDER ── */
         .section-divider{height:1px;background:linear-gradient(to right,transparent,rgba(168,85,247,.3),transparent);margin:0;}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body class="antialiased" style="overflow-x:hidden;max-width:100vw;">
 
@@ -166,7 +167,7 @@
 ══════════════════════════════════ -->
 <section style="background:#0d001f;border-top:1px solid rgba(168,85,247,.15);border-bottom:1px solid rgba(168,85,247,.15);">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 py-10">
-        <div class="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div class="grid grid-cols-2 gap-6 md:grid-cols-4 ki-reveal ki-reveal">
             <div class="text-center">
                 <p class="text-3xl font-bold text-white stat-num">3+</p>
                 <p class="mt-1 text-xs text-violet-400 font-medium">Years Building Products</p>
@@ -202,7 +203,7 @@
                     Started with a simple frustration.<br>
                     <span style="color:#C4B5FD;">Built into something real.</span>
                 </h2>
-                <div class="mt-6 space-y-4 text-sm text-violet-200 leading-relaxed">
+                <div class="mt-6 space-y-4 text-sm text-violet-200 leading-relaxed" data-ki-stagger="0.07">>
                     <p>
                         Kiyomi Group was founded because we kept seeing the same problem: businesses and founders with genuinely good ideas, but no reliable team to help them build those ideas into products.
                     </p>
@@ -285,7 +286,7 @@
         <div style="position:absolute;top:10%;left:50%;width:700px;height:400px;background:radial-gradient(circle,rgba(168,85,247,.1),transparent 70%);border-radius:50%;transform:translateX(-50%);"></div>
     </div>
     <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="text-center mb-14 max-w-2xl mx-auto">
+        <div class="text-center mb-14 max-w-2xl mx-auto ki-reveal ki-reveal">
             <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(99,102,241,.15);color:#A5B4FC;">What We Stand For</span>
             <h2 class="text-2xl font-bold text-white sm:text-3xl">Our mission and the values we actually live by.</h2>
             <p class="mt-3 text-sm text-violet-200">Three principles that shape how we think, how we work, and how we show up for every client.</p>
@@ -300,7 +301,7 @@
         </div>
 
         <!-- Values grid -->
-        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 ki-reveal ki-reveal" data-ki-stagger="0.10">>
 
             <!-- Value 1: Smart Work -->
             <div class="val-card" style="border-color:rgba(168,85,247,.25);">
@@ -381,7 +382,7 @@
                - Optional: LinkedIn URL
              To add a photo: replace the coloured initial div with an <img> tag.
         -->
-        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 ki-reveal ki-reveal">
 
             <!-- Team Member 1 — ADUNOLA (CO-CEO / LEAD DESIGNER) -->
             <div class="team-card">
@@ -514,13 +515,13 @@
         <div style="position:absolute;bottom:10%;left:50%;width:500px;height:400px;background:radial-gradient(circle,rgba(99,102,241,.1),transparent 70%);border-radius:50%;transform:translateX(-50%);"></div>
     </div>
     <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <div class="text-center mb-12 max-w-2xl mx-auto">
+        <div class="text-center mb-12 max-w-2xl mx-auto ki-reveal ki-reveal">
             <span class="inline-flex rounded-full px-3 py-1 text-xs font-semibold mb-4" style="background:rgba(99,102,241,.15);color:#A5B4FC;">What Makes Us Different</span>
             <h2 class="text-2xl font-bold text-white sm:text-3xl">We're not a typical agency.</h2>
             <p class="mt-3 text-sm text-violet-200">Here's what you won't find at Kiyomi Group — and what you will.</p>
         </div>
 
-        <div class="grid gap-4 md:grid-cols-2">
+        <div class="grid gap-4 md:grid-cols-2" data-ki-stagger="0.08">>
             <!-- Left: What we're NOT -->
             <div class="rounded-2xl p-6" style="background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);">
                 <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-5">What you won't find here</p>
@@ -644,7 +645,7 @@
         </button>
         <h2 class="text-lg font-bold text-slate-900">Let's talk about your project.</h2>
         <p class="mt-2 text-sm text-slate-600">Tell us a bit about your idea. We'll reply within 24 hours and set up a free 20-minute call — no pressure, no jargon.</p>
-        <div class="mt-5 space-y-4 text-sm">
+        <div class="mt-5 space-y-4 text-sm" data-ki-stagger="0.07">>
             <div><label class="mb-1 block font-semibold text-slate-800">Name</label><input type="text" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Jane Doe"></div>
             <div><label class="mb-1 block font-semibold text-slate-800">Email</label><input type="email" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="you@yourcompany.com"></div>
             <div><label class="mb-1 block font-semibold text-slate-800">What do you want to build?</label><textarea rows="3" class="block w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 shadow-sm" placeholder="Brief description of your project idea…"></textarea></div>
@@ -695,5 +696,6 @@
     consultModal.addEventListener('click', e => { if (e.target === consultModal) closeConsultModal(); });
     document.querySelectorAll('[data-open-consult]').forEach(btn => btn.addEventListener('click', openConsultModal));
 </script>
+  <script src="kiyomi-animations.js" defer></script>
 </body>
 </html>

@@ -173,6 +173,7 @@
         .connector{width:2px;background:linear-gradient(to bottom,rgba(124,58,237,0.5),rgba(124,58,237,0.1));height:40px;margin:0 auto}
         .deliverable-pill{background:var(--glass-bg);border:1px solid var(--glass-border);font-size:.7rem;padding:3px 10px;border-radius:8px;color:var(--text-secondary);white-space:nowrap}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body id="top">
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
@@ -203,7 +204,7 @@
             </nav>
             <div class="flex items-center gap-2">
                 <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
-                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 ki-btn ki-ripple ki-focus">Get in Touch</a>
                 <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
@@ -227,7 +228,7 @@
                 <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
                 <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
                 <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
-                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block ki-btn ki-ripple ki-focus">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -235,11 +236,11 @@
 
     <!-- HERO -->
     <section class="relative py-24 sm:py-32 overflow-hidden section-glow">
-        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 right-0"></div>
+        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 right-0 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
-            <div class="max-w-3xl reveal">
-                <div class="badge inline-flex mb-5">Our Process</div>
-                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6" style="color:var(--text-primary)">
+            <div class="max-w-3xl reveal ki-reveal">
+                <div class="badge inline-flex mb-5 ki-hero-badge">Our Process</div>
+                <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6 ki-hero-h1" style="color:var(--text-primary)">
                     Transparent. Structured. <span class="grad-text">No surprises.</span>
                 </h1>
                 <p class="text-lg leading-relaxed" style="color:var(--text-secondary)">
@@ -252,10 +253,10 @@
     <!-- 5-STEP PROCESS -->
     <section class="py-4 pb-20">
         <div class="mx-auto max-w-3xl px-4 sm:px-6">
-            <div class="space-y-4">
+            <div class="space-y-4" data-ki-stagger="0.07">>
 
                 <!-- STEP 1 -->
-                <div class="process-step p-6 sm:p-8 reveal">
+                <div class="process-step p-6 sm:p-8 reveal ki-reveal">
                     <div class="flex gap-5 items-start">
                         <div class="step-num">1</div>
                         <div class="flex-1">
@@ -279,10 +280,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="connector reveal"></div>
+                <div class="connector reveal ki-reveal"></div>
 
                 <!-- STEP 2 -->
-                <div class="process-step p-6 sm:p-8 reveal">
+                <div class="process-step p-6 sm:p-8 reveal ki-reveal">
                     <div class="flex gap-5 items-start">
                         <div class="step-num">2</div>
                         <div class="flex-1">
@@ -306,10 +307,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="connector reveal"></div>
+                <div class="connector reveal ki-reveal"></div>
 
                 <!-- STEP 3 -->
-                <div class="process-step p-6 sm:p-8 reveal">
+                <div class="process-step p-6 sm:p-8 reveal ki-reveal">
                     <div class="flex gap-5 items-start">
                         <div class="step-num">3</div>
                         <div class="flex-1">
@@ -336,17 +337,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="connector reveal"></div>
+                <div class="connector reveal ki-reveal"></div>
 
                 <!-- STEP 4 -->
-                <div class="process-step p-6 sm:p-8 reveal">
+                <div class="process-step p-6 sm:p-8 reveal ki-reveal">
                     <div class="flex gap-5 items-start">
                         <div class="step-num">4</div>
                         <div class="flex-1">
                             <div class="badge inline-flex mb-3">Ongoing Sprints</div>
                             <h2 class="font-display text-xl sm:text-2xl font-bold mb-3" style="color:var(--text-primary)">Engineering and Development</h2>
                             <p class="text-sm leading-relaxed mb-4" style="color:var(--text-secondary)">We build in two-week sprints with weekly check-ins. You always know what was built last week, what is being built this week, and what comes next. Clean, documented code throughout. No surprises on scope, timeline, or cost.</p>
-                            <div class="glass-strong rounded-xl p-5 mb-4">
+                            <div class="glass-strong rounded-xl p-5 mb-4 ki-card">
                                 <p class="text-xs font-semibold text-purple-400 uppercase tracking-wide mb-3">Our development rhythm</p>
                                 <div class="grid sm:grid-cols-3 gap-3">
                                     <div class="neo-inset rounded-xl p-3 text-center"><p class="font-display font-bold text-purple-400 text-sm">Weekly</p><p class="text-xs mt-1" style="color:var(--text-secondary)">Video call and written progress update</p></div>
@@ -362,10 +363,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="connector reveal"></div>
+                <div class="connector reveal ki-reveal"></div>
 
                 <!-- STEP 5 -->
-                <div class="process-step p-6 sm:p-8 reveal" style="border-color:rgba(124,58,237,0.25);background:linear-gradient(135deg,rgba(124,58,237,0.06),var(--card-bg))">
+                <div class="process-step p-6 sm:p-8 reveal ki-reveal" style="border-color:rgba(124,58,237,0.25);background:linear-gradient(135deg,rgba(124,58,237,0.06),var(--card-bg))">
                     <div class="flex gap-5 items-start">
                         <div class="step-num" style="background:linear-gradient(135deg,rgba(124,58,237,0.4),rgba(109,40,217,0.2))">5</div>
                         <div class="flex-1">
@@ -397,27 +398,27 @@
     </section>
 
     <!-- PRINCIPLES -->
-    <hr class="hr-glow mx-auto max-w-6xl">
+    <hr class="hr-glow mx-auto max-w-6xl ki-hr-animated">
     <section class="section-glow py-20 sm:py-24">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="text-center mb-12 reveal">
-                <div class="badge inline-flex mb-3">Our Principles</div>
+            <div class="text-center mb-12 reveal ki-reveal ki-reveal">
+                <div class="badge inline-flex mb-3 ki-hero-badge">Our Principles</div>
                 <h2 class="font-display text-3xl sm:text-4xl font-bold" style="color:var(--text-primary)">The way we think about work</h2>
             </div>
-            <div class="grid md:grid-cols-3 gap-5 reveal">
-                <div class="glass-strong rounded-2xl p-6"><div class="text-2xl mb-3">🧠</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Understand first, build second</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">A week of research saves months of rebuilding. We never start before we understand the problem properly.</p></div>
-                <div class="glass-strong rounded-2xl p-6"><div class="text-2xl mb-3">📣</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Radical transparency</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">If something is behind, we tell you immediately. If we made a mistake, we own it. No cover-ups, no spin.</p></div>
-                <div class="glass-strong rounded-2xl p-6"><div class="text-2xl mb-3">🔒</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">It is your product</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Every line of code is yours. No vendor lock-in, no proprietary systems that only we can maintain.</p></div>
+            <div class="grid md:grid-cols-3 gap-5 reveal ki-reveal">
+                <div class="glass-strong rounded-2xl p-6 ki-card"><div class="text-2xl mb-3">🧠</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Understand first, build second</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">A week of research saves months of rebuilding. We never start before we understand the problem properly.</p></div>
+                <div class="glass-strong rounded-2xl p-6 ki-card"><div class="text-2xl mb-3">📣</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">Radical transparency</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">If something is behind, we tell you immediately. If we made a mistake, we own it. No cover-ups, no spin.</p></div>
+                <div class="glass-strong rounded-2xl p-6 ki-card"><div class="text-2xl mb-3">🔒</div><h3 class="font-display font-semibold mb-2" style="color:var(--text-primary)">It is your product</h3><p class="text-sm leading-relaxed" style="color:var(--text-secondary)">Every line of code is yours. No vendor lock-in, no proprietary systems that only we can maintain.</p></div>
             </div>
         </div>
     </section>
 
     <section class="relative py-20 overflow-hidden">
-        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2"></div>
-        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal">
+        <div class="orb w-96 h-96 bg-violet-700/15 -top-10 left-1/2 -translate-x-1/2 ki-orb"></div>
+        <div class="mx-auto max-w-3xl px-4 sm:px-6 text-center relative z-10 reveal ki-reveal">
             <h2 class="font-display text-3xl font-bold mb-4" style="color:var(--text-primary)">Ready to start?</h2>
             <p class="text-sm leading-relaxed mb-8" style="color:var(--text-secondary)">Book a free 20 minute discovery call. We will be honest about whether we are the right team for your project.</p>
-            <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white">Book a Free Call</a>
+            <a href="contact.html" class="btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 text-base font-semibold text-white ki-btn ki-ripple ki-focus">Book a Free Call</a>
         </div>
     </section>
 
@@ -436,10 +437,10 @@
                     <a href="portfolio.html" class="hover:text-purple-400 transition-colors">Portfolio</a>
                     <a href="how-we-work.html" class="hover:text-purple-400 transition-colors">How We Work</a>
                     <a href="index.html#tutorials" class="hover:text-purple-400 transition-colors">Tutorials</a>
-                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs">Get in Touch</a>
+                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs ki-btn ki-ripple ki-focus">Get in Touch</a>
                 </div>
             </div>
-            <hr class="hr-glow mb-4">
+            <hr class="hr-glow mb-4 ki-hr-animated">
             <p class="text-center text-xs" style="color:var(--text-muted)">&#169; <span id="year"></span> Kiyomi Group. All rights reserved.</p>
         </div>
     </footer>
@@ -456,7 +457,7 @@
                 <input type="email" name="email" placeholder="Work email" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <select name="industry" class="neo-input rounded-xl px-4 py-2.5 text-sm"><option value="">Industry</option><option>Health</option><option>Fintech</option><option>E-commerce</option><option>Other</option></select>
                 <textarea name="message" placeholder="Briefly describe your project..." rows="3" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
-                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Send My Project Details</button>
+                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send My Project Details</button>
                 <div id="consult-success" class="hidden text-center py-2 text-green-500 text-sm font-semibold">Sent! We will be in touch within 24 hours.</div>
                 <button type="button" id="modal-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Not now</button>
             </form>
@@ -552,5 +553,6 @@
         revEls.forEach(el=>obs.observe(el));
     </script>
 
+  <script src="kiyomi-animations.js" defer></script>
 </body>
 </html>

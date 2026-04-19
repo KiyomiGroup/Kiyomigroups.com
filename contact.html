@@ -176,6 +176,7 @@
         .contact-link{color:#7c3aed;text-decoration:none;font-weight:600;transition:color .2s}
         .contact-link:hover{color:#a78bfa;text-decoration:underline}
     </style>
+  <link rel="stylesheet" href="kiyomi-animations.css">
 </head>
 <body id="top">
     <header data-nav class="nav-glass fixed inset-x-0 top-0 z-50">
@@ -206,7 +207,7 @@
             </nav>
             <div class="flex items-center gap-2">
                 <button class="theme-toggle hidden md:flex" onclick="toggleTheme()" aria-label="Toggle theme"><span class="ti">☀️</span><span class="tl">Light</span></button>
-                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2">Get in Touch</a>
+                <a href="contact.html" class="hidden md:inline-flex btn-primary text-xs font-semibold rounded-full px-4 py-2 ki-btn ki-ripple ki-focus">Get in Touch</a>
                 <button type="button" data-nav-toggle aria-label="Open menu" class="md:hidden h-9 w-9 flex items-center justify-center rounded-full glass" style="color:var(--text-primary)">
                     <svg class="h-4 w-4" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
                 </button>
@@ -230,7 +231,7 @@
                 <a href="tutorials-ai-mastery.html" class="nav-link py-2 px-2 rounded-xl">⚡ AI Mastery</a>
                 <div class="my-1.5" style="height:1px;background:var(--card-border)"></div>
                 <button onclick="toggleTheme()" class="theme-toggle w-full justify-center mb-2"><span class="ti">☀️</span><span class="tl">Light</span> Mode</button>
-                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block">Get in Touch</a>
+                <a href="contact.html" class="btn-primary rounded-full px-5 py-2.5 text-sm font-semibold text-white text-center mt-1 block ki-btn ki-ripple ki-focus">Get in Touch</a>
             </nav>
         </div>
     </header>
@@ -238,13 +239,13 @@
 
     <!-- HERO -->
     <section class="relative py-24 sm:py-32 overflow-hidden section-glow">
-        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20"></div>
-        <div class="orb w-64 h-64 bg-indigo-700/15 bottom-10 -left-10"></div>
+        <div class="orb w-96 h-96 bg-purple-700/20 -top-20 -right-20 ki-orb"></div>
+        <div class="orb w-64 h-64 bg-indigo-700/15 bottom-10 -left-10 ki-orb"></div>
         <div class="mx-auto max-w-6xl px-4 sm:px-6 relative z-10">
             <div class="md:grid md:grid-cols-2 md:gap-16 md:items-start">
-                <div class="reveal">
+                <div class="reveal ki-reveal">
                     <div class="badge inline-flex mb-5">Get in Touch</div>
-                    <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6" style="color:var(--text-primary)">
+                    <h1 class="font-display text-5xl sm:text-6xl font-bold leading-[1.05] tracking-tight mb-6 ki-hero-h1" style="color:var(--text-primary)">
                         Lets build something <span class="grad-text">great together.</span>
                     </h1>
                     <p class="text-lg leading-relaxed mb-8" style="color:var(--text-secondary)">
@@ -283,7 +284,7 @@
                         </div>
                     </div>
 
-                    <div class="glass-strong rounded-2xl p-5">
+                    <div class="glass-strong rounded-2xl p-5 ki-card">
                         <p class="text-xs font-display font-bold tracking-widest text-purple-400 uppercase mb-3">What to expect after reaching out</p>
                         <ul class="space-y-2 text-sm" style="color:var(--text-secondary)">
                             <li class="flex items-start gap-2"><span class="text-purple-400 mt-0.5 font-bold">1.</span>We review your message and respond within 24 hours</li>
@@ -295,8 +296,8 @@
                 </div>
 
                 <!-- FORM -->
-                <div class="mt-12 md:mt-0 reveal">
-                    <div class="glass-strong rounded-2xl p-6 sm:p-8">
+                <div class="mt-12 md:mt-0 reveal ki-reveal">
+                    <div class="glass-strong rounded-2xl p-6 sm:p-8 ki-card">
                         <h2 class="font-display font-bold text-xl mb-6" style="color:var(--text-primary)">Send us a message</h2>
                         <form id="contact-form" action="https://formspree.io/f/xaqdrkoq" method="POST" class="space-y-4">
                             <div class="grid sm:grid-cols-2 gap-4">
@@ -322,7 +323,7 @@
                             <div><label class="text-xs font-semibold mb-1.5 block" style="color:var(--text-secondary)">Tell us about your project</label>
                                 <textarea name="message" placeholder="Describe what you are building, what stage you are at, and what you need from us..." rows="5" required class="neo-input rounded-xl px-4 py-3 text-sm resize-none"></textarea>
                             </div>
-                            <button type="submit" id="contact-submit" class="btn-primary w-full rounded-full py-3.5 text-sm font-semibold text-white cursor-pointer">Send Message</button>
+                            <button type="submit" id="contact-submit" class="btn-primary w-full rounded-full py-3.5 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send Message</button>
                             <div id="contact-success" class="hidden text-center py-3 text-green-500 text-sm font-semibold">Sent! We will get back to you within 24 hours.</div>
                             <p class="text-xs text-center" style="color:var(--text-muted)">We respond within 24 hours. No spam, ever.</p>
                         </form>
@@ -335,8 +336,8 @@
     <!-- FAQ -->
     <section class="py-16">
         <div class="mx-auto max-w-6xl px-4 sm:px-6">
-            <div class="text-center mb-10 reveal"><div class="badge inline-flex mb-3">FAQs</div><h2 class="font-display text-3xl font-bold" style="color:var(--text-primary)">Questions we get asked a lot</h2></div>
-            <div class="max-w-3xl mx-auto space-y-3 reveal">
+            <div class="text-center mb-10 reveal ki-reveal"><div class="badge inline-flex mb-3">FAQs</div><h2 class="font-display text-3xl font-bold" style="color:var(--text-primary)">Questions we get asked a lot</h2></div>
+            <div class="max-w-3xl mx-auto space-y-3 reveal ki-reveal">
                 <details class="faq-item"><summary class="faq-summary">How long does a typical project take?<span class="text-purple-400">+</span></summary><div class="faq-body">It depends on scope. A simple website takes 2 to 4 weeks. A full web or mobile app is typically 8 to 16 weeks. We give a detailed timeline after our discovery call, never before we understand the project properly.</div></details>
                 <details class="faq-item"><summary class="faq-summary">How much does it cost?<span class="text-purple-400">+</span></summary><div class="faq-body">Every project is quoted individually based on scope, complexity, and timeline. We are transparent from day one and will never inflate an invoice mid-project. Share your project details and we will come back with a clear, itemised estimate.</div></details>
                 <details class="faq-item"><summary class="faq-summary">Who owns the code when you are done?<span class="text-purple-400">+</span></summary><div class="faq-body">You own 100% of everything we build. All source code, design files, assets, and infrastructure transfer to you upon final payment. No vendor lock-in with Kiyomi Group.</div></details>
@@ -361,10 +362,10 @@
                     <a href="portfolio.html" class="hover:text-purple-400 transition-colors">Portfolio</a>
                     <a href="how-we-work.html" class="hover:text-purple-400 transition-colors">How We Work</a>
                     <a href="index.html#tutorials" class="hover:text-purple-400 transition-colors">Tutorials</a>
-                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs">Get in Touch</a>
+                    <a href="contact.html" class="btn-primary rounded-full px-4 py-2 font-semibold text-white text-xs ki-btn ki-ripple ki-focus">Get in Touch</a>
                 </div>
             </div>
-            <hr class="hr-glow mb-4">
+            <hr class="hr-glow mb-4 ki-hr-animated">
             <p class="text-center text-xs" style="color:var(--text-muted)">&#169; <span id="year"></span> Kiyomi Group. All rights reserved.</p>
         </div>
     </footer>
@@ -381,7 +382,7 @@
                 <input type="email" name="email" placeholder="Work email" required class="neo-input rounded-xl px-4 py-2.5 text-sm">
                 <select name="industry" class="neo-input rounded-xl px-4 py-2.5 text-sm"><option value="">Industry</option><option>Health</option><option>Fintech</option><option>E-commerce</option><option>Other</option></select>
                 <textarea name="message" placeholder="Briefly describe your project..." rows="3" class="neo-input rounded-xl px-4 py-2.5 text-sm resize-none"></textarea>
-                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer">Send My Project Details</button>
+                <button type="submit" class="btn-primary w-full rounded-full py-3 text-sm font-semibold text-white cursor-pointer ki-btn ki-ripple ki-focus">Send My Project Details</button>
                 <div id="consult-success" class="hidden text-center py-2 text-green-500 text-sm font-semibold">Sent! We will be in touch within 24 hours.</div>
                 <button type="button" id="modal-not-now" class="w-full text-center text-xs pt-1 cursor-pointer" style="color:var(--text-muted)">Not now</button>
             </form>
